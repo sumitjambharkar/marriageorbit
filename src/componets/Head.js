@@ -32,6 +32,9 @@ const Header = () => {
 export default Header;
 const Head = styled.div`
   background-image: url(${Shaadi});
+  z-index: 1;
+  position: relative;
+  margin-top: -130px;
   min-height:600px;
   background-size:cover;
   background-repeat: no-repeat;
@@ -41,6 +44,11 @@ const Head = styled.div`
   }
   .signup {
     display: none;
+  }
+  @media (max-width:768px) {
+  z-index: 100;
+  position: relative;
+  margin-top: -68px;
   }
   @media (max-width:500px) {
   min-height:100%;

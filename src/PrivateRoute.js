@@ -5,7 +5,6 @@ import { selectUser } from "./componets/userSlice";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = useSelector(selectUser)
-  console.log(user);
   return (
     <Route
       {...rest}

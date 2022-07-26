@@ -15,7 +15,6 @@ const Home = () => {
     <Main/>
     <Story/>
     <Abouts/>
-    <Footer/>
     </Section>
     </>
   )

@@ -50,7 +50,7 @@ const Nav = styled.div`
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
     top: 0;
     right: 0;
-    z-index: 1;
+    z-index:2;
     height:auto;
     width: 300px;
     transition: transform 0.3s ease-in-out;
@@ -59,7 +59,7 @@ const Nav = styled.div`
     background-color: #0D2538;
     width: 300px;
     transition: transform 0.3s ease-in-out;
-    margin-bottom:none;
+    margin-bottom:0px;
     }
     li {
       color: #fff;

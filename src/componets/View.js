@@ -21,8 +21,6 @@ const View = () => {
   }
   const { Id } = useParams()
   const [personData, setPersonData] = useState([])
-  const [personDataFirst, setPersonDataFirst] = useState([])
-  const [personDataSecand, setPersonDataSecand] = useState([])
 
   let x = personData.birth
   let date = new Date(x)
@@ -33,28 +31,7 @@ const View = () => {
     if (Id) {
       db.collection("users").doc(Id).onSnapshot(snapshot => {
         setPersonData(snapshot.data())
-        console.log(snapshot.data());
       })
-      db.collection("users")
-        .doc(Id)
-        .collection("userdata1")
-        .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            setPersonDataFirst(doc.data())
-            console.log(doc.data());
-          });
-        });
-      db.collection("users")
-        .doc(Id)
-        .collection("userdata2")
-        .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            setPersonDataSecand(doc.data())
-          });
-      });
-  
     }
 
   }, [Id])
@@ -73,14 +50,14 @@ const View = () => {
             <Section>
               <Firsts>
                 <li>{calculate_age(new Date(personData.birth))} Years</li>
-                <li>{personDataFirst.maritalStatus}</li>
-                <li>{personDataSecand.religion}</li>
-                <li>{personDataSecand.tounge}</li>
+                <li>{personData.maritalStatus}</li>
+                <li>{personData.religion}</li>
+                <li>{personData.tounge}</li>
               </Firsts>
               <Firsts>
                 <li>Not Specified</li>
                 <li>Not Specified</li>
-                <li>Lives in {personDataFirst.city}</li>
+                <li>Lives in {personData.city}</li>
                 {/* <li><Link to="/chats/:roomId">Group Chat</Link></li> */}
                 <li><Link to="/chat">Chat</Link></li>
               </Firsts>
@@ -91,7 +68,7 @@ const View = () => {
       <AllDetails>
         <Details className='container'>
           <h1>Details of Profile</h1>
-          <div class="fancy2"><img src={images}/></div>
+          <div class="fancy2"><img src={images} alt=""/></div>
           <Box>
             <h3>About</h3>
             <span>I am currently living in uk. I am a smart and dynamic girl who respects her culture very much. I belong to a simple marathi family.</span>
@@ -111,11 +88,11 @@ const View = () => {
             <Agent>
             <First>
                 <li>Religion</li>
-                <li>{personDataSecand.religion}</li>
+                <li>{personData.religion}</li>
               </First>
               <First>
                 <li>Mother Tounge</li>
-                <li>{personDataSecand.tounge}</li>
+                <li>{personData.tounge}</li>
               </First>
             </Agent>
          
@@ -125,11 +102,11 @@ const View = () => {
             <Agent>
               <First>
                 <li>Eating Habit</li>
-                <li>{personDataFirst.diet}</li>
+                <li>{personData.diet}</li>
               </First>
               <First>
                 <li>Height</li>
-                <li>{personDataFirst.height}</li>
+                <li>{personData.height}</li>
               </First>
             </Agent>
            
@@ -139,11 +116,11 @@ const View = () => {
             <Agent>
               <First>
                 <li>Qaulification</li>
-                <li>{personDataSecand.qaulification}</li>
+                <li>{personData.qaulification}</li>
               </First>
               <First>
                 <li>University</li>
-                <li>{personDataSecand.collage}</li>
+                <li>{personData.collage}</li>
               </First>
             </Agent>
             
@@ -153,7 +130,7 @@ const View = () => {
             <Agent>
               <First>
                 <li>Live in Family</li>
-                <li>{personDataFirst.family}</li>
+                <li>{personData.family}</li>
               </First>
               <First>
                 <li>Members</li>
@@ -166,11 +143,11 @@ const View = () => {
             <Agent>
               <First>
                 <li>Live in</li>
-                <li>{personDataFirst.city}</li>
+                <li>{personData.city}</li>
               </First>
               <First>
                 <li>State</li>
-                <li>{personDataFirst.state}</li>
+                <li>{personData.state}</li>
               </First>
             </Agent>
           </Box>

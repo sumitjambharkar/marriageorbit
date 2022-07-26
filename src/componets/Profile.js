@@ -22,7 +22,7 @@ const Profile = () => {
             const {city,family,maritalStatus,diet,height,state} = data
             auth.onAuthStateChanged(user=>{
                 if(user){
-                    db.collection("users").doc(user.uid).collection("userdata1").add({
+                    db.collection("users").doc(user.uid).update({
                         city:city,
                         family:family,
                         diet:diet,

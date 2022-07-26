@@ -32,10 +32,10 @@ const HomeSection = () => {
   const [personData, setPersonData] = useState([])
   const [isGender, setIsGender] = useState('')
 
-  const getLocation =(e)=> {
-
-    console.log({...location,[e.target.name]:e.target.value});
+  const getLocation =()=> {
+     
   }
+  getLocation()
   useEffect(() => {
     auth.onAuthStateChanged(userAuth=>{
       if(userAuth){
@@ -74,8 +74,6 @@ const HomeSection = () => {
   
   return (
     <>
-     <Header/>
-     <Navbar/>
       <h3 style={{textAlign:"center",padding:"30px",backgroundColor:" #eee"}}>Members Looking For Me 418</h3>
     
     <Container>
@@ -89,8 +87,7 @@ const HomeSection = () => {
        <Filtter>
        <Fil>
        <p>Select Location</p>
-       <select name='location' value={location} onChange={getLocation} >
-        <option>Select</option>
+       <select name='location' value={location} onChange={(e)=>setLocation(e.target.value)} >
        {loc.map((ele)=>(
          <option>{ele}</option>
        ))}
@@ -185,7 +182,6 @@ const HomeSection = () => {
      </Card>
      </SectionCard>
     </Section>
-      <Footer/>
     </>
   )
 }

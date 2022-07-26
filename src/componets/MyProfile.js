@@ -8,8 +8,6 @@ import { selectUser } from "./userSlice";
 import EditIcon from "@mui/icons-material/Edit";
 import Tooltip from "@mui/material/Tooltip";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
 import { toast } from "react-toastify";
 import { Avatar } from '@mui/material';
 import { storage} from "./firebase";
@@ -17,36 +15,17 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getDoc, doc, updateDoc } from "firebase/firestore";
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
-import images from "../image/bg-border.png";
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import './MyProfile.css'
 import Navbar from "./Nav/Navbar";
 import Header from "./Header";
 
-const style = {
-  position: "absolute",
-  textAlign:"center",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 300,
-  bgcolor: "background.paper",
-  boxShadow: 24,
-  paddingLeft:2,
-  paddingRight:2,
-};
-
-
-
 const MyProfile = () => {
   const [img ,setImag ] = useState('')
   const [userDetails, setUserDetails] = useState([]);
-  const [userFirst, setUserFirst] = useState([]);
-  const [userSecand, setUserSecand] = useState([]);
   var user = useSelector(selectUser);
   // if else Start
   const [num,setNum] = useState(false)
-  const [data ,setData] = useState({marital:"",birth:"",diet:"",work:"",qaulification:"",collage:"",family:"",members:"",city:"",state:""})
+  const [data ,setData] = useState({maritalStatus:"",birth:"",diet:"",work:"",qaulification:"",collage:"",family:"",members:"",city:"",state:"",religion:"",tounge:""})
   const [show ,setShow] = useState(false)
   // if else Close 
   const dispatch = useDispatch();
@@ -100,47 +79,21 @@ const MyProfile = () => {
     setData({...data,[e.target.name]:e.target.value})
 
   }
-  const firstUpdate = () => {
-    db.collection("users").doc(user.uid).update({birth:data.birth})
-
-  }
-  const secondUpdate = ()=> {
-    db.collection("users").doc(user.uid).collection("userdata1").update({
+  const updateDataAll = ()=> {
+    db.collection("users").doc(user.uid).update({
+      birth:data.birth,
       city:data.city,
       state:data.state,
       diet:data.diet,
       family:data.family,
-      height: data.height,
-      maritalStatus:data.marital,
-      
-    })
-
-  }
-  const thirdUpdate = () => {
-    db.collection("users").doc(user.uid).collection("userdata2").update({
+      maritalStatus:data.maritalStatus,
       collage:data.collage,
       qaulification:data.qaulification,
       religion:data.religion,
       tounge:data.tounge,
       work:data.work,
-
     })
-
-  }
-  const updateDataAll = ()=> {
-    console.log({...data});
-    // setTimeout(() => {
-    //   firstUpdate()
-    // }, )
-    setTimeout(() => {
-       secondUpdate()
-    }, )
-    // setTimeout(() => {
-    //   thirdUpdate()
-    // }, )
-    setTimeout(() => {
-      setShow(false)
-    }, )
+    setShow(false)
   }
   
   function calculate_age(dob) {
@@ -170,24 +123,6 @@ const MyProfile = () => {
         .doc(user.uid).onSnapshot((snapshot) => {
           setUserDetails(snapshot.data());
       });
-      db.collection("users")
-        .doc(user.uid)
-        .collection("userdata1")
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            setUserFirst(doc.data());
-          });
-        });
-      db.collection("users")
-        .doc(user.uid)
-        .collection("userdata2")
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            setUserSecand(doc.data());
-          });
-        })
     }
   }, [user.uid]);
   const Input = styled('input')({
@@ -216,7 +151,7 @@ const MyProfile = () => {
             <hr></hr>
 
             <li>{calculate_age(new Date(userDetails.birth))} Yrs</li>
-            <li>{userFirst.height}</li>
+            <li>{userDetails.height}</li>
             <li>Indian</li>
             <li>{userDetails.number}<Button onClick={()=>setNum(true)}>
               <Tooltip title="Edit"><EditIcon />
@@ -234,7 +169,7 @@ const MyProfile = () => {
             <div class="col-md-12">
                 <div class="section1">
                     <h1>Details Of Profile</h1>
-                    <img src="fancyline.png"></img>
+                    <img src="fancyline.png" alt=""/>
                 </div>
                 <div class="section2">
                     <strong>About</strong>
@@ -266,7 +201,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="birth" type="date" value={data.birth} onChange={handleChange}/></li>
+                       <li><input name="birth" type="date" defaultValue={dateMDY} value={data.birth} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -279,13 +214,13 @@ const MyProfile = () => {
                         <li>Marrired Status</li>
                         {!show? 
                        <>
-                       <li>{userFirst.maritalStatus}</li>
+                       <li>{userDetails.maritalStatus}</li>
                         <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
                         </li>
                        </>
                         : 
                        <>
-                       <li><input name="marital" value={data.marital} onChange={handleChange}/></li>
+                       <li><input name="maritalStatus" defaultValue={userDetails.maritalStatus} value={data.maritalStatus} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -313,7 +248,7 @@ const MyProfile = () => {
                         <li>Religion</li>
                         {!show? 
                        <>
-                       <li>{userSecand.religion}</li>
+                       <li>{userDetails.religion}</li>
                         <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
                         </li>
                        </>
@@ -333,13 +268,13 @@ const MyProfile = () => {
                         <li>Mother Tounge</li>
                         {!show? 
                        <>
-                       <li>{userSecand.tounge}</li>
+                       <li>{userDetails.tounge}</li>
                         <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
                         </li>
                        </>
                         : 
                        <>
-                       <li><input name="tounge" value={data.tounge} onChange={handleChange} /></li>
+                       <li><input name="tounge" defaultValue={userDetails.tounge} value={data.tounge} onChange={handleChange} /></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -368,13 +303,13 @@ const MyProfile = () => {
                         <li>Eating Habbit</li>
                         {!show? 
                        <>
-                       <li>{userFirst.diet}</li>
+                       <li>{userDetails.diet}</li>
                         <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
                         </li>
                        </>
                         : 
                        <>
-                       <li><input name="diet" value={data.diet} onChange={handleChange}/></li>
+                       <li><input name="diet" defaultValue={userDetails.diet} value={data.diet} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -388,7 +323,7 @@ const MyProfile = () => {
                         <li>Work</li>
                         {!show? 
                        <>
-                       <li>{userSecand.work}</li>
+                       <li>{userDetails.work}</li>
                         <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
                         </li>
                        </>
@@ -423,7 +358,7 @@ const MyProfile = () => {
                         <li>Qualification</li>
                         {!show? 
                        <>
-                       <li>{userSecand.qaulification}</li>
+                       <li>{userDetails.qaulification}</li>
                         <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
                         </li>
                        </>
@@ -443,7 +378,7 @@ const MyProfile = () => {
                         <li>University</li>
                         {!show? 
                        <>
-                       <li>{userSecand.collage}</li>
+                       <li>{userDetails.collage}</li>
                         <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
                         </li>
                        </>
@@ -477,7 +412,7 @@ const MyProfile = () => {
                         <li>Live With Family</li>
                         {!show? 
                        <>
-                       <li>{userFirst.family}</li>
+                       <li>{userDetails.family}</li>
                         <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
                         </li>
                        </>
@@ -532,7 +467,7 @@ const MyProfile = () => {
                         <li>Live In </li>
                         {!show? 
                        <>
-                       <li>{userFirst.city}</li>
+                       <li>{userDetails.city}</li>
                         <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
                         </li>
                        </>
@@ -553,7 +488,7 @@ const MyProfile = () => {
                         <li>State</li>
                         {!show? 
                        <>
-                       <li>{userFirst.state}</li>
+                       <li>{userDetails.state}</li>
                         <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
                         </li>
                        </>
@@ -632,53 +567,3 @@ const ImageDetails = styled.div`
     width: 230px;
   }
 `;
-const AllDetails = styled.div`
-display:flex;
-justify-content:start;
-padding:30px;
-background-color:white;`
-const Details = styled.div`
-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
-background-color:#eee;
-width: 70%;
->h1 {
-  font-size: 1.8rem;
-    font-weight: bold;
-    font-family: auto;
-    color:#FFA500;
-    margin-top: 15px;
-}
-@media (max-width:600px) {
-    width:100%;
-    padding:0;
-  }
-> h1 {
-  text-align:center;
-}`
-
-const Agent = styled.div`
-display:flex;
-width: 100%;
-`
-const First = styled.div`
-display: flex;
-justify-content: center;
-width: 50%;
-padding-left:8px;
-margin:4px;
-> li {
-  list-style:none;
-  font-size: 15px;
-  color: #666;
-  width: 30%;
-  
-}
-`
-const Box = styled.div`
-padding:24px;
->h3 {
-  font-size: 1rem;
-    font-weight: 600;
-    font-family: auto;
-}
-`

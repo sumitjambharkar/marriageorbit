@@ -20,8 +20,6 @@ const CoupleDetails = () => {
 
   return (
     <>
-    <Header/>
-    <Navbar/>
       <Details className="container">
         <Link to={`/couple/${personId}`}>Featured Success Stories</Link>
         <Link to="/video">Videos Stories</Link>
@@ -55,7 +53,6 @@ const CoupleDetails = () => {
 
         </div>
       </Head>
-      <Footer/>
     </>
   );
 };

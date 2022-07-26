@@ -18,7 +18,7 @@ const Steptwo = () => {
         const {qaulification,collage,work,tounge,religion} = data
         auth.onAuthStateChanged(user=>{
             if(user){
-                db.collection("users").doc(user.uid).collection("userdata2").add({
+                db.collection("users").doc(user.uid).update({
                     qaulification:qaulification,
                     collage:collage,
                     work:work,
