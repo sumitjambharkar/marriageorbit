@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Loginn from './Loginn'
 import images from "../image/bg-border.png";
+import {Helmet} from "react-helmet";
 AOS.init();
 
 const Story = () => {
@@ -23,6 +24,26 @@ const Story = () => {
 
     return (
         <>
+        <Helmet>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="robots" content="follow,index"/>
+      <meta name="description" content="Pagekeyword"/>
+      <meta name="keywords" content="Pagekeywords"/>
+      <meta name="author" content="Marriageorbit"/>
+      <meta property="og:url" content="PageURL.html"/>
+      <meta property="og:type" content="products" />
+      <meta property="og:title" content="Title-Name"/>
+      <meta property="og:image" content="Pageimagelink.jpg" />
+      <meta property="og:site_name" content="Who We are "/>
+   
+    <link rel="canonical" href="" />
+ 
+      <title></title>
+      
+      <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
+      </Helmet>
             <Title>
                 <h2>Matrimony Service with Millions of Success Stories</h2>
                 <div class="fancy"><img src={images}/></div>
@@ -107,6 +128,7 @@ const StoryImage = styled.div`
        z-index: 1;
        opacity: 0;
        transition: 0.5s;
+       border-radius: 13px;
    }
 
 

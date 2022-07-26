@@ -31,7 +31,7 @@ const SearchPage = () => {
       
        <Header/>
       <Navbar/>
-    <div className='container se mt-4'>
+    <div className='container se mt-5'>
     <div className='row mt-3'>
       <div className='label col-md-3 sm-12'>
         <label>age</label>
@@ -146,6 +146,49 @@ const SearchPage = () => {
       </div>
     </div>
   
+  </div>
+  <div className='container'>
+    <div className='row mt-5 mb-5'>
+    <div className='col-md-3'>
+     <div className='pic'>
+      <div className='pic1'>
+       <span>Profile Id: </span>
+       <p>25 hindu India</p>
+       <p>other</p>
+      </div>
+     </div>
+     </div>
+
+     <div className='col-md-3'>
+     <div className='pic'>
+      <div className='pic1'>
+       <span>Profile Id: </span>
+       <p>25 hindu India</p>
+       <p>other</p>
+      </div>
+     </div>
+     </div>
+
+     <div className='col-md-3'>
+     <div className='pic'>
+      <div className='pic1'>
+       <span>Profile Id: </span>
+       <p>25 hindu India</p>
+       <p>other</p>
+      </div>
+     </div>
+     </div>
+
+     <div className='col-md-3'>
+     <div className='pic'>
+      <div className='pic1'>
+       <span>Profile Id: </span>
+       <p>25 hindu India</p>
+       <p>other</p>
+      </div>
+     </div>
+     </div>
+    </div>
   </div>
   <Footer />
   </>

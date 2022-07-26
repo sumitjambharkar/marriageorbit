@@ -32,14 +32,14 @@ a{
 }
 
 .search input{
-    width: 154%;
+    width: 140%;
     height: 35px !important;
     float: left;
     background: #ffa200 !important;
     cursor: progress;
     color: #fff;
     margin-top:48px;
-    margin-left: -49%;
+    margin-left: -40%;
     border: none;
     border-radius:4px;
 }
