@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import Footer from './Footer';
 import { auth, db } from './firebase';
+import {Helmet} from "react-helmet";
 
 
 const Profile = () => {
@@ -51,6 +52,26 @@ const Profile = () => {
            
   return (
     <>
+    <Helmet>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="robots" content="follow,index"/>
+      <meta name="description" content="Pagekeyword"/>
+      <meta name="keywords" content="Pagekeywords"/>
+      <meta name="author" content="Marriageorbit"/>
+      <meta property="og:url" content="PageURL.html"/>
+      <meta property="og:type" content="products" />
+      <meta property="og:title" content="Title-Name"/>
+      <meta property="og:image" content="Pageimagelink.jpg" />
+      <meta property="og:site_name" content="Who We are "/>
+   
+    <link rel="canonical" href="" />
+ 
+      <title></title>
+      
+      <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
+      </Helmet>
     <Header>
         <h1>marriageorbit.com</h1>
     </Header>

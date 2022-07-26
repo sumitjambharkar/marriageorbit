@@ -17,6 +17,7 @@ import Setting from './setting/Setting';
 import DeleteUser from './setting/DeleteUser'
 import Loginn from './Loginn';
 import images2 from "../image/logos.png";
+import {Helmet} from "react-helmet";
 
 
 const UseNav = () => {
@@ -56,6 +57,26 @@ const UseNav = () => {
   
   return (
     <>
+    <Helmet>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="robots" content="follow,index"/>
+      <meta name="description" content="Pagekeyword"/>
+      <meta name="keywords" content="Pagekeywords"/>
+      <meta name="author" content="Marriageorbit"/>
+      <meta property="og:url" content="PageURL.html"/>
+      <meta property="og:type" content="products" />
+      <meta property="og:title" content="Title-Name"/>
+      <meta property="og:image" content="Pageimagelink.jpg" />
+      <meta property="og:site_name" content="Who We are "/>
+   
+    <link rel="canonical" href="" />
+ 
+      <title></title>
+      
+      <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
+      </Helmet>
     <Header>
     <div class="logoS"><img src={images2}/></div>
      <p style={{paddingLeft:"15px"}}>Free Membership</p>

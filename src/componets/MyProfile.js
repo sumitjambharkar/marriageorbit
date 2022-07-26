@@ -234,7 +234,7 @@ const MyProfile = () => {
             <div class="col-md-12">
                 <div class="section1">
                     <h1>Details Of Profile</h1>
-                    <img src="fancyline.png"></img>
+                    <img src={images}/>
                 </div>
                 <div class="section2">
                     <strong>About</strong>

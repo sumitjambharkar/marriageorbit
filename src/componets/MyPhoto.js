@@ -30,7 +30,7 @@ function MyPhoto() {
       </Helmet>
       <Header/>
       <Navbar/>
-        <div className="con">
+        <div className="con mt-5">
           <div className='container cono'>
             <div className='row'>
               <div className='col-md-11 sm-12 mt-5'>
@@ -90,6 +90,51 @@ function MyPhoto() {
             </div>
           </div>
         </div>
+
+        <div className='container'>
+    <div className='row mt-5 mb-5'>
+    <div className='col-md-3'>
+     <div className='pic'>
+      <div className='pic1'>
+       <span>Profile Id: </span>
+       <p>25 hindu India</p>
+       <p>other</p>
+      </div>
+     </div>
+     </div>
+
+     <div className='col-md-3'>
+     <div className='pic'>
+      <div className='pic1'>
+       <span>Profile Id: </span>
+       <p>25 hindu India</p>
+       <p>other</p>
+      </div>
+     </div>
+     </div>
+
+     <div className='col-md-3'>
+     <div className='pic'>
+      <div className='pic1'>
+       <span>Profile Id: </span>
+       <p>25 hindu India</p>
+       <p>other</p>
+      </div>
+     </div>
+     </div>
+
+     <div className='col-md-3'>
+     <div className='pic'>
+      <img src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600'alt=''/>
+      <div className='pic1'>
+       <span>Profile Id: </span>
+       <p>25 hindu India</p>
+       <p>other</p>
+      </div>
+     </div>
+     </div>
+    </div>
+  </div>
         <Footer />
       </>
   );
