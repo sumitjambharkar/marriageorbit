@@ -35,6 +35,7 @@ import Header from './componets/Header';
 import Navbar from './componets/Nav/Navbar';
 import Footer from './componets/Footer';
 import Gallery from './componets/Gallery';
+import Service from './componets/Service';
 
 function App() {
   const user = useSelector(selectUser)
@@ -113,6 +114,9 @@ function App() {
       <Route exact path="/chat">
         <Chat/>
       </Route>
+      <Route exact path="/sumit">
+        <Header/>
+      </Route>
       <Route exact path="/search">
         <SearchPage/>
       </Route>
@@ -120,6 +124,11 @@ function App() {
       <Route exact path="/Filter">
         <Filter/>
         </Route>
+        
+      <Route exact path="/Service">
+        <Service/>
+        </Route>
+
         <Route exact path="/gallery">
         <Gallery/>
         </Route>

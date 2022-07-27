@@ -15,14 +15,14 @@ const Header = () => {
       <meta name="keywords" content="Pagekeywords"/>
       <meta name="author" content="Marriageorbit"/>
       <meta property="og:url" content="PageURL.html"/>
-      <meta property="og:type" content="products" />
+      <meta property="og:type" content="pkljdsjudospugugpdugu[uguguuuy" />
       <meta property="og:title" content="Title-Name"/>
       <meta property="og:image" content="Pageimagelink.jpg" />
       <meta property="og:site_name" content="Who We are "/>
    
-    <link rel="canonical" href="" />
+      <link rel="canonical" href="sumitjambha" />
  
-      <title></title>
+      <title>babi</title>
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>

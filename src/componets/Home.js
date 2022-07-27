@@ -5,7 +5,6 @@ import Story from './Story';
 import Main from './Main';
 import styled from '@emotion/styled';
 import {Helmet} from "react-helmet";
-import Meta from './Meta';
 
 
 const Home = () => {
@@ -19,7 +18,6 @@ const Home = () => {
     <Main/>
     <Story/>
     <Abouts/>
-    <Meta/>
     </Section>
     </>
   )
