@@ -48,12 +48,14 @@ const SearchPage = () => {
         <label>age</label>
       </div>
       <div className='col-md-7'>
+        <div className='searr'>
         <select>
           <option>22</option>
         </select>
         <select>
           <option>22</option>
         </select>
+        </div>
       </div>
     </div>
 
@@ -62,12 +64,14 @@ const SearchPage = () => {
         <label>Height</label>
       </div>
       <div className='col-md-7'>
+        <div className='searr'>
         <select>
           <option>22</option>
         </select>
         <select>
           <option>22</option>
         </select>
+        </div>
       </div>
     </div>
 
