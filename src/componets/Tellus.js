@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { db } from './firebase';
 import { toast } from 'react-toastify';
 import {Helmet} from "react-helmet";
+import Navbar from './Nav/Navbar';
+import Header from './Header';
 
 
 
@@ -54,6 +56,8 @@ const Tellus = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
+      <Header/>
+      <Navbar/>
     <Details className='container'>
     <Link to="/">Featured Success Stories</Link>
     <Link to="/video">Videos Stories</Link>

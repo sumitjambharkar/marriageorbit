@@ -36,7 +36,7 @@ const Nav = styled.div`
       padding: 15px;
       font-size: 14px;
       line-height:50px;
-      font-weight:600;  
+      font-weight:600;
   }
   .name {
     display:none;
@@ -205,6 +205,7 @@ const Drop = styled.div`
   line-height: 46px;
   padding-left: 10px;
   color:grey;
+  cursor:pointer;
   }
   > span a {
     color: gray;
@@ -258,8 +259,8 @@ const RightNav = ({ open }) => {
       <>
       <ul>
       <li><Link to="/">Home</Link></li>
-       <li><Link to="/"><span style={{position:"absolute",opacity: "0"}}><Loginn/></span>Login</Link></li>
-       <li><Link to="/"><span style={{position:"absolute",opacity: "0"}}><Loginn/></span>Sign Up</Link></li>
+       <li><Link><span style={{position:"absolute",opacity: "0"}}><Loginn/></span>Login</Link></li>
+       <li><Link><span style={{position:"absolute",opacity: "0"}}><Loginn/></span>Sign Up</Link></li>
        <li><Link to="/about">About</Link></li>
       </ul>
       <ul>
@@ -288,7 +289,7 @@ const RightNav = ({ open }) => {
             <ArrowDropDownIcon/>
             </Link>
             {show ? <>
-       <Drop>
+      <Drop>
               <span><Link to="/my-profile"><AccountCircleIcon/> My Profile</Link></span>
               <span onClick={handalLogout}><LogoutIcon/>Logout</span>
               <span style={{display:"flex",alignItems:"center"}}><SettingsIcon/><Setting/></span>

@@ -43,6 +43,8 @@ const CoupleDetails = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
+      <Header/>
+      <Navbar/>
       <Details className="container">
         <Link to={`/couple/${personId}`}>Featured Success Stories</Link>
         <Link to="/video">Videos Stories</Link>

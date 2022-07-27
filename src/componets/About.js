@@ -47,6 +47,8 @@ const About = () => {
 
     
       </Helmet>
+      <Header/>
+      <Navbar/>
     <AboutSection className='container'>
      <h1>About Us</h1>
      <Image>
