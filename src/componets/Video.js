@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Footer from "./Footer";
 import {db} from './firebase';
 import {Helmet} from "react-helmet";
 
@@ -73,7 +72,6 @@ const Video = () => {
          
           </div>
       </Videos>
-      <Footer/>
     </>
   );
 };

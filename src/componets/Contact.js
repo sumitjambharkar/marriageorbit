@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-
-import Footer from './Footer';
 import styled from 'styled-components';
 import { db } from './firebase';
 import { toast } from 'react-toastify';
-import Header from './Header';
-import Navbar from './Nav/Navbar';
 import {Helmet} from "react-helmet";
+import ScrollArea from 'react-scrollbar';
+import { Container } from '@mui/material';
 
 const Contact = () => {
     const [input, setinput] = useState({
@@ -48,7 +46,6 @@ const Contact = () => {
                 <link rel="canonical" href="http://mysite.com/example" />
   
       </Helmet>
-   
     <Head>
         <h3>Contact Us</h3>
         <h5>contact us if you have any query or concern.</h5>
@@ -80,7 +77,107 @@ const Contact = () => {
             <button onClick={submitForm} type='submit'>Submit</button>
         </FeedBack>
     </Feed>
-  
+    <Container>
+        <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Avialble In Several Locations</h1>
+    <ScrollArea
+            speed={0.8}
+            className="area"
+            contentClassName="content"
+            horizontal={false}
+            style={{height:100, color:"#666666", marginBottom:"25px",padding:"15px", border:"1px solid #ffa500"}}
+            > 
+<p>	girls lifepartner providing matrimonial websites Ghatkopar	</p>
+<p>	newly launched matrimonial companies Dahanu	</p>
+<p>	newly launched matrimonial services Mira-bhayander	</p>
+<p>	girls lifepartner providing matchmaking services Bandra	</p>
+<p>	online dating matrimonial apps Mira-bhayander	</p>
+<p>	newly launched matrimonial apps Ghatkopar	</p>
+<p>	newly launched matrimonial services Vasai	</p>
+<p>	online dating matrimonial services Vasai	</p>
+<p>	online meeting matchmaking websites Andheri	</p>
+<p>	trusted matrimonial websites Worli	</p>
+<p>	upcoming matchmaking companies Powai	</p>
+<p>	boys lifepartner providing matrimonial services Bandra	</p>
+<p>	top 10 matrimony matrimonial services Borivali	</p>
+<p>	boys lifepartner providing matchmaking apps Bhandup	</p>
+<p>	boys lifepartner providing matrimonial companies Jogeshwari	</p>
+<p>	girls lifepartner providing matchmaking companies Palghar	</p>
+<p>	boys lifepartner providing matchmaking apps Kanjurmarg	</p>
+<p>	trusted matrimonial apps byculla	</p>
+<p>	trusted matchmaking websites Dadar	</p>
+<p>	online meeting matrimonial apps Vasai	</p>
+<p>	upcoming matrimonial websites byculla	</p>
+<p>	best matchmaking companies Churchgate	</p>
+<p>	online meeting matrimonial companies Jogeshwari	</p>
+<p>	online dating matrimonial companies Jogeshwari	</p>
+<p>	trusted matrimonial apps Kandivali	</p>
+<p>	best matrimonial websites Ghatkopar	</p>
+<p>	upcoming matrimonial apps Churchgate	</p>
+<p>	newly launched matchmaking services Vidyavihar	</p>
+<p>	trusted matrimonial companies Bhandup	</p>
+<p>	top 10 matrimony matchmaking companies Vile-Parle	</p>
+<p>	boys lifepartner providing matrimonial services Mulund	</p>
+<p>	online meeting matrimonial websites Vidyavihar	</p>
+<p>	girls lifepartner providing matchmaking apps Thane	</p>
+<p>	girls lifepartner providing matchmaking services Dahisar	</p>
+<p>	trusted matchmaking companies Borivali	</p>
+<p>	newly launched matchmaking companies Kanjurmarg	</p>
+<p>	best matrimonial apps Nallasopara	</p>
+<p>	top 10 matrimony matchmaking websites Boisar	</p>
+<p>	newly launched matchmaking apps Powai	</p>
+<p>	newly launched matchmaking websites Powai	</p>
+<p>	newly launched matrimonial apps Mira-bhayander	</p>
+<p>	newly launched matchmaking services Bandra	</p>
+<p>	girls lifepartner providing matchmaking apps Powai	</p>
+<p>	girls lifepartner providing matchmaking services Mira-bhayander	</p>
+<p>	girls lifepartner providing matchmaking companies Bhandup	</p>
+<p>	newly launched matrimonial companies Mulund	</p>
+<p>	newly launched matrimonial websites Palghar	</p>
+<p>	upcoming matchmaking services Thane	</p>
+<p>	boys lifepartner providing matrimonial apps Bhandup	</p>
+<p>	top 10 matrimony matrimonial companies Dadar	</p>
+<p>	newly launched matrimonial websites Ghatkopar	</p>
+<p>	upcoming matchmaking apps Borivali	</p>
+<p>	trusted matchmaking apps Virar	</p>
+<p>	girls lifepartner providing matchmaking apps Nallasopara	</p>
+<p>	online dating matchmaking companies Nallasopara	</p>
+<p>	best matrimonial companies Colaba	</p>
+<p>	best matrimonial apps Bhandup	</p>
+<p>	best matrimonial websites Kandivali	</p>
+<p>	boys lifepartner providing matchmaking companies Navi Mumbai	</p>
+<p>	best matchmaking websites Powai	</p>
+<p>	newly launched matchmaking services Bhandup	</p>
+<p>	upcoming matrimonial apps Worli	</p>
+<p>	best matrimonial apps Churchgate	</p>
+<p>	boys lifepartner providing matchmaking companies Bandra	</p>
+<p>	boys lifepartner providing matrimonial websites Powai	</p>
+<p>	boys lifepartner providing matrimonial apps Vasai	</p>
+<p>	online dating matchmaking websites Navi Mumbai	</p>
+<p>	online meeting matchmaking services Nallasopara	</p>
+<p>	best matrimonial services Churchgate	</p>
+<p>	girls lifepartner providing matrimonial websites Kurla	</p>
+<p>	online dating matchmaking apps Matunga	</p>
+<p>	best matrimonial services Boisar	</p>
+<p>	newly launched matrimonial websites Bhandup	</p>
+<p>	upcoming matchmaking websites Vidyavihar	</p>
+<p>	top 10 matrimony matrimonial companies Kandivali	</p>
+<p>	upcoming matrimonial services Nallasopara	</p>
+<p>	upcoming matrimonial websites Bhandup	</p>
+<p>	best matchmaking apps byculla	</p>
+<p>	online meeting matchmaking companies Vasai	</p>
+<p>	newly launched matrimonial companies Chembur	</p>
+<p>	upcoming matrimonial companies Borivali	</p>
+<p>	trusted matrimonial companies Powai	</p>
+<p>	newly launched matchmaking services Dahisar	</p>
+<p>	trusted matrimonial companies Colaba	</p>
+<p>	online meeting matchmaking services Dahanu	</p>
+<p>	boys lifepartner providing matrimonial services Mira-bhayander	</p>
+<p>	upcoming matrimonial websites Parel	</p>
+<p>	trusted matrimonial websites Mulund	</p>
+<p>	online meeting matrimonial websites Juhu	</p>
+            
+          </ScrollArea>
+          </Container>
     </>
   )
 }

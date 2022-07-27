@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Footer from './Footer';
-import Header from './Header';
-import Navbar from './Nav/Navbar';
 import {Helmet} from "react-helmet";
-
+import ScrollArea from 'react-scrollbar';
+import { Container } from '@mui/material';
 
 const Sitemap = () => {
   return (
@@ -45,7 +43,6 @@ const Sitemap = () => {
    
 
       </Helmet>
-
     <p></p>
     <h2 style={{textAlign:"center"}}>Marriageorbit Location</h2>
     <p></p>
@@ -72,7 +69,85 @@ const Sitemap = () => {
         <h4>12:00 PM to 08:00 PM</h4>
     </Location>
     </SiteLocation>
-   
+    <Container>
+        <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Avialble In Several Locations</h1>
+    <ScrollArea
+            speed={0.8}
+            className="area"
+            contentClassName="content"
+            horizontal={false}
+            style={{height:100, color:"#666666", marginBottom:"25px",padding:"15px", border:"1px solid #ffa500"}}
+            > 
+<p>	newly launched matchmaking websites in Coimbatore.	</p>
+<p>	best matrimonial services in Surat.	</p>
+<p>	upcoming matrimonial apps in Ahmedabad.	</p>
+<p>	boys lifepartner providing matchmaking services in Mumbai.	</p>
+<p>	best matchmaking services in Chennai.	</p>
+<p>	online dating matrimonial services in Chennai.	</p>
+<p>	upcoming matchmaking websites in Hyderabad.	</p>
+<p>	online meeting matchmaking websites in Mumbai.	</p>
+<p>	girls lifepartner providing matchmaking services in Surat.	</p>
+<p>	boys lifepartner providing matchmaking services in Indore.	</p>
+<p>	newly launched matrimonial websites in Rajasthan.	</p>
+<p>	best matrimonial companies in dehradun.	</p>
+<p>	trusted matrimonial services in Surat.	</p>
+<p>	upcoming matrimonial services in Faridabad.	</p>
+<p>	best matrimonial websites in Kolkata.	</p>
+<p>	upcoming matchmaking apps in Trivandrum.	</p>
+<p>	girls lifepartner providing matrimonial services in Indore.	</p>
+<p>	boys lifepartner providing matrimonial companies in Chennai.	</p>
+<p>	online dating matrimonial websites in dehradun.	</p>
+<p>	best matchmaking services in Kochi.	</p>
+<p>	girls lifepartner providing matrimonial services in Kolkata.	</p>
+<p>	online dating matchmaking services in Nashik.	</p>
+<p>	best matrimonial websites in Indore.	</p>
+<p>	online dating matrimonial services in Jamshedpur.	</p>
+<p>	trusted matrimonial companies in dehradun.	</p>
+<p>	trusted matchmaking services in Lucknow.	</p>
+<p>	girls lifepartner providing matrimonial companies in Hyderabad.	</p>
+<p>	girls lifepartner providing matchmaking services in Pune.	</p>
+<p>	upcoming matchmaking websites in Bangalore.	</p>
+<p>	best matrimonial companies in New Delhi.	</p>
+<p>	online meeting matchmaking companies in dehradun.	</p>
+<p>	trusted matrimonial companies in Karnataka.	</p>
+<p>	top 10 matrimony matrimonial companies in Kolkata.	</p>
+<p>	newly launched matchmaking apps in Coimbatore.	</p>
+<p>	best matrimonial companies in Indore.	</p>
+<p>	boys lifepartner providing matchmaking websites in Bangalore.	</p>
+<p>	girls lifepartner providing matrimonial companies in Nagpur.	</p>
+<p>	trusted matrimonial companies in New Delhi.	</p>
+<p>	best matchmaking companies in Chennai.	</p>
+<p>	upcoming matrimonial companies in Rajasthan.	</p>
+<p>	top 10 matrimony matrimonial websites in Surat.	</p>
+<p>	newly launched matchmaking services in Nashik.	</p>
+<p>	online meeting matrimonial apps in Karnataka.	</p>
+<p>	upcoming matchmaking websites in Nashik.	</p>
+<p>	online dating matrimonial apps in Surat.	</p>
+<p>	boys lifepartner providing matchmaking companies in Jaipur.	</p>
+<p>	best matchmaking services in Vadodara.	</p>
+<p>	trusted matchmaking services in Surat.	</p>
+<p>	top 10 matrimony matchmaking companies in New Delhi.	</p>
+<p>	boys lifepartner providing matchmaking websites in Karnataka.	</p>
+<p>	best matrimonial companies in Nagpur.	</p>
+<p>	best matrimonial companies in Ahmedabad.	</p>
+<p>	trusted matrimonial websites in Faridabad.	</p>
+<p>	newly launched matchmaking websites in Surat.	</p>
+<p>	boys lifepartner providing matchmaking apps in Pune.	</p>
+<p>	best matrimonial companies in Chennai.	</p>
+<p>	boys lifepartner providing matchmaking apps in Vadodara.	</p>
+<p>	upcoming matchmaking services in Lucknow.	</p>
+<p>	best matchmaking apps in Indore.	</p>
+<p>	upcoming matrimonial services in Chennai.	</p>
+<p>	girls lifepartner providing matchmaking apps in Rajasthan.	</p>
+<p>	online dating matchmaking services in Mumbai.	</p>
+<p>	boys lifepartner providing matchmaking companies in Vadodara.	</p>
+<p>	trusted matchmaking apps in Karnataka.	</p>
+<p>	online dating matchmaking companies in Rajasthan.	</p>
+<p>	newly launched matchmaking websites in Rajasthan.	</p>
+<p>	boys lifepartner providing matchmaking services in Kochi.	</p>
+<p>	boys lifepartner providing matchmaking websites in dehradun.	</p>     
+          </ScrollArea>
+          </Container>
     </>
   )
 }

@@ -1,51 +1,50 @@
 import React from 'react'
 import styled from 'styled-components';
-import Footer from './Footer';
-import Header from './Header';
-import Navbar from './Nav/Navbar';
 import {Helmet} from "react-helmet";
-
+import ScrollArea from 'react-scrollbar';
+import { Container } from '@mui/material';
 const Policy = () => {
   return (  
     <>
+    
+    <Section className='container'>
+
     <Helmet>
       
 
 
-  <meta charset="utf-8"/>
-  <meta name="robots" content="follow,index"/>
-  <meta http-equiv="content-language" content="en"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-      <meta name="description" content="On Marriageorbit, you can find many genuine Hindi Matrimonial Male and Female profiles.
-      Safe and secure dating with total anonymity. Now add your profile!Indian Matrimonial Services from marriageorbit Matrimonials Portal for Indian Singles. 
-      Register now to find Indian matrimony profiles from your city, community, and profession."/>
-
-      <meta name="keywords" content="Matrimony services in Thane, matchmaking services in thane, Matrimonial websites to get womens, matrimonials, couples matchmaking companies in ghatkopar, Brides, matchmaking services in mumbai, grooms, shaadi, Online Matrimonial, 
-      Online Matrimony, female partner for shadi in mulund, Online matchmaking Services,Indian single girls in bhandup,girls for marriage in mahim
-      lifepartner for wedding in kanjur marg.get girlfriend for marriage in sion.diffrent casts of girls for marriage in vidyavihar.
-      services of matrimony for mens in vidyavihar, Matrimonial websites to find girls, matrimonials, couples girls and boys matchmaking companies in mahalaxmi, Brides, matchmaking services in mumbai, grooms, shaadi, Online Matrimonial, 
-      Online Matrimony for females and males, male partner for shadi in jogeshwari, Online matchmaking Services,Indian single boys in kurla,boys for marriage in mahalaxmi
-      lifepartner for wedding in mumbai.get boyfriend for marriage in mumbai.diffrent casts of boys for marriage in mumbai.
-      hindu girls and boys for marriage."/>
-
-      <meta name="author" content="Design and Promoted By Marriageorbit"/>
-      <meta property="og:url" content="https://marriageorbit.com/privacy-policy"/>
-      <meta property="og:type" content="Matrimonial Matchmaking Service In India" />
-      <meta property="og:title" content="privacy policy | Best marriage matrimonial service in bandra and mahim" />
-      <meta property="og:image" content="https://marriageorbit.com/static/media/logos.a6d6cf2e05ff270da4b5.png" />
-      <meta property="og:site_name" content="Marriageorbit.com"/>
-   
-    <link rel="canonical" href="https://marriageorbit.com/privacy-policy" />
- 
-      <title>privacy policy | Best marriage matrimonial service in bandra and mahim</title>
-      
-      <link rel="icon" href="https://marriageorbit.com/static/media/nl.6247103f9d5641b1f3f1.png" sizes="16x16" type="image/png"/> 
-   
-
-      </Helmet>
+      <meta charset="utf-8"/>
+      <meta name="robots" content="follow,index"/>
+      <meta http-equiv="content-language" content="en"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     
-    <Section className='container'>
+          <meta name="description" content="On Marriageorbit, you can find many genuine Hindi Matrimonial Male and Female profiles.
+          Safe and secure dating with total anonymity. Now add your profile!Indian Matrimonial Services from marriageorbit Matrimonials Portal for Indian Singles. 
+          Register now to find Indian matrimony profiles from your city, community, and profession."/>
+    
+          <meta name="keywords" content="Matrimony services in Thane, matchmaking services in thane, Matrimonial websites to get womens, matrimonials, couples matchmaking companies in ghatkopar, Brides, matchmaking services in mumbai, grooms, shaadi, Online Matrimonial, 
+          Online Matrimony, female partner for shadi in mulund, Online matchmaking Services,Indian single girls in bhandup,girls for marriage in mahim
+          lifepartner for wedding in kanjur marg.get girlfriend for marriage in sion.diffrent casts of girls for marriage in vidyavihar.
+          services of matrimony for mens in vidyavihar, Matrimonial websites to find girls, matrimonials, couples girls and boys matchmaking companies in mahalaxmi, Brides, matchmaking services in mumbai, grooms, shaadi, Online Matrimonial, 
+          Online Matrimony for females and males, male partner for shadi in jogeshwari, Online matchmaking Services,Indian single boys in kurla,boys for marriage in mahalaxmi
+          lifepartner for wedding in mumbai.get boyfriend for marriage in mumbai.diffrent casts of boys for marriage in mumbai.
+          hindu girls and boys for marriage."/>
+    
+          <meta name="author" content="Design and Promoted By Marriageorbit"/>
+          <meta property="og:url" content="https://marriageorbit.com/privacy-policy"/>
+          <meta property="og:type" content="Matrimonial Matchmaking Service In India" />
+          <meta property="og:title" content="privacy policy | Best marriage matrimonial service in bandra and mahim" />
+          <meta property="og:image" content="https://marriageorbit.com/static/media/logos.a6d6cf2e05ff270da4b5.png" />
+          <meta property="og:site_name" content="Marriageorbit.com"/>
+       
+        <link rel="canonical" href="https://marriageorbit.com/privacy-policy" />
+     
+          <title>privacy policy | Best marriage matrimonial service in bandra and mahim</title>
+          
+          <link rel="icon" href="https://marriageorbit.com/static/media/nl.6247103f9d5641b1f3f1.png" sizes="16x16" type="image/png"/> 
+       
+    
+          </Helmet>
     <h1>PRIVACY POLICY</h1>
     <p>In Anmolrishte.com we are committed to protecting and respecting the privacy of our members & partners. We do collect the personal information and process personal data in accordance to the highest-quality and with the highest level of integrity in dealing with our members and partners. The Policy is designed to assist you in understanding how we collect, use and safeguard the personal information you provide to us and to assist you in making informed decisions when using our site and our products and services. This statement will be continuously assessed against new technologies, business practices and our customers' needs.</p>
     <span> Information We Collect</span>
@@ -115,7 +114,100 @@ const Policy = () => {
     <p></p>
     <p>If you are below 18, or the age of majority in the jurisdiction in which you reside, you may only use our Website with the consent of your parent or legal guardian. In any case, Anmolrishte.com will not be liable for any cause of action that arose due to non-compliance with any section. </p>
     </Section>
-
+    <Container>
+        <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Avialble In Several Locations</h1>
+    <ScrollArea
+            speed={0.8}
+            className="area"
+            contentClassName="content"
+            horizontal={false}
+            style={{height:100, color:"#666666", marginBottom:"25px",padding:"15px", border:"1px solid #ffa500"}}
+            > 
+<p>	top 10 matrimony matrimonial websites Palghar	</p>
+<p>	girls lifepartner providing matrimonial companies Vidyavihar	</p>
+<p>	online dating matrimonial services Mahim	</p>
+<p>	top 10 matrimony matrimonial services Goregaon	</p>
+<p>	online meeting matrimonial apps Vikhroli	</p>
+<p>	best matrimonial companies Dahanu	</p>
+<p>	best matrimonial companies Juhu	</p>
+<p>	girls lifepartner providing matrimonial websites Colaba	</p>
+<p>	top 10 matrimony matrimonial websites Andheri	</p>
+<p>	best matrimonial services Mahim	</p>
+<p>	online meeting matchmaking websites Vikhroli	</p>
+<p>	boys lifepartner providing matrimonial apps Kandivali	</p>
+<p>	top 10 matrimony matchmaking companies Bandra	</p>
+<p>	online meeting matrimonial companies Vile-Parle	</p>
+<p>	girls lifepartner providing matrimonial websites Borivali	</p>
+<p>	upcoming matchmaking websites Jogeshwari	</p>
+<p>	best matchmaking websites Vile-Parle	</p>
+<p>	trusted matchmaking apps Bhandup	</p>
+<p>	online dating matrimonial services Bhandup	</p>
+<p>	online dating matrimonial services Dahisar	</p>
+<p>	online dating matrimonial apps Vile-Parle	</p>
+<p>	online meeting matrimonial websites Mahalaxmi	</p>
+<p>	online dating matchmaking websites Andheri	</p>
+<p>	trusted matchmaking apps Kurla	</p>
+<p>	boys lifepartner providing matchmaking services Thane	</p>
+<p>	best matchmaking websites Mira-bhayander	</p>
+<p>	boys lifepartner providing matrimonial services Churchgate	</p>
+<p>	newly launched matrimonial services Goregaon	</p>
+<p>	boys lifepartner providing matrimonial companies Vikhroli	</p>
+<p>	best matchmaking companies byculla	</p>
+<p>	boys lifepartner providing matrimonial websites Bandra	</p>
+<p>	upcoming matchmaking websites Dahisar	</p>
+<p>	boys lifepartner providing matchmaking services Mahalaxmi	</p>
+<p>	top 10 matrimony matchmaking companies Powai	</p>
+<p>	online dating matchmaking companies Powai	</p>
+<p>	upcoming matchmaking companies Borivali	</p>
+<p>	online dating matchmaking companies Navi Mumbai	</p>
+<p>	trusted matchmaking services Powai	</p>
+<p>	best matchmaking services Bhandup	</p>
+<p>	boys lifepartner providing matchmaking websites Powai	</p>
+<p>	newly launched matchmaking apps Kanjurmarg	</p>
+<p>	top 10 matrimony matrimonial companies Colaba	</p>
+<p>	newly launched matchmaking websites Kanjurmarg	</p>
+<p>	girls lifepartner providing matrimonial apps Mahim	</p>
+<p>	online meeting matrimonial websites Bhandup	</p>
+<p>	girls lifepartner providing matrimonial companies Goregaon	</p>
+<p>	top 10 matrimony matrimonial apps Bhandup	</p>
+<p>	trusted matchmaking websites Matunga	</p>
+<p>	online dating matrimonial companies Vasai	</p>
+<p>	upcoming matchmaking apps Powai	</p>
+<p>	trusted matrimonial companies Kandivali	</p>
+<p>	boys lifepartner providing matrimonial apps Vikhroli	</p>
+<p>	boys lifepartner providing matchmaking apps Ghatkopar	</p>
+<p>	newly launched matchmaking websites Dahisar	</p>
+<p>	best matrimonial services Parel	</p>
+<p>	top 10 matrimony matrimonial companies Dahisar	</p>
+<p>	online dating matchmaking apps Virar	</p>
+<p>	newly launched matchmaking websites Dadar	</p>
+<p>	girls lifepartner providing matchmaking websites Palghar	</p>
+<p>	upcoming matchmaking apps Sion	</p>
+<p>	trusted matrimonial apps Goregaon	</p>
+<p>	newly launched matchmaking apps Mulund	</p>
+<p>	newly launched matrimonial services Chembur	</p>
+<p>	top 10 matrimony matrimonial services byculla	</p>
+<p>	online dating matrimonial companies Boisar	</p>
+<p>	girls lifepartner providing matrimonial apps Bandra	</p>
+<p>	trusted matchmaking apps Chembur	</p>
+<p>	top 10 matrimony matrimonial apps Andheri	</p>
+<p>	online dating matrimonial services Borivali	</p>
+<p>	boys lifepartner providing matrimonial companies Mulund	</p>
+<p>	online dating matchmaking services Mira-bhayander	</p>
+<p>	trusted matrimonial websites Palghar	</p>
+<p>	boys lifepartner providing matchmaking companies Colaba	</p>
+<p>	newly launched matchmaking services Colaba	</p>
+<p>	boys lifepartner providing matchmaking websites Juhu	</p>
+<p>	newly launched matchmaking companies Palghar	</p>
+<p>	online meeting matchmaking services Mira-bhayander	</p>
+<p>	online dating matrimonial companies Powai	</p>
+<p>	girls lifepartner providing matchmaking apps Malad	</p>
+<p>	newly launched matrimonial services Juhu	</p>
+<p>	upcoming matchmaking companies Goregaon	</p>
+<p>	online meeting matchmaking apps Dahisar	</p>
+<p>	upcoming matrimonial companies Ghatkopar	</p>    
+          </ScrollArea>
+          </Container>
     </>
   )
 }
