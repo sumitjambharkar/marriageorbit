@@ -29,8 +29,6 @@ const Sitemap = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
-  <Header/>
-      <Navbar/>
     <p></p>
     <h2 style={{textAlign:"center"}}>Marriageorbit Location</h2>
     <p></p>
@@ -57,7 +55,6 @@ const Sitemap = () => {
         <h4>12:00 PM to 08:00 PM</h4>
     </Location>
     </SiteLocation>
-    <Footer/>
     </>
   )
 }

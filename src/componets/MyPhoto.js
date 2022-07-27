@@ -28,8 +28,6 @@ function MyPhoto() {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
-      <Header/>
-      <Navbar/>
         <div className="con mt-5">
           <div className='container cono'>
             <div className='row'>
@@ -135,7 +133,6 @@ function MyPhoto() {
      </div>
     </div>
   </div>
-        <Footer />
       </>
   );
 }

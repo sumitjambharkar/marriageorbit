@@ -61,8 +61,6 @@ const Contact = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
-    <Header/>
-    <Navbar/>
     <Head>
         <h3>Contact Us</h3>
         <h5>contact us if you have any query or concern.</h5>
@@ -94,7 +92,6 @@ const Contact = () => {
             <button onClick={submitForm} type='submit'>Submit</button>
         </FeedBack>
     </Feed>
-    <Footer/>
     </>
   )
 }

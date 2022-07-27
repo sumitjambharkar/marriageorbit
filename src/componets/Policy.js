@@ -28,8 +28,6 @@ const Policy = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
-    <Header/>
-      <Navbar/>
     <Section className='container'>
     <h1>PRIVACY POLICY</h1>
     <p>In Anmolrishte.com we are committed to protecting and respecting the privacy of our members & partners. We do collect the personal information and process personal data in accordance to the highest-quality and with the highest level of integrity in dealing with our members and partners. The Policy is designed to assist you in understanding how we collect, use and safeguard the personal information you provide to us and to assist you in making informed decisions when using our site and our products and services. This statement will be continuously assessed against new technologies, business practices and our customers' needs.</p>
@@ -100,7 +98,6 @@ const Policy = () => {
     <p></p>
     <p>If you are below 18, or the age of majority in the jurisdiction in which you reside, you may only use our Website with the consent of your parent or legal guardian. In any case, Anmolrishte.com will not be liable for any cause of action that arose due to non-compliance with any section. </p>
     </Section>
-    <Footer/>
     </>
   )
 }

@@ -131,8 +131,6 @@ const MyProfile = () => {
 
   return (
     <>
-    <Header/>
-      <Navbar/>
       <ProfileSection>
         <ImageSection>
           <CardImage>
@@ -169,11 +167,7 @@ const MyProfile = () => {
             <div class="col-md-12">
                 <div class="section1">
                     <h1>Details Of Profile</h1>
-<<<<<<< HEAD
                     <img src="fancyline.png" alt=""/>
-=======
-                    <img src={images}/>
->>>>>>> 3559bd36a63ec8f50bcd0bb3273b1f97a6d7e294
                 </div>
                 <div class="section2">
                     <strong>About</strong>
@@ -520,9 +514,6 @@ const MyProfile = () => {
         </div>
         </div>
     </div>
-
-
-      <Footer />
     </>
   );
 };

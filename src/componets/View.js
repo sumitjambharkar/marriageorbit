@@ -58,8 +58,6 @@ const View = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
-    <Header/>
-      <Navbar/>
       <ProfileSection>
         <ImageSection>
           <CardImage>
@@ -92,7 +90,7 @@ const View = () => {
           <div class="fancy2"><img src={images} alt=""/></div>
           <Box>
             <h3>About</h3>
-            <span>I am currently living in uk. I am a smart and dynamic girl who respects her culture very much. I belong to a simple marathi family.</span>
+            {/* <span>I am currently living in uk. I am a smart and dynamic girl who respects her culture very much. I belong to a simple marathi family.</span> */}
           </Box><hr></hr>
           <Box>
             <h3>Basic Info</h3>
@@ -175,8 +173,6 @@ const View = () => {
           <hr></hr>
         </Details>
       </AllDetails> 
-
-      <Footer />
     </>
   )
 }

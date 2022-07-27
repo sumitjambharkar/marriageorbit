@@ -73,7 +73,6 @@ const Video = () => {
          
           </div>
       </Videos>
-      <Footer/>
     </>
   );
 };

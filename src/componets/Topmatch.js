@@ -117,9 +117,9 @@ const Topmatch = () => {
           </Button>
         </Card>
       </CreateSection>
-      <SectionFooter>
+      {/* <SectionFooter>
         <Footer />
-      </SectionFooter>
+      </SectionFooter> */}
     </>
   );
 };

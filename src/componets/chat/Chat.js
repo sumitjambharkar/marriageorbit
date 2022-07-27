@@ -122,8 +122,6 @@ const Home = () => {
                 <title>Chat</title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
-    <Header/>
-    <Navbar/>
     <HomeContainer>
       <UserContainer>
         <ScrollToBottom>

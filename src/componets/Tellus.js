@@ -99,7 +99,6 @@ const Tellus = () => {
      <h3><button onClick={submitData} type='submit'>Submit</button></h3>
      </TellUsCard> 
     </Welcome>
-   <Footer/>
     </>
   )
 }

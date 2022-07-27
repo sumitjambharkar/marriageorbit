@@ -1,7 +1,6 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect,useRef} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import Footer from './Footer';
 import { db } from './firebase';
 import { Avatar, Container } from '@mui/material';
 import { useSelector } from "react-redux";
@@ -11,15 +10,14 @@ import { useDispatch } from 'react-redux';
 import {login,logout} from './userSlice';
 import { auth } from './firebase';
 import Slider from '@mui/material/Slider';
-import Navbar from '../componets/Nav/Navbar';
-import Header from './Header';
 import {Helmet} from "react-helmet";
 
-const loc = ["Andheri","Bandra","Virar","Lokhandwala"]
+const city = ["mumbai", "pune", "new delhi", "surat", "nashik", "nagpur", "kolkata", "ahmedabad", "hyderabad", "bangalore", "jaipur", "kochi", "kanpur", "vadodara", "faridabad", "coimbatore", "karnataka", "chennai", "lucknow", "dore", "dehradun", "jamshedpur", "trivandrum", "rajasthan"]
 
 const HomeSection = () => {
 
-  const [location,setLocation] = useState("")
+  const input = useRef("")
+  
 
   function calculate_age(dob) { 
     var diff_ms = Date.now() - dob.getTime();
@@ -28,15 +26,12 @@ const HomeSection = () => {
     return Math.abs(age_dt.getUTCFullYear() - 1970);
   }
   const user = useSelector(selectUser)
-
+  
   const dispatch = useDispatch()
-  const [personData, setPersonData] = useState([])
+  
+  const [location, setLocation] = useState([])
   const [isGender, setIsGender] = useState('')
 
-  const getLocation =()=> {
-     
-  }
-  getLocation()
   useEffect(() => {
     auth.onAuthStateChanged(userAuth=>{
       if(userAuth){
@@ -61,17 +56,23 @@ const HomeSection = () => {
       });
     }
     db.collection("users").onSnapshot(snapshot => {
-      setPersonData(snapshot.docs
+      setLocation(snapshot.docs
         .map((doc) => ({
-        id: doc.id,
+        // id: doc.id,
         data : doc.data()
       })))
     })  
-    
-    return () => {
-      
-    }
   }, [])
+  
+    const handleSelect =()=> {
+    // console.log(input.current.value);
+
+    const newData = location.filter((item)=>{
+      console.log(item.data.city);
+      return item.data.city !== input.current.value
+    })
+    setLocation(newData)
+    }
   
   return (
     <>
@@ -95,8 +96,6 @@ const HomeSection = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
-     <Header/>
-     <Navbar/>
       <h3 style={{textAlign:"center",padding:"30px",backgroundColor:" #eee"}}>Members Looking For Me 418</h3>
     
     <Container>
@@ -110,8 +109,9 @@ const HomeSection = () => {
        <Filtter>
        <Fil>
        <p>Select Location</p>
-       <select name='location' value={location} onChange={(e)=>setLocation(e.target.value)} >
-       {loc.map((ele)=>(
+       <select ref={input}  onChange={handleSelect} >
+        <option>Select Location</option>
+       {city.map((ele)=>(
          <option>{ele}</option>
        ))}
        </select>
@@ -185,7 +185,7 @@ const HomeSection = () => {
      <SectionCard>
      <Card>
       
-      {personData.map((doc)=>(
+      {location.map((doc)=>(
         <>
         { isGender.gender !== doc.data.gender ? 
           <> {doc.data.displayName===user.displayName ? 
