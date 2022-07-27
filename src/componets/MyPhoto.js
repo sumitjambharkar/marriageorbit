@@ -2,8 +2,68 @@ import UploadFileIcon from '@mui/icons-material/UploadFile';
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
+import { auth, db } from './firebase';
+import React, {useEffect, useState } from "react";
+import { storage} from "./firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { getDoc, doc, updateDoc } from "firebase/firestore";
+import { selectUser } from "./userSlice";
+import { useSelector } from 'react-redux';
 
 function MyPhoto() {
+  
+  var user = useSelector(selectUser);
+  const [card, setCard] = useState([])
+  const [img ,setImag ] = useState('')
+  const [userN, setUserN] = useState()
+  const [profile,setProfile] = useState([])
+
+  useEffect(() => {
+    db.collection("users")
+        .doc(user.uid).onSnapshot((snapshot) => {
+          setProfile(snapshot.data());
+      });
+  
+  }, [])
+  
+
+  useEffect(()=>{
+    getDoc(doc(db, "users", auth.currentUser.uid)).then((docSnap) => {
+      if (docSnap.exists) {
+        setUserN(docSnap.data());
+      }
+    });
+    if(img){
+      const uploadImg =async()=>{
+        const imgRef = ref(storage,`avatar/${new Date().getTime()} - ${img.name}`)
+        try{
+        const snap =await uploadBytes(imgRef,img)
+        console.log(snap.ref.fullPath)
+        const url = await  getDownloadURL(ref(storage,snap.ref.fullPath))
+        await updateDoc(doc(db,"users",auth.currentUser.uid),{
+          image:url,
+          avatarPath:snap.ref.fullPath
+        })
+        console.log(url)
+        setImag("")
+        }
+        catch(err){
+          console.log(err.message);
+        }
+      }
+      uploadImg()
+    }
+
+  },[img])
+
+  useEffect(() => {
+    db.collection("card").onSnapshot(snapshot=>(
+      setCard(snapshot.docs.map((doc)=>(
+        {data:doc.data()}
+      )))
+    ))
+  }, [])
+  
   return (
       <>
       <Helmet>
@@ -50,7 +110,7 @@ function MyPhoto() {
                   
                     <div className="col-md-3">
                       <div className="img mt-5">
-
+                        <img src={profile.image} alt=""/>
                       </div>
                     </div>
 
@@ -66,7 +126,7 @@ function MyPhoto() {
                       <div className="row text-center mt-5">
                         <div className="col-md-5">
                           <div className="textt">
-                        <input type="file"/>
+                        <input onChange={(e)=>setImag(e.target.files[0])} type="file"/>
                         <a><UploadFileIcon/>Uplod</a>
                           </div>
                         </div>
@@ -104,49 +164,20 @@ function MyPhoto() {
 
         <div className='container'>
     <div className='row mt-5 mb-5'>
-    <div className='col-md-3'>
-     <div className='pic'>
-     <img src='https://dynamic.matrimonialsindia.com/photon/dir_20/582865/347004-em6IimbOUq.jpg'alt=''/>
-      <div className='pic1'>
-       <span>Uma Gawas</span>
-       <p>26 hindu India</p>
-       <p>other</p>
-      </div>
-     </div>
-     </div>
-
+   {card.map((ele)=>(
+    <>
      <div className='col-md-3'>
      <div className='pic'>
-     <img src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600'alt=''/>
+     <img src={ele.data.image} alt=''/>
       <div className='pic1'>
-       <span>Profile Id: </span>
-       <p>25 hindu India</p>
-       <p>other</p>
+       <span>{ele.data.displayName}</span>
+       <p>{ele.data.city}</p>
+       <p>{ele.data.age}</p>
       </div>
      </div>
      </div>
-
-     <div className='col-md-3'>
-     <div className='pic'>
-     <img src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600'alt=''/>
-      <div className='pic1'>
-       <span>Profile Id: </span>
-       <p>25 hindu India</p>
-       <p>other</p>
-      </div>
-     </div>
-     </div>
-
-     <div className='col-md-3'>
-     <div className='pic'>
-      <img src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600'alt=''/>
-      <div className='pic1'>
-       <span>Sagar</span>
-       <p>25 hindu India</p>
-       <p>other</p>
-      </div>
-     </div>
-     </div>
+    </>
+   ))}
     </div>
   </div>
 

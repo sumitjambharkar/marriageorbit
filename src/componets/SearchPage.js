@@ -1,8 +1,21 @@
 import React from 'react';
 import "../App.css";
 import {Helmet} from "react-helmet";
+import { db } from './firebase';
+import { useEffect, useState } from 'react';
 
 const SearchPage = () => {
+
+  const [card, setCard] = useState([])
+
+  useEffect(() => {
+    db.collection("card").onSnapshot(snapshot=>(
+      setCard(snapshot.docs.map((doc)=>(
+        {data:doc.data()}
+      )))
+    ))
+  }, [])
+
   return (
     <>
     <Helmet>
@@ -160,45 +173,20 @@ const SearchPage = () => {
   </div>
   <div className='container'>
     <div className='row mt-5 mb-5'>
-    <div className='col-md-3'>
-     <div className='pic'>
-      <div className='pic1'>
-       <span>Profile Id: </span>
-       <p>25 hindu India</p>
-       <p>other</p>
-      </div>
-     </div>
-     </div>
-
+    {card.map((ele)=>(
+    <>
      <div className='col-md-3'>
      <div className='pic'>
+     <img src={ele.data.image} alt=''/>
       <div className='pic1'>
-       <span>Profile Id: </span>
-       <p>25 hindu India</p>
-       <p>other</p>
+       <span>{ele.data.displayName}</span>
+       <p>{ele.data.city}</p>
+       <p>{ele.data.age}</p>
       </div>
      </div>
      </div>
-
-     <div className='col-md-3'>
-     <div className='pic'>
-      <div className='pic1'>
-       <span>Profile Id: </span>
-       <p>25 hindu India</p>
-       <p>other</p>
-      </div>
-     </div>
-     </div>
-
-     <div className='col-md-3'>
-     <div className='pic'>
-      <div className='pic1'>
-       <span>Profile Id: </span>
-       <p>25 hindu India</p>
-       <p>other</p>
-      </div>
-     </div>
-     </div>
+    </>
+   ))}
     </div>
   </div>
   </>
