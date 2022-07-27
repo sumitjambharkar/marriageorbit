@@ -17,7 +17,7 @@ import Setting from '../setting/Setting';
 import DeleteUser from '../setting/DeleteUser'
 import Loginn from '../Loginn';
 import Gallery from '../Gallery';
-import Service from '../Service';
+// import Service from '../Service';
 
 const Nav = styled.div`
   list-style: none;
@@ -258,9 +258,9 @@ const RightNav = ({ open }) => {
       <>
       <ul>
       <li><Link to="/">Home</Link></li>
-       <li><Link to="/">Login</Link></li>
-       <li><Link to="/my-profile">Sing Up</Link></li>
-       <li><Link to="/chat">About</Link></li>
+       <li><Link to="/"><span style={{position:"absolute",opacity: "0"}}><Loginn/></span>Login</Link></li>
+       <li><Link to="/"><span style={{position:"absolute",opacity: "0"}}><Loginn/></span>Sign Up</Link></li>
+       <li><Link to="/about">About</Link></li>
       </ul>
       <ul>
       <li><Link to="/myphoto">Help</Link></li>
@@ -273,10 +273,10 @@ const RightNav = ({ open }) => {
        <li><Link to="/">Matches</Link></li>
        <li><Link to="/my-profile">Account</Link></li>
        <li><Link to="/chat">Chat</Link></li>
-       <li><Link to="/search">Search</Link></li>
+       {/* <li><Link to="/search">Search</Link></li> */}
        <li><Link to="/myphoto">My Photo</Link></li>
        <li><Link to="/gallery">Gallery</Link></li>
-       <li><Link to="/service">Service</Link></li>
+       {/* <li><Link to="/service">Service</Link></li> */}
        <li onClick={handalLogout} className='logout'><Link>Logout</Link></li>
        </ul>
        <ul>
