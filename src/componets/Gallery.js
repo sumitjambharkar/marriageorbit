@@ -14,7 +14,7 @@ const Gallery = () => {
     <div className='container text-center'>
      <div className='row mt-5'>
         <h1>Our Gallery</h1>
-        <p>Lorem ipsum do Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+        <p>We Are successfully Completed So Many Perfect Couple Matches In All Over India.</p>
         <div className='col-md-4'>
             <div className='gall'>
              <img src='https://images.unsplash.com/photo-1616165415772-f5b95c3ae135?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d2VkZGluZyUyMGNvdXBsZXxlbnwwfHwwfHw%3D'alt=''/>
@@ -56,7 +56,7 @@ const Gallery = () => {
 
 
     <Container>
-        <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Avialble In Several Locations</h1>
+        <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Available In Several Locations</h1>
     <ScrollArea
             speed={0.8}
             className="area"

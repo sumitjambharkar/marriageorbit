@@ -151,7 +151,7 @@ function MyPhoto() {
   </div>
 
   <Container>
-        <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Avialble In Several Locations</h1>
+        <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Available In Several Locations</h1>
     <ScrollArea
             speed={0.8}
             className="area"

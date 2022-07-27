@@ -558,3 +558,35 @@ transition: 1s;
   height: 200px;
   background: #eee;
 }
+
+.user_wrapper{
+  border-bottom:1px solid #ffa500;
+}
+
+
+.scrollarea {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  color: #c2c2c2!important;
+}
+
+
+/* .btnss p{
+border: 1px solid #FFA500;
+padding: 10px;
+border-radius: 10px;
+cursor: pointer;
+transition: 0.4s;
+
+}
+
+.btnss p:hover{
+  background: #FFA500;
+  color: #fff;
+  box-shadow: 0 0 7px #c2c2c2;
+} */
+
+
+
+
