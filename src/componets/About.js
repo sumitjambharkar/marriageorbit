@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import AboutImage from '../image/download.jpg';
-import Footer from './Footer';
-import Header from './Header';
-import Navbar from './Nav/Navbar';
 import {Helmet} from "react-helmet";
 const About = () => {
   return (
@@ -28,8 +25,6 @@ const About = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
-    <Header/>
-      <Navbar/>
     <AboutSection className='container'>
      <h1>About Us</h1>
      <Image>
@@ -55,7 +50,6 @@ const About = () => {
      <h4>What keeps us going:</h4>
      <p>Happy success stories and continuous feedback from our valued members. </p>
     </AboutSection>
-    <Footer/>
     </>
   )
 }

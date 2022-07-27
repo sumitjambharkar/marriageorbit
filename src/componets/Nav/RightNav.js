@@ -16,6 +16,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import Setting from '../setting/Setting';
 import DeleteUser from '../setting/DeleteUser'
 import Loginn from '../Loginn';
+import Gallery from '../Gallery';
 
 const Nav = styled.div`
   list-style: none;
@@ -273,6 +274,7 @@ const RightNav = ({ open }) => {
        <li><Link to="/chat">Chat</Link></li>
        <li><Link to="/search">Search</Link></li>
        <li><Link to="/myphoto">My Photo</Link></li>
+       <li><Link to="/gallery">Gallery</Link></li>
        <li onClick={handalLogout} className='logout'><Link>Logout</Link></li>
        </ul>
        <ul>

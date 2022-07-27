@@ -1,8 +1,4 @@
-
-import Footer from './Footer'
 import UploadFileIcon from '@mui/icons-material/UploadFile';
-import Header from './Header';
-import Navbar from './Nav/Navbar';
 import {Helmet} from "react-helmet";
 
 function MyPhoto() {

@@ -20,8 +20,6 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 import User from "./User";
 import MessageForm from "./MessageForm";
 import Message from "./Message";
-import Header from "../Header";
-import Navbar from "../Nav/Navbar";
 import {Helmet} from "react-helmet";
 
 

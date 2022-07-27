@@ -1,6 +1,5 @@
 import React, {useEffect, useState } from "react";
 import styled from "styled-components";
-import Footer from "./Footer";
 import { db, auth} from "./firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout } from "./userSlice";
@@ -15,9 +14,7 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getDoc, doc, updateDoc } from "firebase/firestore";
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
-import './MyProfile.css'
-import Navbar from "./Nav/Navbar";
-import Header from "./Header";
+import './MyProfile.css';
 
 const MyProfile = () => {
   const [img ,setImag ] = useState('')

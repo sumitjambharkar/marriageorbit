@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
-
-import Footer from './Footer';
 import styled from 'styled-components';
 import { db } from './firebase';
 import { toast } from 'react-toastify';
-import Header from './Header';
-import Navbar from './Nav/Navbar';
 import {Helmet} from "react-helmet";
 
 const Contact = () => {

@@ -1,8 +1,5 @@
-import React from 'react'
-import "../App.css"
-import Footer from './Footer'
-import Header from './Header';
-import Navbar from './Nav/Navbar';
+import React from 'react';
+import "../App.css";
 import {Helmet} from "react-helmet";
 
 const SearchPage = () => {
