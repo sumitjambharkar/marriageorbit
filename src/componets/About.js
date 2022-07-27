@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import AboutImage from '../image/download.jpg';
+import AboutImage from '../image/pageabout-us.png';
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
@@ -69,7 +69,7 @@ const About = () => {
      <p>Happy success stories and continuous feedback from our valued members. </p>
     </AboutSection>
     <Container>
-        <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Avialble In Several Locations</h1>
+        <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Available In Several Locations</h1>
     <ScrollArea
             speed={0.8}
             className="area"

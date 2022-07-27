@@ -68,7 +68,7 @@ const Policy = () => {
     
           </Helmet>
     <h1>PRIVACY POLICY</h1>
-    <p>In Anmolrishte.com we are committed to protecting and respecting the privacy of our members & partners. We do collect the personal information and process personal data in accordance to the highest-quality and with the highest level of integrity in dealing with our members and partners. The Policy is designed to assist you in understanding how we collect, use and safeguard the personal information you provide to us and to assist you in making informed decisions when using our site and our products and services. This statement will be continuously assessed against new technologies, business practices and our customers' needs.</p>
+    <p>In marriageorbit.com we are committed to protecting and respecting the privacy of our members & partners. We do collect the personal information and process personal data in accordance to the highest-quality and with the highest level of integrity in dealing with our members and partners. The Policy is designed to assist you in understanding how we collect, use and safeguard the personal information you provide to us and to assist you in making informed decisions when using our site and our products and services. This statement will be continuously assessed against new technologies, business practices and our customers' needs.</p>
     <span> Information We Collect</span>
     <p></p>
     <p>We collect two types of basic information when you visit our website:</p>
@@ -130,11 +130,11 @@ const Policy = () => {
     <p>We may disclose information when legally compelled to do so, in other words, when we, in good faith, believe that the law requires it or for the protection of our legal rights</p>
     <span>What About Other Websites Linked to Our Website?</span>
     <p></p>
-    <p>Anmolrishte.com is not responsible for the practices employed by Websites linked to or from our Website nor the information or content contained therein. Often links to other Websites are provided solely as pointers to information on topics that may be useful to the users of our Website.</p>
-    <p>Anmolrishte.com uses Google adwords remarketing lists. Google.com as a third party collects information about your visit to our websites and displays appropriate advertisements on the google websites as well as on the Google network. Anmolrishte.com does not collect this information. This is a cookies based solution. Most browsers allow you to delete cookies. Visitors can also opt out of Google's use of cookies by visiting the Ads Preferences Manager. Alternatively, you can opt out by visiting the Network Advertising Initiative opt-out page.</p>
+    <p>marriageorbit.com is not responsible for the practices employed by Websites linked to or from our Website nor the information or content contained therein. Often links to other Websites are provided solely as pointers to information on topics that may be useful to the users of our Website.</p>
+    <p>marriageorbit.com uses Google adwords remarketing lists. Google.com as a third party collects information about your visit to our websites and displays appropriate advertisements on the google websites as well as on the Google network. marriageorbit.com does not collect this information. This is a cookies based solution. Most browsers allow you to delete cookies. Visitors can also opt out of Google's use of cookies by visiting the Ads Preferences Manager. Alternatively, you can opt out by visiting the Network Advertising Initiative opt-out page.</p>
     <span>Age Limit</span>
     <p></p>
-    <p>If you are below 18, or the age of majority in the jurisdiction in which you reside, you may only use our Website with the consent of your parent or legal guardian. In any case, Anmolrishte.com will not be liable for any cause of action that arose due to non-compliance with any section. </p>
+    <p>If you are below 18, or the age of majority in the jurisdiction in which you reside, you may only use our Website with the consent of your parent or legal guardian. In any case, marriageorbit.com will not be liable for any cause of action that arose due to non-compliance with any section. </p>
     </Section>
     <Container>
         <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Avialble In Several Locations</h1>
