@@ -88,7 +88,6 @@ const Contact = () => {
             <button onClick={submitForm} type='submit'>Submit</button>
         </FeedBack>
     </Feed>
-
     </>
   )
 }

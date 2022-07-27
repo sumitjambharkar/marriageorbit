@@ -96,7 +96,6 @@ const Policy = () => {
     <p></p>
     <p>If you are below 18, or the age of majority in the jurisdiction in which you reside, you may only use our Website with the consent of your parent or legal guardian. In any case, Anmolrishte.com will not be liable for any cause of action that arose due to non-compliance with any section. </p>
     </Section>
-  
     </>
   )
 }

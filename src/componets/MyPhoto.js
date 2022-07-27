@@ -90,6 +90,18 @@ function MyPhoto() {
     <div className='row mt-5 mb-5'>
     <div className='col-md-3'>
      <div className='pic'>
+     <img src='https://dynamic.matrimonialsindia.com/photon/dir_20/582865/347004-em6IimbOUq.jpg'alt=''/>
+      <div className='pic1'>
+       <span>Uma Gawas</span>
+       <p>26 hindu India</p>
+       <p>other</p>
+      </div>
+     </div>
+     </div>
+
+     <div className='col-md-3'>
+     <div className='pic'>
+     <img src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600'alt=''/>
       <div className='pic1'>
        <span>Profile Id: </span>
        <p>25 hindu India</p>
@@ -100,16 +112,7 @@ function MyPhoto() {
 
      <div className='col-md-3'>
      <div className='pic'>
-      <div className='pic1'>
-       <span>Profile Id: </span>
-       <p>25 hindu India</p>
-       <p>other</p>
-      </div>
-     </div>
-     </div>
-
-     <div className='col-md-3'>
-     <div className='pic'>
+     <img src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600'alt=''/>
       <div className='pic1'>
        <span>Profile Id: </span>
        <p>25 hindu India</p>
@@ -122,7 +125,7 @@ function MyPhoto() {
      <div className='pic'>
       <img src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600'alt=''/>
       <div className='pic1'>
-       <span>Profile Id: </span>
+       <span>Sagar</span>
        <p>25 hindu India</p>
        <p>other</p>
       </div>
@@ -130,7 +133,6 @@ function MyPhoto() {
      </div>
     </div>
   </div>
-    
       </>
   );
 }

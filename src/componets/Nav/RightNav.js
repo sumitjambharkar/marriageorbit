@@ -17,6 +17,7 @@ import Setting from '../setting/Setting';
 import DeleteUser from '../setting/DeleteUser'
 import Loginn from '../Loginn';
 import Gallery from '../Gallery';
+import Service from '../Service';
 
 const Nav = styled.div`
   list-style: none;
@@ -275,6 +276,7 @@ const RightNav = ({ open }) => {
        <li><Link to="/search">Search</Link></li>
        <li><Link to="/myphoto">My Photo</Link></li>
        <li><Link to="/gallery">Gallery</Link></li>
+       <li><Link to="/service">Service</Link></li>
        <li onClick={handalLogout} className='logout'><Link>Logout</Link></li>
        </ul>
        <ul>
