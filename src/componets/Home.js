@@ -10,9 +10,7 @@ import {Helmet} from "react-helmet";
 const Home = () => {
   return (
     <>
-    <Helmet>
-     
-      </Helmet>
+   
     <Head/>
     <Section>
     <Main/>

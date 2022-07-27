@@ -32,7 +32,6 @@ import MyPhoto from './componets/MyPhoto';
 
 import Filter from './componets/Filter'
 import Header from './componets/Header';
-import Navbar from './componets/Nav/Navbar';
 import Footer from './componets/Footer';
 import Gallery from './componets/Gallery';
 import Service from './componets/Service';
@@ -61,8 +60,7 @@ function App() {
   return (
     <>
     <Router>
-    <Header/>
-    <Navbar/>
+    
       <ScrollToTop/>
       <ToastContainer  theme="colored" position="top-center"/>
     <Switch>

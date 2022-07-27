@@ -3,38 +3,15 @@ import styled from 'styled-components';
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
+import Navbar from './Nav/Navbar';
+import Header from './Header';
+
+
 const Policy = () => {
   return (  
     <>
-    
-
-    <Helmet>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <meta name="robots" content="follow,index"/>
-      <meta name="description" content="Pagekeyword"/>
-      <meta name="keywords" content="Pagekeywords"/>
-      <meta name="author" content="Marriageorbit"/>
-      <meta property="og:url" content="PageURL.html"/>
-      <meta property="og:type" content="products" />
-      <meta property="og:title" content="Title-Name"/>
-      <meta property="og:image" content="Pageimagelink.jpg" />
-      <meta property="og:site_name" content="Who We are "/>
-   
-    <link rel="canonical" href="" />
- 
-      <title></title>
-      
-      <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
-      </Helmet>
-
-    <Section className='container'>
-
     <Helmet>
       
-
-
       <meta charset="utf-8"/>
       <meta name="robots" content="follow,index"/>
       <meta http-equiv="content-language" content="en"/>
@@ -67,6 +44,13 @@ const Policy = () => {
        
     
           </Helmet>
+
+
+          <Header/>
+    <Navbar/>
+    <Section className='container'>
+
+    
     <h1>PRIVACY POLICY</h1>
     <p>In marriageorbit.com we are committed to protecting and respecting the privacy of our members & partners. We do collect the personal information and process personal data in accordance to the highest-quality and with the highest level of integrity in dealing with our members and partners. The Policy is designed to assist you in understanding how we collect, use and safeguard the personal information you provide to us and to assist you in making informed decisions when using our site and our products and services. This statement will be continuously assessed against new technologies, business practices and our customers' needs.</p>
     <span> Information We Collect</span>

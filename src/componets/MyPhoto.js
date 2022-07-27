@@ -9,6 +9,8 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getDoc, doc, updateDoc } from "firebase/firestore";
 import { selectUser } from "./userSlice";
 import { useSelector } from 'react-redux';
+import Navbar from './Nav/Navbar';
+import Header from './Header';
 
 function MyPhoto() {
   
@@ -101,6 +103,9 @@ function MyPhoto() {
    
 
       </Helmet>
+      <Header/>
+    <Navbar/>
+
         <div className="con mt-5">
           <div className='container cono'>
             <div className='row'>

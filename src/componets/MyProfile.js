@@ -16,6 +16,9 @@ import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import './MyProfile.css'
 import {Helmet} from "react-helmet";
+import Navbar from './Nav/Navbar';
+import Header from './Header';
+
 
 const MyProfile = () => {
   const [img ,setImag ] = useState('')
@@ -129,8 +132,7 @@ const MyProfile = () => {
 
   return (
     <>
-    <parent>
-      <child>
+  
     <Helmet>
 
 
@@ -169,8 +171,8 @@ const MyProfile = () => {
 
 
     </Helmet>
-    </child>
-    </parent>
+    <Header/>
+    <Navbar/>
       <ProfileSection>
         <ImageSection>
           <CardImage>

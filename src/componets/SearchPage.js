@@ -3,6 +3,9 @@ import "../App.css";
 import {Helmet} from "react-helmet";
 import { db } from './firebase';
 import { useEffect, useState } from 'react';
+import Navbar from './Nav/Navbar';
+import Header from './Header';
+
 
 const SearchPage = () => {
 
@@ -54,6 +57,8 @@ const SearchPage = () => {
 
 
       </Helmet>
+      <Header/>
+    <Navbar/>
 
     <div className='container se mt-5'>
     <div className='row mt-3'>

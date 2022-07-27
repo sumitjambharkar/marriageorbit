@@ -62,7 +62,7 @@ const Tellus = () => {
     <Welcome className='container'>
      <h1>Thank you for sharing your Story with us!</h1>
      <TellUsCard>
-      <p>Lorem ipsum do Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ad magni voluptatum aliquam? Placeat quas, quasi animi saepe nulla tempore deserunt ducimus deleniti optio, inventore assumenda est maiores, omnis quae? lor sit amet consectetur, adipisicing elit. Totam reiciendis ullam possimus enim quas repellendus nihil? Rem unde sapiente reiciendis ab! Repellat est facere, aliquam vitae officia fugit sed a.</p>
+      <p>We Provide The Best Matchmaking Service In All Over India.</p>
      <hr />
      <Company>
          <img style={{width:"100px",marginRight:"24px"}} src="https://smartpropdeals.com/wp-content/uploads/2020/12/Harish-Rupani-210x210.jpg" alt="" />

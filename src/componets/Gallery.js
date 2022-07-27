@@ -2,9 +2,13 @@ import React from 'react';
 import "../App.css";
 import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
+import Navbar from './Nav/Navbar';
+import Header from './Header';
 const Gallery = () => {
   return (
     <>
+    <Header/>
+    <Navbar/>
     {/* <div className='gallery'>
      <div className='container'>
 

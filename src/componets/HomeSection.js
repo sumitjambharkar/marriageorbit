@@ -12,6 +12,8 @@ import { auth } from './firebase';
 import Slider from '@mui/material/Slider';
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
+import Navbar from './Nav/Navbar';
+import Header from './Header';
 
 const city = ["mumbai", "pune", "new delhi", "surat", "nashik", "nagpur", "kolkata", "ahmedabad", "hyderabad", "bangalore", "jaipur", "kochi", "kanpur", "vadodara", "faridabad", "coimbatore", "karnataka", "chennai", "lucknow", "dore", "dehradun", "jamshedpur", "trivandrum", "rajasthan"]
 
@@ -97,6 +99,8 @@ const HomeSection = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
+      <Header/>
+    <Navbar/>
       <h3 style={{textAlign:"center",padding:"30px",backgroundColor:" #eee"}}>Members Looking For Me 418</h3>
     
     <Container>

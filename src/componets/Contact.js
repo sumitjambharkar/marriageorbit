@@ -5,6 +5,9 @@ import { toast } from 'react-toastify';
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
+import Navbar from './Nav/Navbar';
+import Header from './Header';
+
 
 const Contact = () => {
     const [input, setinput] = useState({
@@ -41,11 +44,41 @@ const Contact = () => {
     <>
     <Helmet>
 
-    <meta charSet="utf-8" />
-                <title>My contact</title>
-                <link rel="canonical" href="http://mysite.com/example" />
-  
+    <meta charset="utf-8"/>
+  <meta name="robots" content="follow,index"/>
+  <meta http-equiv="content-language" content="en"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <meta name="description" content="On Marriageorbit, you can find many genuine Hindi Matrimonial Male and Female profiles.
+      Safe and secure dating with total anonymity. Now add your profile!Indian Matrimonial Services from marriageorbit Matrimonials Portal for Indian Singles. 
+      Register now to find Indian matrimony profiles from your city, community, and profession."/>
+
+      <meta name="keywords" content="Matrimony services for girls in kolaba, matchmaking services in mumbai, Matrimonial websites to get womens, matrimonials, couples matchmaking companies in mumbai, Brides, matchmaking services in mumbai, grooms, shaadi, Online Matrimonial, 
+      Online Matrimony, female partner for shadi in bhandup, Online matchmaking Services,Indian single girls in matunga,girls for marriage in mumbai
+      lifepartner for wedding in ghatkopar.get girlfriend for marriage in goregaon.diffrent casts of girls for marriage in mumbai.
+      services of matrimony for mens in powai, Matrimonial websites to find girls, matrimonials, couples girls and boys matchmaking companies in mumbai, Brides, matchmaking services in mumbai, grooms, shaadi, Online Matrimonial, 
+      Online Matrimony for females and males, male partner for shadi in kandivali, Online matchmaking Services,Indian single boys in mumbai,boys for marriage in mumbai
+      lifepartner for wedding in vikhroli.get boyfriend for marriage in malad.diffrent casts of boys for marriage in mumbai.
+      hindu girls and boys for marriage."/>
+
+      <meta name="author" content="Design and Promoted By Marriageorbit"/>
+      <meta property="og:url" content="https://marriageorbit.com/contact"/>
+      <meta property="og:type" content="Matrimonial Matchmaking Service In India" />
+      <meta property="og:title" content="Contact Us | Top Matrimonial website in mumbai" />
+      <meta property="og:image" content="https://marriageorbit.com/static/media/logos.a6d6cf2e05ff270da4b5.png" />
+      <meta property="og:site_name" content="Marriageorbit.com"/>
+   
+    <link rel="canonical" href="https://marriageorbit.com/contact" />
+ 
+      <title>Contact Us | Top Matrimonial website in mumbai</title>
+      
+      <link rel="icon" href="https://marriageorbit.com/static/media/nl.6247103f9d5641b1f3f1.png" sizes="16x16" type="image/png"/> 
+   
+
+
       </Helmet>
+      <Header/>
+    <Navbar/>
     <Head>
         <h3>Contact Us</h3>
         <h5>contact us if you have any query or concern.</h5>

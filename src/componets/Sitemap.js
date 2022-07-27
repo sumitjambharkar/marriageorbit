@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
+import Navbar from './Nav/Navbar';
+import Header from './Header';
+
 
 const Sitemap = () => {
   return (
@@ -43,6 +46,10 @@ const Sitemap = () => {
    
 
       </Helmet>
+
+      <Header/>
+    <Navbar/>
+
     <p></p>
     <h2 style={{textAlign:"center"}}>Marriageorbit Location</h2>
     <p></p>

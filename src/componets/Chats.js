@@ -9,6 +9,9 @@ import MessageScreen from './MessageScreen';
 import { useSelector } from "react-redux";
 import { selectUser } from "./userSlice";
 import {Helmet} from "react-helmet";
+import Navbar from './Nav/Navbar';
+import Header from './Header';
+
 
 
 
@@ -62,6 +65,8 @@ function Chats() {
       <link rel="icon" href="https://marriageorbit.com/static/media/nl.6247103f9d5641b1f3f1.png" sizes="16x16" type="image/png"/> 
    
       </Helmet>
+      <Header/>
+    <Navbar/>
       <Chat>
         <ContactSideBar>
           {room.map((doc) => {
