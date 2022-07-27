@@ -114,6 +114,9 @@ function App() {
       <Route exact path="/chat">
         <Chat/>
       </Route>
+      <Route exact path="/sumit">
+        <Header/>
+      </Route>
       <Route exact path="/search">
         <SearchPage/>
       </Route>

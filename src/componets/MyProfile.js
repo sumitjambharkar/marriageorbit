@@ -165,7 +165,6 @@ const MyProfile = () => {
                 <div class="section1">
                     <h1>Details Of Profile</h1>
                     <img src="fancyline.png" alt=""/>
-
                 </div>
                 <div class="section2">
                     <strong>About</strong>
@@ -512,7 +511,6 @@ const MyProfile = () => {
         </div>
         </div>
     </div>
-
     </>
   );
 };

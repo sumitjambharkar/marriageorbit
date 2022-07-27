@@ -24,7 +24,6 @@ function MyPhoto() {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
-     
         <div className="con mt-5">
           <div className='container cono'>
             <div className='row'>
