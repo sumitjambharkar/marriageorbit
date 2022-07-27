@@ -233,6 +233,10 @@ select{
   background-color: #ffa500;
 }
 
+.searr select{
+  width: 50%;
+}
+
 input[type=checkbox], input[type=radio] {
   box-sizing: border-box;
   padding: 0;
