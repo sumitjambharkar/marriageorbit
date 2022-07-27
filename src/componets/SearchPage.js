@@ -1,8 +1,5 @@
-import React from 'react'
-import "../App.css"
-import Footer from './Footer'
-import Header from './Header';
-import Navbar from './Nav/Navbar';
+import React from 'react';
+import "../App.css";
 import {Helmet} from "react-helmet";
 
 const SearchPage = () => {
@@ -28,9 +25,7 @@ const SearchPage = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
-      
-       <Header/>
-      <Navbar/>
+    
     <div className='container se mt-5'>
     <div className='row mt-3'>
       <div className='label col-md-3 sm-12'>
@@ -190,7 +185,7 @@ const SearchPage = () => {
      </div>
     </div>
   </div>
-  <Footer />
+
   </>
   )
 }

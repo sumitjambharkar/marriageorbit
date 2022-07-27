@@ -3,9 +3,9 @@ import Head from './Head';
 import Abouts from './Abouts';
 import Story from './Story';
 import Main from './Main';
-import Footer from './Footer';
 import styled from '@emotion/styled';
 import {Helmet} from "react-helmet";
+import Meta from './Meta';
 
 
 const Home = () => {
@@ -36,6 +36,7 @@ const Home = () => {
     <Main/>
     <Story/>
     <Abouts/>
+    <Meta/>
     </Section>
     </>
   )

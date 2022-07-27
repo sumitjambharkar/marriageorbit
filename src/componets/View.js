@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Footer from './Footer';
 import { useParams } from 'react-router-dom';
 import { db } from './firebase';
 import { Link } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 import images from "../image/bg-border.png";
-import Header from './Header';
-import Navbar from './Nav/Navbar';
 import {Helmet} from "react-helmet";
 
 
@@ -58,8 +55,6 @@ const View = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
-    <Header/>
-      <Navbar/>
       <ProfileSection>
         <ImageSection>
           <CardImage>
@@ -175,8 +170,6 @@ const View = () => {
           <hr></hr>
         </Details>
       </AllDetails> 
-
-      <Footer />
     </>
   )
 }

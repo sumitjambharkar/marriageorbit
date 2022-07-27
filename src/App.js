@@ -34,6 +34,7 @@ import Filter from './componets/Filter'
 import Header from './componets/Header';
 import Navbar from './componets/Nav/Navbar';
 import Footer from './componets/Footer';
+import Gallery from './componets/Gallery';
 
 function App() {
   const user = useSelector(selectUser)
@@ -118,6 +119,9 @@ function App() {
 
       <Route exact path="/Filter">
         <Filter/>
+        </Route>
+        <Route exact path="/gallery">
+        <Gallery/>
         </Route>
       <Route exact path="/MyPhoto">
         <MyPhoto/>
