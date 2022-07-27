@@ -95,8 +95,7 @@ const HomeSection = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
-     <Header/>
-     <Navbar/>
+
       <h3 style={{textAlign:"center",padding:"30px",backgroundColor:" #eee"}}>Members Looking For Me 418</h3>
     
     <Container>

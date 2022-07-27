@@ -18,6 +18,7 @@ import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import './MyProfile.css'
 import Navbar from "./Nav/Navbar";
 import Header from "./Header";
+import {Helmet} from "react-helmet";
 
 const MyProfile = () => {
   const [img ,setImag ] = useState('')
@@ -131,8 +132,51 @@ const MyProfile = () => {
 
   return (
     <>
-    <Header/>
-      <Navbar/>
+    <parent>
+      <child>
+    <Helmet>
+
+
+
+    <meta charset="utf-8"/>
+  <meta name="robots" content="follow,index"/>
+  <meta http-equiv="content-language" content="en"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <meta name="description" content="On Marriageorbit, you can find many genuine Hindi Matrimonial Male and Female profiles.
+      Safe and secure dating with total anonymity. Now add your profile!Indian Matrimonial Services from marriageorbit Matrimonials Portal for Indian Singles. 
+      Register now to find Indian matrimony profiles from your city, community, and profession."/>
+
+      <meta name="keywords" content="best Matrimony services in bangalore,top matchmaking services in pune, Matrimonial websites to get womens, matrimonials, couples matchmaking companies in mumbai, Brides, matchmaking services in mumbai, grooms, shaadi, Online Matrimonial, 
+      Online Matrimony, female partner for shadi in new delhi, Online matchmaking Services,Indian single girls in ahmedabad,girls for marriage in mumbai
+      lifepartner for wedding in hyderabad.get girlfriend for marriage in chennai.diffrent casts of girls for marriage in nagpur.
+      services of matrimony for mens in karnataka, Matrimonial websites to find girls, matrimonials, couples girls and boys matchmaking companies in mumbai, Brides, matchmaking services in mumbai, grooms, shaadi, Online Matrimonial, 
+      Online Matrimony for females and males, male partner for shadi in gujarat, Online matchmaking Services,Indian single boys surat,boys for marriage in mumbai
+      lifepartner for wedding in jaipur.get boyfriend for marriage in lucknow.diffrent casts of boys for marriage in vadodara.
+      hindu girls and boys for marriage."/>
+
+      <meta name="author" content="Design and Promoted By Marriageorbit"/>
+      <meta property="og:url" content="https://marriageorbit.com/my-profile"/>
+      <meta property="og:type" content="Matrimonial Matchmaking Service In India" />
+      <meta property="og:title" content="Account | matrimony matchmaking services in mumbai and thane" />
+      <meta property="og:image" content="https://marriageorbit.com/static/media/logos.a6d6cf2e05ff270da4b5.png" />
+      <meta property="og:site_name" content="Marriageorbit.com"/>
+   
+    <link rel="canonical" href="https://marriageorbit.com/my-profile" />
+ 
+      <title>Account | matrimony matchmaking services in mumbai and thane</title>
+      
+      <link rel="icon" href="https://marriageorbit.com/static/media/nl.6247103f9d5641b1f3f1.png" sizes="16x16" type="image/png"/> 
+   
+
+
+
+    </Helmet>
+    </child>
+    </parent>
+
+
+ 
       <ProfileSection>
         <ImageSection>
           <CardImage>
@@ -169,11 +213,7 @@ const MyProfile = () => {
             <div class="col-md-12">
                 <div class="section1">
                     <h1>Details Of Profile</h1>
-<<<<<<< HEAD
                     <img src="fancyline.png" alt=""/>
-=======
-                    <img src={images}/>
->>>>>>> 3559bd36a63ec8f50bcd0bb3273b1f97a6d7e294
                 </div>
                 <div class="section2">
                     <strong>About</strong>
@@ -522,7 +562,6 @@ const MyProfile = () => {
     </div>
 
 
-      <Footer />
     </>
   );
 };

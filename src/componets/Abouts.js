@@ -15,24 +15,36 @@ return (
 
     <>
    <Helmet>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+   <meta charset="utf-8"/>
+  <meta name="robots" content="follow,index"/>
+  <meta http-equiv="content-language" content="en"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <meta name="robots" content="follow,index"/>
-      <meta name="description" content="Pagekeyword"/>
-      <meta name="keywords" content="Pagekeywords"/>
-      <meta name="author" content="Marriageorbit"/>
-      <meta property="og:url" content="PageURL.html"/>
-      <meta property="og:type" content="products" />
-      <meta property="og:title" content="Title-Name"/>
-      <meta property="og:image" content="Pageimagelink.jpg" />
-      <meta property="og:site_name" content="Who We are "/>
+
+      <meta name="description" content="Now add your profile!Indian Matrimonial Services from marriageorbit Matrimonials Portal for Indian Singles. 
+      Register now to find Indian matrimony profiles from your city, community, and profession.On Marriageorbit, you can find many genuine Hindi Matrimonial Male and Female profiles.
+      Safe and secure dating with total anonymity."/>
+
+      <meta name="keywords" content="Matrimony services for boys in mumbai,Matchmaking services for girls in mumbai,Matrimonial websites to get womens, matrimonials, couples matchmaking companies in mumbai, Brides, matchmaking services in linking road, grooms, shaadi, Online Matrimonial services in marine drive, 
+      Online Matrimony, female partner for shadi in south matunga, Online matchmaking Services,Indian single girls in juhu,girls for marriage in mumbai
+      lifepartner for wedding in thane.get girlfriend for marriage in bandra.diffrent casts of girls for marriage in mulund.
+      Matrimony services for mens in panvel, matchmaking websites to find girls, matrimonials, couples girls and boys matchmaking companies in lower parel, Brides, matchmaking services in mumbai, grooms, shaadi, Online Matrimonial, 
+      Online Matrimony for females and males, male partner for shadi in dadar, Online matchmaking Services,Indian single boys in chembur,boys for marriage in varsova
+      lifepartner for wedding in santacruz.get boyfriend for marriage in vasai-virar.diffrent casts of boys for marriage in andheri.hindu girls and boys for marriage in borivali."/>
+
+      <meta name="author" content="Design and Promoted By Marriageorbit"/>
+      <meta property="og:url" content="https://marriageorbit.com/about"/>
+      <meta property="og:type" content="About Our Matrimonial Matchmaking Service In Thane" />
+      <meta property="og:title" content="About Us | Best Matchmaking Services In Thane" />
+      <meta property="og:image" content="https://marriageorbit.com/static/media/download.c4ad1512ea895588cb1d.jpg" />
+      <meta property="og:site_name" content="Marriageorbit.com"/>
    
-    <link rel="canonical" href="" />
+    <link rel="canonical" href="https://marriageorbit.com/about" />
  
-      <title>About Us</title>
+      <title>About Us | Best Matchmaking and Matrimony Services In Thane</title>
       
-      <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
+      <link rel="icon" href="https://marriageorbit.com/static/media/nl.6247103f9d5641b1f3f1.png" sizes="16x16" type="image/png"/> 
+   
+
       </Helmet>
 <div class="heads"><h1>About Us</h1></div>
 <div class="fancy2"><img src={images1}/></div>

@@ -42,27 +42,13 @@ const Contact = () => {
   return (
     <>
     <Helmet>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <meta name="robots" content="follow,index"/>
-      <meta name="description" content="Pagekeyword"/>
-      <meta name="keywords" content="Pagekeywords"/>
-      <meta name="author" content="Marriageorbit"/>
-      <meta property="og:url" content="PageURL.html"/>
-      <meta property="og:type" content="products" />
-      <meta property="og:title" content="Title-Name"/>
-      <meta property="og:image" content="Pageimagelink.jpg" />
-      <meta property="og:site_name" content="Who We are "/>
-   
-    <link rel="canonical" href="" />
- 
-      <title>Contact</title>
-      
-      <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
+
+    <meta charSet="utf-8" />
+                <title>My contact</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+  
       </Helmet>
-    <Header/>
-    <Navbar/>
+   
     <Head>
         <h3>Contact Us</h3>
         <h5>contact us if you have any query or concern.</h5>
@@ -94,7 +80,7 @@ const Contact = () => {
             <button onClick={submitForm} type='submit'>Submit</button>
         </FeedBack>
     </Feed>
-    <Footer/>
+  
     </>
   )
 }
