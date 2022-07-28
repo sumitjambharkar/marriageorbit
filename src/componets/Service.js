@@ -26,7 +26,7 @@ const Service = () => {
             <p></p>
             <strong>Free Sign Up</strong>
             <p></p>
-            <p>An important facility such as ctat is available in our site, so that people can interact with each other.</p>
+            <p>Sign up in marriage orbit for free of cost and get perfect matches for your Profile</p>
             <p></p>
           </Servicee>
         </div>
@@ -37,7 +37,7 @@ const Service = () => {
             <p></p>
             <strong>Free SMS & Chat</strong>
             <p></p>
-            <p>An important facility such as ctat is available in our site, so that people can interact with each other.</p>
+            <p>On our website, a crucial tool like ctat is accessible so that users can communicate with one another.</p>
             <p></p>
           </Servicee>
         </div>
@@ -49,7 +49,7 @@ const Service = () => {
            <p></p>
             <strong>Auto Match Maker</strong>
             <p></p>
-            <p>An important facility such as ctat is available in our site, so that people can interact with each other.</p>
+            <p>Each day, some new members sign up. This matrimonial service updates and displays matching profiles to you.</p>
             <p></p>
           </Servicee>
         </div>
@@ -61,7 +61,7 @@ const Service = () => {
             <p></p>
             <strong>Recommend Profile</strong>
             <p></p>
-            <p>An important facility such as ctat is available in our site, so that people can interact with each other.</p>
+            <p>You can view updates from those you follow when you follow someone.</p>
             <p></p>
           </Servicee>
         </div>
@@ -75,7 +75,7 @@ const Service = () => {
             <p></p>
             <strong>NotificationsAlerts</strong>
             <p></p>
-            <p>An important facility such as ctat is available in our site, so that people can interact with each other.</p>
+            <p>changes to the display picture, birthday notifications, and photo requests</p>
             <p></p>
           </Servicee>
         </div>
@@ -87,7 +87,7 @@ const Service = () => {
             <p></p>
             <strong>Restrictions Setting</strong>
             <p></p>
-            <p>An important facility such as ctat is available in our site, so that people can interact with each other.</p>
+            <p>limitations make it possible to disable the built-in anti-spam system.</p>
             <p></p>
           </Servicee>
         </div>
