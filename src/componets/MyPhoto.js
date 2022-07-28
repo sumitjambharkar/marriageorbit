@@ -152,11 +152,6 @@ function MyPhoto() {
                         <p>Note : Only Image formats allowed. Image size should be upto 10MB</p>
                        </div>
                       </div>
-
-
-
-
-
                     </div>
 
                   </div>

@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 import images from "../image/bg-border.png";
 import {Helmet} from "react-helmet";
+import Header from './Header';
+import Navbar from './Nav/Navbar';
 
 
 
@@ -18,11 +20,13 @@ const View = () => {
     return Math.abs(age_dt.getUTCFullYear() - 1970);
   }
   const { Id } = useParams()
+  console.log(Id);
   const [personData, setPersonData] = useState([])
 
   let x = personData.birth
   let date = new Date(x)
   let dateMDY = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+  
   
 
   useEffect(() => {
@@ -55,6 +59,8 @@ const View = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
+      <Header/>
+      <Navbar/>
       <ProfileSection>
         <ImageSection>
           <CardImage>

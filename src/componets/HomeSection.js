@@ -61,7 +61,7 @@ const HomeSection = () => {
     db.collection("users").onSnapshot(snapshot => {
       setLocation(snapshot.docs
         .map((doc) => ({
-        // id: doc.id,
+        id: doc.id,
         data : doc.data()
       })))
     })  
@@ -160,7 +160,7 @@ const HomeSection = () => {
        <li><input type="checkbox"></input>
        <label>Maratha</label></li>
        </ul>
-       <a>More...</a>
+  
 
        <p>Mother Tongue</p>
        <ul>
@@ -171,7 +171,7 @@ const HomeSection = () => {
        <li><input type="checkbox"></input>
        <label>Konkani</label></li>
        </ul>
-       <a>More...</a>
+       
 
        <p>Occupation</p>
        <ul>
@@ -182,7 +182,7 @@ const HomeSection = () => {
        <li><input type="checkbox"></input>
        <label>Non-Working</label></li>
        </ul>
-       <a>More...</a>
+      
 
        </Fil>
        </Filtter>
@@ -451,6 +451,6 @@ justify-content: flex-end;
     font-size: 15px;
     border-radius: 4px;
     font-weight: 700;
-    border: 0
+    border: 0;
 }
 `

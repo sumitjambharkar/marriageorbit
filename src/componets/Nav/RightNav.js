@@ -190,11 +190,11 @@ const Avtars = styled.div`
 `
 const Drop = styled.div`
    position:absolute;
-   justify-content:start;
    display:flex;
-  width:300px;
-  margin-left:-134px;
-  z-index:1;
+   width:300px;
+   margin-left:-134px;
+   z-index:1;
+   justify-content:start;
   height:100px;
   background-color:#fff;
   box-shadow: 5px 5px 5px #0008;

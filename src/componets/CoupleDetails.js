@@ -10,6 +10,7 @@ import {Helmet} from "react-helmet";
 
 
 
+
 const CoupleDetails = () => {
   const {personId} = useParams()
 
@@ -127,6 +128,6 @@ const Head = styled.div`
   }
   > img {
     width: 100%;
-    align-items: center;
+    align-items:center;
   }
 `;
