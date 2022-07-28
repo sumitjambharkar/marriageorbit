@@ -1,20 +1,17 @@
 import React from 'react';
-import "../App.css";
+// import "../App.css";
 import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
-import Navbar from './Nav/Navbar';
-import Header from './Header';
+import Navbar from '../Nav/Navbar';
+import Header from '../Header';
+import styled from 'styled-components';
+
 const Gallery = () => {
   return (
     <>
     <Header/>
     <Navbar/>
-    {/* <div className='gallery'>
-     <div className='container'>
-
-     </div>
-    </div> */}
-
+     <Section>
     <div className='container text-center'>
      <div className='row mt-5'>
         <h1>Our Gallery</h1>
@@ -164,9 +161,36 @@ const Gallery = () => {
             
           </ScrollArea>
           </Container>
+          </Section>
     </>
 
   )
 }
 
 export default Gallery
+
+const Section = styled.div`
+
+.gall{
+  width: 100%;
+  height: 250px;
+  margin: 15px 0;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid #ffa500;
+}
+.gall img{
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ left: 0;
+background-size: cover;
+transition: 1s;
+}
+.gall:hover img{
+  transform: scale(1.2);
+}
+
+
+`

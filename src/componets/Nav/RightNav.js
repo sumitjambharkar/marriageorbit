@@ -16,7 +16,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import Setting from '../setting/Setting';
 import DeleteUser from '../setting/DeleteUser'
 import Loginn from '../Loginn';
-import Gallery from '../Gallery';
+import Gallery from '../pages/Gallery';
 import Service from '../Service';
 
 const Nav = styled.div`
