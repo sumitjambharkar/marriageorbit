@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 import images from "../image/bg-border.png";
 import {Helmet} from "react-helmet";
+import ForumIcon from '@mui/icons-material/Forum';
+import CallIcon from '@mui/icons-material/Call';
 
 
 
@@ -55,6 +57,7 @@ const View = () => {
       
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
+
       <ProfileSection>
         <ImageSection>
           <CardImage>
@@ -78,6 +81,18 @@ const View = () => {
                 <li><Link to="/chat">Chat</Link></li>
               </Firsts>
             </Section>
+       
+           <Second>
+            <p>Invitation Sent</p>
+          <li>
+            <a>Write Message</a>
+            <span><ForumIcon/></span>
+            </li>
+            <li>
+            <a>View Contact</a>
+            <span><CallIcon/></span>
+            </li>
+            </Second>
           </ImageDetails>
         </ImageSection>
       </ProfileSection>
@@ -272,5 +287,40 @@ margin:4px;
   font-size: 15px;
   color: #666;
   width: 100px;
+}
+`
+const Second = styled.div`
+width: 100%;
+text-align: center;
+> li{
+  width: 50%; 
+  display: flex;
+  float: left;
+  flex-direction: column;
+  flex-direction: column;
+ align-items: center;
+ margin-top: 5px;
+ >a{
+  font-size: 14px;
+ }
+ > span{
+  width: 50px;
+  height: 50px;
+  border-radius:50%;
+  line-height: 50px;
+  color: #ffa500;
+  font-size: 18px;
+  border: 1px solid #ffa500;
+  >.MuiSvgIcon-root {
+  font-size:30px;
+  color:#FFA500;
+}
+}
+
+}
+> p{
+  font-size: 20px;
+  height: 10px;
+  color: #ffa500;
 }
 `

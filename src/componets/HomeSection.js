@@ -61,7 +61,7 @@ const HomeSection = () => {
     db.collection("users").onSnapshot(snapshot => {
       setLocation(snapshot.docs
         .map((doc) => ({
-        // id: doc.id,
+        id: doc.id,
         data : doc.data()
       })))
     })  
