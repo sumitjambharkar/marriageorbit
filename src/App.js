@@ -133,6 +133,7 @@ function App() {
         <Route exact path="/gallery">
         <Gallery/>
         </Route>
+
       <Route exact path="/MyPhoto">
         <MyPhoto/>
       </Route>

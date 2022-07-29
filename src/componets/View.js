@@ -5,9 +5,12 @@ import { db } from './firebase';
 import { Link } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 import images from "../image/bg-border.png";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import Header from './Header';
 import Navbar from './Nav/Navbar';
+import CallView from './CallView';
+import EmailView from './EmailView';
+import ChatIcon from '@mui/icons-material/Chat';
 
 
 
@@ -26,8 +29,8 @@ const View = () => {
   let x = personData.birth
   let date = new Date(x)
   let dateMDY = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
-  
-  
+
+
 
   useEffect(() => {
     if (Id) {
@@ -39,32 +42,32 @@ const View = () => {
   }, [Id])
   return (
     <>
-    <Helmet>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <meta name="robots" content="follow,index"/>
-      <meta name="description" content="Pagekeyword"/>
-      <meta name="keywords" content="Pagekeywords"/>
-      <meta name="author" content="Marriageorbit"/>
-      <meta property="og:url" content="PageURL.html"/>
-      <meta property="og:type" content="products" />
-      <meta property="og:title" content="Title-Name"/>
-      <meta property="og:image" content="Pageimagelink.jpg" />
-      <meta property="og:site_name" content="Who We are "/>
-   
-    <link rel="canonical" href="" />
- 
-      <title></title>
-      
-      <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
+      <Helmet>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="follow,index" />
+        <meta name="description" content="Pagekeyword" />
+        <meta name="keywords" content="Pagekeywords" />
+        <meta name="author" content="Marriageorbit" />
+        <meta property="og:url" content="PageURL.html" />
+        <meta property="og:type" content="products" />
+        <meta property="og:title" content="Title-Name" />
+        <meta property="og:image" content="Pageimagelink.jpg" />
+        <meta property="og:site_name" content="Who We are " />
+
+        <link rel="canonical" href="" />
+
+        <title></title>
+
+        <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
-      <Header/>
-      <Navbar/>
+      <Header />
+      <Navbar />
       <ProfileSection>
         <ImageSection>
           <CardImage>
-          <Avatar src={personData.image} sx={{width:224,height:250}} variant="square"/>
+            <Avatar src={personData.image} sx={{ width: 224, height: 250 }} variant="square" />
           </CardImage>
           <ImageDetails>
             <h3 style={{ textTransform: 'capitalize' }}>{personData.displayName}</h3>
@@ -81,16 +84,28 @@ const View = () => {
                 <li>Not Specified</li>
                 <li>Lives in {personData.city}</li>
                 {/* <li><Link to="/chats/:roomId">Group Chat</Link></li> */}
-                <li><Link to="/chat">Chat</Link></li>
+                <li><Link >Online Now</Link></li>
               </Firsts>
             </Section>
+
+            <Second>
+              <li>
+                <EmailView email={personData.email} />
+              </li>
+              <li>
+                <CallView number={personData.number} />
+              </li>
+              <li>
+                <Link to="/chat"><button><ChatIcon /></button></Link>
+              </li>
+            </Second>
           </ImageDetails>
         </ImageSection>
       </ProfileSection>
       <AllDetails>
         <Details className='container'>
           <h1>Details of Profile</h1>
-          <div class="fancy2"><img src={images} alt=""/></div>
+          <div class="fancy2"><img src={images} alt="" /></div>
           <Box>
             <h3>About</h3>
             <span>{personData.about}</span>
@@ -108,7 +123,7 @@ const View = () => {
               </First>
             </Agent>
             <Agent>
-            <First>
+              <First>
                 <li>Religion</li>
                 <li>{personData.religion}</li>
               </First>
@@ -117,7 +132,7 @@ const View = () => {
                 <li>{personData.tounge}</li>
               </First>
             </Agent>
-         
+
           </Box>
           <hr></hr>
           <Box><h3>Lifestyle and Intrests</h3>
@@ -131,7 +146,7 @@ const View = () => {
                 <li>{personData.height}</li>
               </First>
             </Agent>
-           
+
           </Box>
           <hr></hr>
           <Box><h3>Education and profession</h3>
@@ -145,7 +160,7 @@ const View = () => {
                 <li>{personData.collage}</li>
               </First>
             </Agent>
-            
+
           </Box>
           <hr></hr>
           <Box><h3>Family Details</h3>
@@ -175,7 +190,7 @@ const View = () => {
           </Box>
           <hr></hr>
         </Details>
-      </AllDetails> 
+      </AllDetails>
     </>
   )
 }
@@ -204,7 +219,6 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
 width:450px;
 margin-top:28px;
 padding:12px;
-padding-right: 80px;
 background-color:#eee;
 > h3 {
   font-size: 1.2rem;
@@ -278,5 +292,35 @@ margin:4px;
   font-size: 15px;
   color: #666;
   width: 100px;
+  
+}
+`
+const Second = styled.div`
+width: 100%;
+text-align: center;
+> li{
+  width: 33%; 
+  display: flex;
+  float: left;
+  flex-direction: column;
+  flex-direction: column;
+ align-items: center;
+ margin-top: 5px;
+ > a button{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    line-height: 50px;
+    color: #ffa500;
+    font-size: 18px;
+    border: 1px solid #ffa500;
+  
+    >.MuiSvgIcon-root {
+  font-size:35px;
+  color:#FFA500;
+}
+}
+ 
+
 }
 `

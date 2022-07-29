@@ -213,6 +213,7 @@ const SearchPage = () => {
     <div className='row'>
       <div className='label col-md-3 sm-12'>
         <label>Marital Status</label>
+        
       </div>
       <div className='col-md-7'>
         <div className='ser'>
