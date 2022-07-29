@@ -93,7 +93,7 @@ const View = () => {
           <div class="fancy2"><img src={images} alt=""/></div>
           <Box>
             <h3>About</h3>
-            {/* <span>I am currently living in uk. I am a smart and dynamic girl who respects her culture very much. I belong to a simple marathi family.</span> */}
+            <span>{personData.about}</span>
           </Box><hr></hr>
           <Box>
             <h3>Basic Info</h3>

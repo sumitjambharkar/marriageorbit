@@ -277,7 +277,7 @@ const handleMouseLeave = e => {
                               </Div>
                               <Div>
                                 <p>
-                                  <Link onClick={handalLogin}>Free SignUp</Link>
+                                  <Link onClick={handalLogin}>Free Sign Up</Link>
                                 </p>
                               </Div>
                             </Forgot>

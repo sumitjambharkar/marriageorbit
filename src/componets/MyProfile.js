@@ -213,8 +213,7 @@ const MyProfile = () => {
                 </div>
                 <div class="section2">
                     <strong>About</strong>
-                    <p>I am currently living in uk. I am a smart and dynamic girl who respects her culture very much.
-                        I belong to a simple marathi family.</p>
+                    {/* <p>{userDetails.about}</p> */}
                     <hr></hr>
                 </div>
 

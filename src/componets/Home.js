@@ -5,7 +5,7 @@ import Story from './Story';
 import Main from './Main';
 import styled from '@emotion/styled';
 import {Helmet} from "react-helmet";
-
+import Subscription from './pages/Subscription';
 
 const Home = () => {
   return (
@@ -15,6 +15,7 @@ const Home = () => {
     <Section>
     <Main/>
     <Story/>
+    <Subscription/>
     <Abouts/>
     </Section>
     </>

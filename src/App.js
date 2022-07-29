@@ -34,6 +34,7 @@ import Header from './componets/Header';
 import Footer from './componets/Footer';
 import Gallery from './componets/pages/Gallery';
 import Service from './componets/Service';
+import Subscription from './componets/pages/Subscription';
 
 function App() {
   const user = useSelector(selectUser)
@@ -55,11 +56,14 @@ function App() {
     })
     
   }, [])
+
+  
+
+  
   
   return (
     <>
-    <Router>
-    
+    <Router> 
       <ScrollToTop/>
       <ToastContainer  theme="colored" position="top-center"/>
     <Switch>
