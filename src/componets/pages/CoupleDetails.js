@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
+import Footer from "../Footer";
 import { useParams } from "react-router-dom";
-import { db } from "./firebase";
-import Navbar from "./Nav/Navbar";
-import Header from './Header';
+import { db } from "../firebase";
+import Navbar from "../Nav/Navbar";
+import Header from '../Header';
 import {Helmet} from "react-helmet";
+
 
 
 
@@ -127,6 +128,6 @@ const Head = styled.div`
   }
   > img {
     width: 100%;
-    align-items: center;
+    align-items:center;
   }
 `;

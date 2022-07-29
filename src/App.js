@@ -1,22 +1,22 @@
 import './App.css';
 import React, { useEffect } from "react";
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
-import CoupleDetails from './componets/CoupleDetails';
+import CoupleDetails from './componets/pages/CoupleDetails';
 import Video from './componets/Video';
 import Tellus from './componets/Tellus';
-import Profile from './componets/Profile';
+import Profile from './componets/pages/Profile';
 import Steptwo from './componets/Steptwo';
 import Topmatch from './componets/Topmatch';
-import About from './componets/About';
+import About from './componets/pages/About';
 import Home from './componets/Home'
 import HomeSection from './componets/HomeSection';
 import View from './componets/View';
 import { useDispatch, useSelector} from 'react-redux';
 import {selectUser,login,logout} from './componets/userSlice';
 import { auth } from './componets/firebase';
-import Contact from './componets/Contact';
+import Contact from './componets/pages/Contact';
 import Policy from './componets/Policy';
-import Sitemap from './componets/Sitemap';
+import Sitemap from './componets/pages/Sitemap';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -29,11 +29,10 @@ import Chat from './componets/chat/Chat';
 import PrivateRoute from './PrivateRoute';
 import SearchPage from './componets/SearchPage';
 import MyPhoto from './componets/MyPhoto';
-
 import Filter from './componets/Filter'
 import Header from './componets/Header';
 import Footer from './componets/Footer';
-import Gallery from './componets/Gallery';
+import Gallery from './componets/pages/Gallery';
 import Service from './componets/Service';
 
 function App() {
@@ -130,6 +129,7 @@ function App() {
         <Route exact path="/gallery">
         <Gallery/>
         </Route>
+
       <Route exact path="/MyPhoto">
         <MyPhoto/>
       </Route>

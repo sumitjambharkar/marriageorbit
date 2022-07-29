@@ -14,7 +14,6 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getDoc, doc, updateDoc } from "firebase/firestore";
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
-import './MyProfile.css'
 import {Helmet} from "react-helmet";
 import Navbar from './Nav/Navbar';
 import Header from './Header';
@@ -203,6 +202,7 @@ const MyProfile = () => {
       </ProfileSection>
      
       
+    <Section>
     <div class="container" style={{justifyContent:'center'}}>
       <div class="bg-colr">
         <div class="row">
@@ -241,7 +241,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="birth" type="date" defaultValue={dateMDY} value={data.birth} onChange={handleChange}/></li>
+                       <li><input name="birth" type="date" value={data.birth || userDetails.birth} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -260,7 +260,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="maritalStatus" defaultValue={userDetails.maritalStatus} value={data.maritalStatus} onChange={handleChange}/></li>
+                       <li><input name="maritalStatus" defaultValue={userDetails.maritalStatus} value={data.maritalStatus || userDetails.maritalStatus} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -294,7 +294,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input  name="religion" value={data.religion} onChange={handleChange}/></li>
+                       <li><input  name="religion" value={data.religion || userDetails.religion} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -314,7 +314,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="tounge" defaultValue={userDetails.tounge} value={data.tounge} onChange={handleChange} /></li>
+                       <li><input name="tounge" defaultValue={userDetails.tounge} value={data.tounge || userDetails.tounge} onChange={handleChange} /></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -349,7 +349,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="diet" defaultValue={userDetails.diet} value={data.diet} onChange={handleChange}/></li>
+                       <li><input name="diet" defaultValue={userDetails.diet} value={data.diet || userDetails.diet} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -369,7 +369,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="work" value={data.work} onChange={handleChange}/></li>
+                       <li><input name="work" value={data.work || userDetails.work} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -404,7 +404,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="qaulification" value={data.qaulification} onChange={handleChange}/></li>
+                       <li><input name="qaulification" value={data.qaulification || userDetails.qaulification} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -424,7 +424,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="collage" value={data.collage} onChange={handleChange}/></li>
+                       <li><input name="collage" value={data.collage || userDetails.collage} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -458,7 +458,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="family" value={data.family} onChange={handleChange}/></li>
+                       <li><input name="family" value={data.family || userDetails.family} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -478,7 +478,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="members" value={data.members} onChange={handleChange}/></li>
+                       <li><input name="members" value={data.members || "No Required"} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -513,7 +513,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="city" value={data.city} onChange={handleChange}/></li>
+                       <li><input name="city" value={data.city || userDetails.city} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -534,7 +534,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="state" value={data.state} onChange={handleChange}/></li>
+                       <li><input name="state" value={data.state || userDetails.state} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -556,6 +556,7 @@ const MyProfile = () => {
         </div>
         </div>
     </div>
+    </Section>
     </>
   );
 };
@@ -604,3 +605,105 @@ const ImageDetails = styled.div`
     width: 230px;
   }
 `;
+
+const Section = styled.div`
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+.section1 img{
+    width:300px;
+}
+
+.section1 h1{
+
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: auto;
+    color: #FFA500;
+}
+
+.section1{
+    text-align: center;
+}
+.section2{
+    padding:25px;
+}
+.info button{
+    background: none;
+    border: 1px solid #c2c2c2;
+    padding: 2px;
+
+
+  
+}
+
+.entire{
+    padding:25px;
+}
+
+.update{
+    margin-top: 60px;
+    text-align: center;
+
+}
+
+
+.update button{
+    width: 250px;
+    padding: 10px;
+    border: none;
+    background-color: #FFA500;
+    color: #000;
+}
+
+.section1{
+    margin-top: 30px;
+}
+
+.info{
+    margin-bottom: 20px;
+}
+
+.first{
+   
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.update button:hover{
+background-color: #fff;
+color:  #000;
+border: 1px solid #FFA500;;
+}
+
+.info{
+    display: flex;
+}
+
+.info li{
+
+    width: 150px;}
+
+
+    .info input{
+    border: 1px solid #c2c2c2;
+        width: 186px;
+        height: 36px;
+        outline: none;
+        padding-left: 2px;
+    }
+
+
+    .bg-colr{
+  
+        background-color: #eee;
+
+    }
+ `

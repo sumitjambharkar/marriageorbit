@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import { db } from './firebase';
+import { db } from '../firebase';
 import { toast } from 'react-toastify';
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
-import Navbar from './Nav/Navbar';
-import Header from './Header';
+import Navbar from '../Nav/Navbar';
+import Header from '../Header';
 
 
 const Contact = () => {

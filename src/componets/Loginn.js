@@ -277,7 +277,7 @@ const handleMouseLeave = e => {
                               </Div>
                               <Div>
                                 <p>
-                                  <Link onClick={handalLogin}>signup</Link>
+                                  <Link onClick={handalLogin}>Free SignUp</Link>
                                 </p>
                               </Div>
                             </Forgot>
@@ -422,13 +422,13 @@ const handleMouseLeave = e => {
                               Register
                             </button>
                           </Div>
-                          <Forgot>
-                            <Div>
-                              <Link onClick={handleOpen}>
+                          
+                            <Div style={{textAlign:"center", marginTop:"10px"}}>
+                              <Link  onClick={handleOpen}>
                                 <p>Already a Member? Login</p>
                               </Link>
                             </Div>
-                          </Forgot>
+                         
                         </MainDiv>
                       </FormC>
                     </form>
@@ -545,7 +545,9 @@ const Input = styled.div`
 const Forgot = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 21px;
+  width: 100%;
+  margin-top: 12px;
+  align-items: baseline;
 `;
 const Div = styled.div`
   > p > a {

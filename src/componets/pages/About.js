@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import AboutImage from '../image/pageabout-us.png';
+import AboutImage from "../image/pageabout-us.png";
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
-import Navbar from './Nav/Navbar';
-import Header from './Header';
+import Navbar from '../Nav/Navbar';
+import Header from '../Header';
 
 const About = () => {
   return (
