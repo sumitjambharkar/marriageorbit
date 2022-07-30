@@ -150,6 +150,7 @@ color:white;
 }
 >ul li{
   margin:5px;
+  list-style: none;
 }
 >ul li a{
 	width: 40px;

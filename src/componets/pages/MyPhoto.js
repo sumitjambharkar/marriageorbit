@@ -69,9 +69,7 @@ function MyPhoto() {
   return (
       <>
       <Helmet>
-    
-
-  <meta charset="utf-8"/>
+      <meta charset="utf-8"/>
   <meta name="robots" content="follow,index"/>
   <meta http-equiv="content-language" content="en"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -100,7 +98,6 @@ function MyPhoto() {
       <title>My Photo | Best matchmaking services in Juhu</title>
       
       <link rel="icon" href="https://marriageorbit.com/static/media/nl.6247103f9d5641b1f3f1.png" sizes="16x16" type="image/png"/> 
-   
 
       </Helmet>
       <Header/>

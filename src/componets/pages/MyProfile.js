@@ -17,6 +17,7 @@ import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import {Helmet} from "react-helmet";
 import Navbar from '../Nav/Navbar';
 import Header from '../Header';
+import images from "../image/bg-border.png";
 
 
 const MyProfile = () => {
@@ -209,7 +210,7 @@ const MyProfile = () => {
             <div class="col-md-12">
                 <div class="section1">
                     <h1>Details Of Profile</h1>
-                    <img src="fancyline.png" alt=""/>
+                    <div class="fancy2"><img src={images} alt="" /></div>
                 </div>
                 <div class="section2">
                     <strong>About</strong>
@@ -638,13 +639,12 @@ a{
     background: none;
     border: 1px solid #c2c2c2;
     padding: 2px;
-
-
   
 }
 
 .entire{
     padding:25px;
+    margin-bottom: 25px;
 }
 
 .update{

@@ -104,7 +104,7 @@ const View = () => {
       </ProfileSection>
       <AllDetails>
         <Details className='container'>
-          <h1>Details of Profile</h1>
+          <h1 style={{marginTop:"15px"}}>Details of Profile</h1>
           <div class="fancy2"><img src={images} alt="" /></div>
           <Box>
             <h3>About</h3>
