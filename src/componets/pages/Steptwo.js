@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Footer from './Footer';
-import { auth, db } from './firebase';
+import Footer from '../Footer';
+import { auth, db } from '../firebase';
 import {Helmet} from "react-helmet";
 
 const Steptwo = () => {

@@ -1,13 +1,13 @@
 import React from "react";
-import images from "../image/about-us.jpg";
-import images1 from "../image/bg-border.png";
+import images from "./image/about-us.jpg";
+import images1 from "./image/bg-border.png";
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 import { db } from "./firebase"
 import { Button } from '@mui/material';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Loginn from './Loginn';
+import Login from './pages/Login';
 import {Helmet} from "react-helmet";
 const Abouts = ()=> {
 
@@ -73,7 +73,7 @@ Marriage Orbit offers you a way to locate your life partner for a planned, local
  </div>
  <SectionButton>
                 <span>Your story is waiting to happen!</span>
-                <Button data-aos="zoom-in-down" data-aos-duration="1500"><Link><span style={{position:'absolute',opacity:0}}><Loginn/></span>Get Started</Link></Button>
+                <Button data-aos="zoom-in-down" data-aos-duration="1500"><Link><span style={{position:'absolute',opacity:0}}><Login/></span>Get Started</Link></Button>
 </SectionButton>
 </>
 

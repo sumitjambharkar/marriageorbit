@@ -1,19 +1,20 @@
 import React, { useState,useEffect,useRef} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import { db } from './firebase';
+import { db } from '../firebase';
 import { Avatar, Container } from '@mui/material';
 import { useSelector } from "react-redux";
-import { selectUser } from "./userSlice";
+import { selectUser } from "../userSlice";
 import { Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import {login,logout} from './userSlice';
-import { auth } from './firebase';
+import {login,logout} from '../userSlice';
+import { auth } from '../firebase';
 import Slider from '@mui/material/Slider';
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
-import Navbar from './Nav/Navbar';
-import Header from './Header';
+import Navbar from '../Nav/Navbar';
+import Header from '../Header';
+
 
 const city = ["mumbai", "pune", "new delhi", "surat", "nashik", "nagpur", "kolkata", "ahmedabad", "hyderabad", "bangalore", "jaipur", "kochi", "kanpur", "vadodara", "faridabad", "coimbatore", "karnataka", "chennai", "lucknow", "dore", "dehradun", "jamshedpur", "trivandrum", "rajasthan"]
 
@@ -31,9 +32,17 @@ const HomeSection = () => {
   const user = useSelector(selectUser)
   
   const dispatch = useDispatch()
-  
+  const [search, setSearch ] = useState("")
   const [location, setLocation] = useState([])
   const [isGender, setIsGender] = useState('')
+
+  const handleSearch =()=> {
+     
+    var newData = location.filter((item)=>{
+      return item.data.city === search
+    })
+    setLocation(newData)
+  }
 
   useEffect(() => {
     auth.onAuthStateChanged(userAuth=>{
@@ -58,14 +67,21 @@ const HomeSection = () => {
         setIsGender(snapshot.data());
       });
     }
-    db.collection("users").onSnapshot(snapshot => {
+
+  }, [])
+
+  useEffect (() => {
+    const Unsubscribe = db.collection("users").onSnapshot(snapshot => {
       setLocation(snapshot.docs
         .map((doc) => ({
         id: doc.id,
         data : doc.data()
       })))
-    })  
+    }) 
+  
+    return () => Unsubscribe()
   }, [])
+   
   
     const handleSelect =()=> {
     // console.log(input.current.value);
@@ -76,6 +92,7 @@ const HomeSection = () => {
     })
     setLocation(newData)
     }
+
   
   return (
     <>
@@ -104,8 +121,8 @@ const HomeSection = () => {
       <h3 style={{textAlign:"center",padding:"30px",backgroundColor:" #eee"}}>Members Looking For Me 418</h3>
     
     <Container>
-    <SearchBar><input type="search" placeholder="search"/>
-    <button type="submit">Search</button>
+    <SearchBar><input type="search" value={search} onChange={(e)=>setSearch(e.target.value)} placeholder="search"/>
+    <button onClick={handleSearch} type="submit">Search</button>
     </SearchBar>
     </Container>
  

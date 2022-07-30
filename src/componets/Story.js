@@ -5,8 +5,8 @@ import { db } from "./firebase"
 import { Button } from '@mui/material';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Loginn from './Loginn'
-import images from "../image/bg-border.png";
+import Login from './pages/Login'
+import images from "./image/bg-border.png";
 import {Helmet} from "react-helmet";
 AOS.init();
 

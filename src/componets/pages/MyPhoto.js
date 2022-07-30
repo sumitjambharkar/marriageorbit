@@ -2,15 +2,15 @@ import UploadFileIcon from '@mui/icons-material/UploadFile';
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
-import { auth, db } from './firebase';
+import { auth, db } from '../firebase';
 import React, {useEffect, useState } from "react";
-import { storage} from "./firebase";
+import { storage} from "../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getDoc, doc, updateDoc } from "firebase/firestore";
-import { selectUser } from "./userSlice";
+import { selectUser } from "../userSlice";
 import { useSelector } from 'react-redux';
-import Navbar from './Nav/Navbar';
-import Header from './Header';
+import Navbar from '../Nav/Navbar';
+import Header from '../Header';
 
 function MyPhoto() {
   

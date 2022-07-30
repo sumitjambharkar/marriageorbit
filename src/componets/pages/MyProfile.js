@@ -1,22 +1,22 @@
 import React, {useEffect, useState } from "react";
 import styled from "styled-components";
-import { db, auth} from "./firebase";
+import { db, auth} from "../firebase";
 import { useDispatch, useSelector } from "react-redux";
-import { login, logout } from "./userSlice";
-import { selectUser } from "./userSlice";
+import { login, logout } from "../userSlice";
+import { selectUser } from "../userSlice";
 import EditIcon from "@mui/icons-material/Edit";
 import Tooltip from "@mui/material/Tooltip";
 import Button from "@mui/material/Button";
 import { toast } from "react-toastify";
 import { Avatar } from '@mui/material';
-import { storage} from "./firebase";
+import { storage} from "../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getDoc, doc, updateDoc } from "firebase/firestore";
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import {Helmet} from "react-helmet";
-import Navbar from './Nav/Navbar';
-import Header from './Header';
+import Navbar from '../Nav/Navbar';
+import Header from '../Header';
 
 
 const MyProfile = () => {
@@ -213,8 +213,7 @@ const MyProfile = () => {
                 </div>
                 <div class="section2">
                     <strong>About</strong>
-                    <p>I am currently living in uk. I am a smart and dynamic girl who respects her culture very much.
-                        I belong to a simple marathi family.</p>
+                    {/* <p>{userDetails.about}</p> */}
                     <hr></hr>
                 </div>
 

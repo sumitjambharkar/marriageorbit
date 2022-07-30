@@ -1,9 +1,10 @@
 import React from 'react';
-import './Form.css';
-import Loginn from './Loginn';
+import Login from './pages/Login';
 import {Helmet} from "react-helmet";
+import styled from 'styled-components';
 
 const Form = () => {
+    
 
     let motherTounge = [
         "Hindi",
@@ -132,6 +133,7 @@ const Form = () => {
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
       
+   <Section>
    <div class="container form">
         <form>
            
@@ -204,7 +206,7 @@ const Form = () => {
             <div class="col-md-1 col-12">
                 <div class="search">
                     <span style={{position:"absolute",marginTop:"30px",marginLeft:"-20px",opacity:0}}>
-                    <Loginn/>
+                    <Login/>
                     </span>
                     <input type="submit" value="Lets Go"/>
                    
@@ -219,8 +221,72 @@ const Form = () => {
         
     </form>
     </div>
+   </Section>
    </>
   )
 }
 
 export default Form;
+
+const Section = styled.div`
+ul{
+    list-style: none;
+}
+.form {
+    background-color: #0009;
+    padding: 0 45px;
+    min-height: 100px;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.change {
+   margin-top:10px;
+    font-size: 16px;
+    color: #fff;
+    display: block;
+}
+
+ .sel{
+    width: 90%;
+    height: 35px !important;
+    outline: none;
+    float: left;
+    /* background: none !important; */
+    color:black;
+    /* border: 1px solid #ffa200; */
+    background-color: white;
+    border-radius: 4px;
+}
+
+.search input{
+    width: 140%;
+    height: 35px !important;
+    float: left;
+    background: #ffa200 !important;
+    cursor: progress;
+    color: #fff;
+    margin-top:48px;
+    margin-left: -40%;
+    border: none;
+    border-radius:4px;
+}
+@media (max-width :768px){
+    .search input{
+    margin-left: -2%!important;
+    width: 100% !important;
+    margin-bottom:12px;
+    margin-top: 24px;
+}
+}
+
+.spc{
+    
+     padding-left: 4px !important; 
+}
+
+
+`

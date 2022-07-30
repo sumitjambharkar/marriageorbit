@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
-import { db } from './firebase';
+import { db } from '../firebase';
 import { Link } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 import images from "../image/bg-border.png";
 import { Helmet } from "react-helmet";
-import Header from './Header';
-import Navbar from './Nav/Navbar';
-import CallView from './CallView';
-import EmailView from './EmailView';
+import Header from '../Header';
+import Navbar from '../Nav/Navbar';
+import CallView from '../CallView';
+import EmailView from '../EmailView';
 import ChatIcon from '@mui/icons-material/Chat';
 
 
@@ -108,7 +108,7 @@ const View = () => {
           <div class="fancy2"><img src={images} alt="" /></div>
           <Box>
             <h3>About</h3>
-            {/* <span>I am currently living in uk. I am a smart and dynamic girl who respects her culture very much. I belong to a simple marathi family.</span> */}
+            <span>{personData.about}</span>
           </Box><hr></hr>
           <Box>
             <h3>Basic Info</h3>

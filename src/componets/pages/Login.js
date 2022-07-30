@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword,sendPasswordResetEmail} from "firebase/auth";
-import { auth, createUserCollecton } from "./firebase";
+import { auth, createUserCollecton } from "../firebase";
 import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styled from "@emotion/styled";
-import { db } from "./firebase";
+import { db } from "../firebase";
 import { updateDoc, doc } from "firebase/firestore";
 import CloseIcon from "@mui/icons-material/Close";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
@@ -14,7 +14,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { login } from "./userSlice";
+import { login } from "../userSlice";
 import Logo from '../image/nl.png'
 
 const style = {
@@ -277,7 +277,7 @@ const handleMouseLeave = e => {
                               </Div>
                               <Div>
                                 <p>
-                                  <Link onClick={handalLogin}>Free SignUp</Link>
+                                  <Link onClick={handalLogin}>Free Sign Up</Link>
                                 </p>
                               </Div>
                             </Forgot>

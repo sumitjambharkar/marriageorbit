@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { db } from "./firebase";
+import { db } from "../firebase";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
-import Navbar from "./Nav/Navbar";
-import Header from "./Header";
+import Navbar from "../Nav/Navbar";
+import Header from "../Header";
 
 const Tellus = () => {
   const [patner, setPatner] = useState({

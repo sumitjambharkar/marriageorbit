@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react'
 import Avatar from '@mui/material/Avatar';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemButton from '@mui/material/ListItemButton';
-import { db } from './firebase'
+import { db } from '../firebase'
 import { Link } from 'react-router-dom'
 import MessageScreen from './MessageScreen';
 import { useSelector } from "react-redux";
-import { selectUser } from "./userSlice";
+import { selectUser } from "../userSlice";
 import {Helmet} from "react-helmet";
-import Navbar from './Nav/Navbar';
-import Header from './Header';
+import Navbar from '../Nav/Navbar';
+import Header from '../Header';
 
 
 
