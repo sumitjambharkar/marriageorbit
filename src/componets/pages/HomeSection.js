@@ -132,7 +132,9 @@ const HomeSection = () => {
       <h3 style={{textAlign:"center",padding:"30px",backgroundColor:" #eee"}}>Members Looking For Me 418</h3>
     
     <Container>
-    <SearchBar><input type="search" value={search} onChange={(e)=>setSearch(e.target.value)} placeholder="search"/>
+  
+    <SearchBar>  
+        <Button style={{backgroundColor:'#fff'}} onClick={handleSearch} type="submit"><img src="https://img.icons8.com/ios/40/fab90a/filter--v1.png"/></Button><input type="search" value={search} onChange={(e)=>setSearch(e.target.value)} placeholder="search"/>
     <button onClick={handleSearch} type="submit">Search</button>
     </SearchBar>
     </Container>
@@ -386,7 +388,7 @@ width:25%;
 padding:1%;
 
 @media(max-width: 768px){
-  width:40%;
+ display:none;
 }
 `
 
@@ -395,7 +397,7 @@ width:75%;
 padding:1%;
 
 @media(max-width: 768px){
-  width:60%;
+width:100%;
 }
 `
 
@@ -407,6 +409,7 @@ padding:0;
 const Card = styled.div`
 display:flax;
 flex-wrap:wrap;
+justify-content:center;
 `
 
 const SingleCard = styled.div`
@@ -467,18 +470,26 @@ justify-content: flex-end;
     border-radius: 4px;
     border: 1px solid #ccc;
     padding: 10px;
-    margin-right: 10px;
+    height:45px;
     width: 300px;
     outline: none;
 }
 >button{
   background: #ffa500;
     color: #fff;
-    padding: 10px;
+    height:45px;
     width: 80px;
     font-size: 15px;
     border-radius: 4px;
     font-weight: 700;
     border: 0;
+}
+> Button {
+  display:none;
+}
+@media(max-width: 768px){
+  Button {
+    display:block;
+  }
 }
 `
