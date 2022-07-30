@@ -1,7 +1,6 @@
 import React from 'react';
-import "../App.css";
-import Navbar from './Nav/Navbar';
-import Header from './Header';
+import Navbar from '../Nav/Navbar';
+import Header from '../Header';
 import SensorOccupiedIcon from '@mui/icons-material/SensorOccupied';
 import styled from 'styled-components';
 import SmsIcon from '@mui/icons-material/Sms';

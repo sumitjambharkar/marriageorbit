@@ -360,4 +360,17 @@ input[type=checkbox], input[type=radio] {
   margin-bottom: 20px;
 }
 
+.label{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+select{
+  width: 100%;
+  height: 40px;
+  margin-top: 15px;
+  outline: none;
+}
+
 `

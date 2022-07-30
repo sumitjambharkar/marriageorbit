@@ -207,7 +207,7 @@ const HomeSection = () => {
      <SectionCard>
      <Card>
       
-      {location.map((doc)=>(
+      {location.slice(0,20).map((doc)=>(
         <>
         { isGender.gender !== doc.data.gender ? 
           <> {doc.data.displayName===user.displayName ? 

@@ -1,7 +1,7 @@
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
-import { Container } from '@mui/material';
+import { Avatar, Container } from '@mui/material';
 import { auth, db } from '../firebase';
 import React, {useEffect, useState } from "react";
 import { storage} from "../firebase";
@@ -115,7 +115,7 @@ function MyPhoto() {
                   
                     <div className="col-md-3">
                       <div className="img mt-5">
-                        <img src={profile.image} alt=""/>
+                        <img src={profile ? profile.image : null} alt=""/>
                       </div>
                     </div>
 

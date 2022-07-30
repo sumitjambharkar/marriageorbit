@@ -172,7 +172,7 @@ flex-direction:column;
 }
 >label {
     margin-bottom:8px;
-    padding:5px;
+    
 }
 >input {
     margin-bottom:8px;

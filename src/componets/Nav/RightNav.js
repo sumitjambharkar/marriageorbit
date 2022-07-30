@@ -17,7 +17,7 @@ import Setting from '../setting/Setting';
 import DeleteUser from '../setting/DeleteUser'
 import Login from '../pages/Login';
 import Gallery from '../pages/Gallery';
-import Service from '../Service';
+import Service from '../pages/Service';
 
 const Nav = styled.div`
   list-style: none;

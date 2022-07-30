@@ -155,8 +155,7 @@ flex-direction:column;
     font-weight:400;
 }
 >label {
-    margin-bottom:8px;
-    padding:5px;
+    margin-top: 4px;
 }
 >input {
     margin-bottom:8px;

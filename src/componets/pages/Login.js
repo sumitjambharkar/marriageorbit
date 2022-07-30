@@ -182,10 +182,6 @@ const handleMouseLeave = e => {
       </Button>
       <Modal
         open={open}
-        // shouldCloseOnOverlayClick={false}
-        // onClose={handleOpen}
-        // aria-labelledby="modal-modal-title"
-        // aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
@@ -222,6 +218,7 @@ const handleMouseLeave = e => {
                                 onChange={handalChange}
                               />
                             </Input>
+                            <p></p>
                             <Label>
                               <label>Password</label>
                             </Label>
@@ -525,6 +522,7 @@ const MainDiv = styled.div`
 const Label = styled.div`
   > label {
     font-size:16px;
+    margin-top: 4px;
     font-weight: 400;
    
   }
@@ -546,7 +544,7 @@ const Forgot = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 12px;
+  padding: 12px;
   align-items: baseline;
 `;
 const Div = styled.div`
