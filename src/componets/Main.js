@@ -4,8 +4,8 @@ import first from '../image/call7.png';
 import secand from '../image/call3.png';
 import third from '../image/call.png';
 import { Link } from "react-router-dom";
-import Loginn from './Loginn';
-import images from "../image/bg-border.png";
+import Login from './pages/Login';
+import images from "./image/bg-border.png";
 import {Helmet} from "react-helmet";
 
 const Main = () => {
@@ -68,7 +68,7 @@ const Main = () => {
 
                 <Title>
                 <Link>
-                <span><Loginn/></span>
+                <span><Login/></span>
                    {ele.name}
                 </Link>
                 </Title>

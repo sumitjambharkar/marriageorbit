@@ -1,11 +1,12 @@
 import React from 'react';
-import "../App.css";
 import {Helmet} from "react-helmet";
-import { db } from './firebase';
+import { db } from '../firebase';
 import { useEffect, useState } from 'react';
-import Navbar from './Nav/Navbar';
-import Header from './Header';
-import {Link} from 'react-router-dom'
+import Navbar from '../Nav/Navbar';
+import Header from '../Header';
+import {Link} from 'react-router-dom';
+import styled from '@emotion/styled';
+
 
 let motherTounge = [
   "Hindi",
@@ -118,6 +119,7 @@ const height = [4.0,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,5.0,5.1,5.2,5.3,5.4,5.5,
 
 const SearchPage = () => {
 
+
   const [card, setCard] = useState([])
 
   useEffect(() => {
@@ -169,7 +171,8 @@ const SearchPage = () => {
       <Header/>
     <Navbar/>
 
-    <div className='container se mt-5'>
+  <Section>
+  <div className='container se mt-5'>
     <div className='row mt-3'>
       <div className='label col-md-3 sm-12'>
         <label>age</label>
@@ -322,7 +325,39 @@ const SearchPage = () => {
    ))}
     </div>
   </div>
+  </Section>
   </>
   )
 }
 export default SearchPage
+
+const Section = styled.div`
+
+.ser select{
+  width: 100%;
+  margin-top: 15px;
+  outline: none;
+}
+
+.btn{
+  background-color: #ffa500;
+}
+
+.searr select{
+  width: 50%;
+}
+
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+  margin-top: 19px;
+ 
+}
+
+.se{
+  background-color: #eee;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+`

@@ -223,37 +223,10 @@ select{
   outline: none;
 }
 
-.ser select{
-  width: 100%;
-  margin-top: 15px;
-  outline: none;
-}
-
-.btn{
-  background-color: #ffa500;
-}
-
-.searr select{
-  width: 50%;
-}
-
-input[type=checkbox], input[type=radio] {
-  box-sizing: border-box;
-  padding: 0;
-  margin-top: 19px;
- 
-}
-
-.se{
-  background-color: #eee;
-  padding: 5px;
-  margin-bottom: 20px;
-}
-
 .con{
   width:"100%";
   min-height: 500px;
-  background: url(./image/bg.png);
+  background: url(./componets/image/bg.png);
   background-size: cover;
 }
 .ro{

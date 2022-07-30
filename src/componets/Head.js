@@ -1,10 +1,10 @@
 import React, {useState } from "react";
 import styled from "styled-components";
-import Shaadi from '../image/photo.jpg'
-import Logoo from '../image/nl.png'
-import Loginn from "./Loginn";
+import Shaadi from './image/photo.jpg'
+import Logoo from './image/nl.png'
+import Login from "./pages/Login";
 import Form from "./Form";
-import images1 from "../image/bg-border.png";
+import images1 from "./image/bg-border.png";
 import {Helmet} from "react-helmet";
 
 
@@ -38,9 +38,9 @@ const Header = () => {
             <img className="App-logo" src={Logoo} alt=""/>
             <h1>RBIT</h1>
           </Logo>
-            <Login>       
-                <p><Loginn/></p>     
-            </Login>
+            <Loginn>       
+                <p><Login/></p>     
+            </Loginn>
         </Navbar>
         <Heading>
           <h1>Trusted Matrimony & Matchmaking Service</h1>
@@ -148,7 +148,7 @@ const Logo = styled.div`
 
   
 `;
-const Login = styled.div`
+const Loginn = styled.div`
   color: black;
   > h1 > a {
     font-size: 20px;

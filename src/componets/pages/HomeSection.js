@@ -1,19 +1,19 @@
 import React, { useState,useEffect,useRef} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import { db } from './firebase';
+import { db } from '../firebase';
 import { Avatar, Container } from '@mui/material';
 import { useSelector } from "react-redux";
-import { selectUser } from "./userSlice";
+import { selectUser } from "../userSlice";
 import { Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import {login,logout} from './userSlice';
-import { auth } from './firebase';
+import {login,logout} from '../userSlice';
+import { auth } from '../firebase';
 import Slider from '@mui/material/Slider';
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
-import Navbar from './Nav/Navbar';
-import Header from './Header';
+import Navbar from '../Nav/Navbar';
+import Header from '../Header';
 
 
 const city = ["mumbai", "pune", "new delhi", "surat", "nashik", "nagpur", "kolkata", "ahmedabad", "hyderabad", "bangalore", "jaipur", "kochi", "kanpur", "vadodara", "faridabad", "coimbatore", "karnataka", "chennai", "lucknow", "dore", "dehradun", "jamshedpur", "trivandrum", "rajasthan"]

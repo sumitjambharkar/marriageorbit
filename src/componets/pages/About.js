@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import AboutImage from "../image/pageabout-us.png";
+import AboutImage from "../image/banner.jpg";
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';

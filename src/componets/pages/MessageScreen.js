@@ -3,11 +3,11 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemButton from "@mui/material/ListItemButton";
-import {db } from "./firebase";
+import {db } from "../firebase";
 import Avatar from '@mui/material/Avatar';
 import firebase from 'firebase/compat/app';
 import { useSelector } from "react-redux";
-import { selectUser } from "./userSlice";
+import { selectUser } from "../userSlice";
 import ScrollToBottom from 'react-scroll-to-bottom';
 
 

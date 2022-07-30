@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import DoneIcon from '@mui/icons-material/Done';
-import Loginn from '../Loginn'
+import Login from './Login'
 
 const Subscription = () => {
   return ( 
@@ -28,7 +28,7 @@ const Subscription = () => {
                 <li> <DoneIcon/> Bold Listing</li>
                 <li> <DoneIcon/> Astro Matching</li>
               </ul>
-              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Loginn/></span>BuyNow</a>
+              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Login/></span>BuyNow</a>
             </div>
           </div>
 
@@ -44,7 +44,7 @@ const Subscription = () => {
                 <li> <DoneIcon/> Bold Listing</li>
                 <li> <DoneIcon/> 100 Astro Matching</li>
               </ul>
-              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Loginn/></span>BuyNow</a>
+              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Login/></span>BuyNow</a>
             </div>
           </div>
 
@@ -60,7 +60,7 @@ const Subscription = () => {
                 <li> <DoneIcon/> Bold Listing</li>
                 <li> <DoneIcon/> 200 Astro Matching</li>
               </ul>
-              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Loginn/></span>BuyNow</a>
+              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Login/></span>BuyNow</a>
             </div>
           </div>
           <div className='col-md-3 mt-5'>
@@ -75,7 +75,7 @@ const Subscription = () => {
                 <li><DoneIcon/> Bold Listing</li>
                 <li><DoneIcon/> 250 Astro Matching</li>
               </ul>
-              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Loginn/></span>BuyNow</a>
+              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Login/></span>BuyNow</a>
             </div>
           </div>
 
