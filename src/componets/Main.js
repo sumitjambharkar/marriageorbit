@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from "styled-components";
-import first from '../image/call7.png';
-import secand from '../image/call3.png';
-import third from '../image/call.png';
+import first from './image/call7.png';
+import secand from './image/call3.png';
+import third from './image/call.png';
 import { Link } from "react-router-dom";
 import Login from './pages/Login';
 import images from "./image/bg-border.png";

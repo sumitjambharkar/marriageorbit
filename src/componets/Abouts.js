@@ -1,5 +1,5 @@
 import React from "react";
-import images from "../image/about-us.jpg";
+import images from "./image/about-us.jpg";
 import images1 from "./image/bg-border.png";
 import styled from "styled-components";
 import { Link } from 'react-router-dom';

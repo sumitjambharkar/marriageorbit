@@ -6,7 +6,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import images2 from "../image/logos.png";
+import images2 from "./image/logos.png";
 import {Helmet} from "react-helmet";
 const Footer = () => {
   return (
