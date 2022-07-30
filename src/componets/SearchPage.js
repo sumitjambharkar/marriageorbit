@@ -98,6 +98,8 @@ let age = [
   56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 67, 68, 69, 70, 71,
 ];
 
+let religion = ["Hindu","Muslim","Christian","Sikh","Parsi","Jain","Buddhist","Jewish","No_Religion","Spiritual","Other"]
+
 let caste = [
   "Hindu",
   "Muslim",
@@ -212,14 +214,16 @@ const SearchPage = () => {
 
     <div className='row'>
       <div className='label col-md-3 sm-12'>
-        <label>Marital Status</label>
-        
+        <label>Marital Status</label> 
       </div>
       <div className='col-md-7'>
         <div className='ser'>
         <select>
-          <option></option>
-        </select>
+             <option >Select</option>
+                 <option>Married</option>
+                 <option>Never Married</option>
+                 <option>Divorce</option>
+             </select>
         </div>
       </div>
     </div>
@@ -231,8 +235,11 @@ const SearchPage = () => {
       <div className='col-md-7'>
         <div className='ser'>
         <select>
-          <option></option>
-        </select>
+             <option >Select</option>
+                 {religion.map((ele)=>{
+                     return <option >{ele}</option>
+                 })}
+             </select>
         </div>
       </div>
     </div>
