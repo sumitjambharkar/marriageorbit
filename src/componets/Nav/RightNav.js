@@ -270,7 +270,7 @@ const RightNav = ({ open }) => {
        :
        <>
        <ul>
-       <li><Link to="/">Home</Link></li>
+       {/* <li><Link to="/">Home</Link></li> */}
        <li><Link to="/">Matches</Link></li>
        <li><Link to="/my-profile">Account</Link></li>
        <li><Link to="/chat">Chat</Link></li>
