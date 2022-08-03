@@ -6,6 +6,7 @@ import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
 import Navbar from '../Nav/Navbar';
 import Header from '../Header';
+import Footer from '../Footer';
 
 const About = () => {
   return (
@@ -161,6 +162,7 @@ const About = () => {
             
           </ScrollArea>
           </Container>
+          <Footer/>
     </>
   )
 }

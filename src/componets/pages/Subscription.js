@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import DoneIcon from '@mui/icons-material/Done';
 import Login from './Login'
+import Footer from '../Footer';
 
 const Subscription = () => {
   return ( 
@@ -20,7 +21,7 @@ const Subscription = () => {
             <div className='card'>
               <p>MOST POPULAR</p>
               <strong><span>Gold</span> 3 Months</strong>
-              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}>3999</span></span>
+              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}></span></span>
               <ul>
                 <li> <DoneIcon/> 150 Contact</li>
                 <li> <DoneIcon/>Perfect E-Matches</li>
@@ -28,7 +29,7 @@ const Subscription = () => {
                 <li> <DoneIcon/> Bold Listing</li>
                 <li> <DoneIcon/> Astro Matching</li>
               </ul>
-              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Login/></span>BuyNow</a>
+              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Login/></span>Buy Now</a>
             </div>
           </div>
 
@@ -36,7 +37,7 @@ const Subscription = () => {
             <div className='card'>
               <p>MOST POPULAR</p>
               <strong><span>Diamond</span> 6 Months</strong>
-              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}>5999</span></span>
+              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}></span></span>
               <ul>
                 <li> <DoneIcon/> 250 Contact</li>
                 <li> <DoneIcon/>Perfect E-Matches</li>
@@ -44,7 +45,7 @@ const Subscription = () => {
                 <li> <DoneIcon/> Bold Listing</li>
                 <li> <DoneIcon/> 100 Astro Matching</li>
               </ul>
-              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Login/></span>BuyNow</a>
+              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Login/></span>Buy Now</a>
             </div>
           </div>
 
@@ -52,7 +53,7 @@ const Subscription = () => {
             <div className='card'>
               <p>MOST POPULAR</p>
               <strong><span>Platinum </span> 9 Months</strong>
-              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}>7999</span></span>
+              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}></span></span>
               <ul>
                 <li> <DoneIcon/> 150 Contact</li>
                 <li> <DoneIcon/>Perfect E-Matches</li>
@@ -60,14 +61,19 @@ const Subscription = () => {
                 <li> <DoneIcon/> Bold Listing</li>
                 <li> <DoneIcon/> 200 Astro Matching</li>
               </ul>
-              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Login/></span>BuyNow</a>
+              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Login/></span>Buy Now</a>
             </div>
           </div>
           <div className='col-md-3 mt-5'>
             <div className='card'>
               <p>MOST POPULAR</p>
+<<<<<<< HEAD
               <strong><span>Star </span> 12 Months</strong>
               <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}>14999</span></span>
+=======
+              <strong><span>Star </span> Till Marriage</strong>
+              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}></span></span>
+>>>>>>> d2024fb86daffc4c858140937ffc53073d37e6ba
               <ul>
                 <li><DoneIcon/> 600 Contact</li>
                 <li><DoneIcon/>Perfect E-Matches</li>
@@ -75,7 +81,7 @@ const Subscription = () => {
                 <li><DoneIcon/> Bold Listing</li>
                 <li><DoneIcon/> 250 Astro Matching</li>
               </ul>
-              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Login/></span>BuyNow</a>
+              <a><span style={{position:"absolute",opacity:"0",fontSize:"0px"}}><Login/></span>Buy Now</a>
             </div>
           </div>
 
@@ -85,6 +91,7 @@ const Subscription = () => {
     </div>
 
     </Sub>
+    <Footer/>
     </>
   )
 }

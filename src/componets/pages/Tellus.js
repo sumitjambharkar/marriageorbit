@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
 import Navbar from "../Nav/Navbar";
 import Header from "../Header";
+import Footer from "../Footer";
 
 const Tellus = () => {
   const [patner, setPatner] = useState({
@@ -172,6 +173,7 @@ const Tellus = () => {
           </h3>
         </TellUsCard>
       </Welcome>
+      <Footer/>
     </>
   );
 };

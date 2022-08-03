@@ -110,6 +110,7 @@ const Steptwo = () => {
          </Form>
         </Card>
     </CreateSection>
+    <Footer/>
     {/* <SectionFooter>
     <Footer/>
     </SectionFooter> */}

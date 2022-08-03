@@ -23,6 +23,7 @@ import Message from "./Message";
 import {Helmet} from "react-helmet";
 import Navbar from "../Nav/Navbar";
 import Header from "../Header";
+import Footer from "../Footer";
 
 
 const Home = () => {
@@ -164,6 +165,7 @@ const Home = () => {
         )}
       </MessageContainer>
     </HomeContainer>
+    <Footer/>
     </>
   );
 };

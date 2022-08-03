@@ -5,6 +5,7 @@ import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
 import Navbar from '../Nav/Navbar';
 import Header from '../Header';
+import Footer from '../Footer';
 
 
 const Sitemap = () => {
@@ -67,7 +68,7 @@ const Sitemap = () => {
         <span>Email Id</span>
         <h4><a href ="mailto:marriageorbit@gmail.com">marriageorbit@gmail.com</a></h4>
         <span>Contact No</span>
-        <h4><a href='tel:9833188536'>+91 98331 88536</a></h4>
+        <h4><a href='tel:9833188536'>+91 98331 88050</a></h4>
         <span>Telephone No</span>
         <h4><a href='tel:+91 224006 5656'>+91 224006 5656</a></h4>
         <span>U.K No</span>
@@ -77,7 +78,7 @@ const Sitemap = () => {
     </Location>
     </SiteLocation>
     <Container>
-        <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Avialble In Several Locations</h1>
+        <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Available In Several Locations</h1>
     <ScrollArea
             speed={0.8}
             className="area"
@@ -155,7 +156,7 @@ const Sitemap = () => {
 <p>	boys lifepartner providing matchmaking websites in dehradun.	</p>     
           </ScrollArea>
           </Container>
-
+<Footer/>
     </>
   )
 }

@@ -127,6 +127,7 @@ const Profile = () => {
          </Form>
         </Card>
     </CreateSection>
+    <Footer/>
     {/* <SectionFooter>
     <Footer/>
     </SectionFooter> */}

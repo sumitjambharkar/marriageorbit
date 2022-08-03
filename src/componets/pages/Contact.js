@@ -7,6 +7,7 @@ import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
 import Navbar from '../Nav/Navbar';
 import Header from '../Header';
+import Footer from '../Footer';
 
 
 const Contact = () => {
@@ -93,7 +94,7 @@ const Contact = () => {
             <span>Email Id</span>
             <h4><a href ="mailto:marriageorbit@gmail.com">marriageorbit@gmail.com</a></h4>
             <span>Contact No</span>
-            <h4><a href='tel:9833188536'>+91 98331 88536</a></h4>
+            <h4><a href='tel:9833188536'>+91 98331 88050</a></h4>
             <span>Telephone No</span>
             <h4><a href='tel:+91 224006 5656'>+91 224006 5656</a></h4>
             <span>U.K No</span>
@@ -211,6 +212,7 @@ const Contact = () => {
             
           </ScrollArea>
           </Container>
+          <Footer/>
     </>
   )
 }

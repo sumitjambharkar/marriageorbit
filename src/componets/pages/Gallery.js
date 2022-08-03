@@ -6,6 +6,7 @@ import Navbar from '../Nav/Navbar';
 import Header from '../Header';
 import styled from 'styled-components';
 import {Helmet} from "react-helmet";
+import Footer from '../Footer';
 
 const Gallery = () => {
   return (
@@ -198,6 +199,7 @@ const Gallery = () => {
           </ScrollArea>
           </Container>
           </Section>
+          <Footer/>
     </>
 
   )

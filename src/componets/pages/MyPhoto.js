@@ -11,6 +11,7 @@ import { selectUser } from "../userSlice";
 import { useSelector } from 'react-redux';
 import Navbar from '../Nav/Navbar';
 import Header from '../Header';
+import Footer from '../Footer';
 
 function MyPhoto() {
   
@@ -268,8 +269,7 @@ function MyPhoto() {
             
           </ScrollArea>
           </Container>
-
-
+<Footer/>
       </>
   );
 }

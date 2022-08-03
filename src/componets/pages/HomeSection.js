@@ -14,6 +14,7 @@ import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
 import Navbar from '../Nav/Navbar';
 import Header from '../Header';
+import Footer from '../Footer';
 
 
 const city = ["mumbai", "pune", "new delhi", "surat", "nashik", "nagpur", "kolkata", "ahmedabad", "hyderabad", "bangalore", "jaipur", "kochi", "kanpur", "vadodara", "faridabad", "coimbatore", "karnataka", "chennai", "lucknow", "dore", "dehradun", "jamshedpur", "trivandrum", "rajasthan"]
@@ -371,7 +372,7 @@ const HomeSection = () => {
 <p>	boys lifepartner providing weddings services in mumbai	</p>
           </ScrollArea>
           </Container>
-    </>
+          <Footer/>    </>
   )
 }
 

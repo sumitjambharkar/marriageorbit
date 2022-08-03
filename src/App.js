@@ -165,7 +165,7 @@ function App() {
             <Sitemap/>
           </Route>
         </Switch>
-        <Footer/>
+       
     </Router>
     </>
   );
