@@ -55,10 +55,10 @@ const About = () => {
          <img src={AboutImage}  alt='about'/>
      </Image>
      <p>
-     Sangam is a matchmaking service created for parents who are looking for a life partner for their loved ones. Unlike other Matrimonial services, we focus on providing detailed family and background information to help you take the next step with confidence. With over 80+ community sites, you can find a match from your own community. Sangam is part of Shaadi.com (sometimes mis-spelt as Shadi), the World's No. 1 Matchmaking service.
+     Marriageorbit is a matchmaking service created for parents who are looking for a life partner for their loved ones. Unlike other Matrimonial services, we focus on providing detailed family and background information to help you take the next step with confidence. With over 80+ community sites, you can find a match from your own community. Marriageorbit is Like Shaadi.com, the World's No. 1 Matchmaking service.
      </p>
      <h4>Our Mission:</h4>
-     <span>With the aim of bringing upliftment & togetherness to the Prajapati community, we at Anmolrishte.com have a vision to widen and strengthen this website as an all-serving dedicated space from matchmaking to wedding planning services, wedding invitations, catering facilities, destinations, decorations or venue bookings & more. </span>
+     <span>With the aim of bringing upliftment & togetherness to the Sindhi community, we at Marriageorbit.com have a vision to widen and strengthen this website as an all-serving dedicated space from matchmaking to wedding planning services, wedding invitations, catering facilities, destinations, decorations or venue bookings & more. </span>
      <p></p>
      <h4>Why Us:</h4>
      <li>Matrimonial magazines have gone obsolete, websites are the all-serving future</li>

@@ -269,7 +269,7 @@ a{
     background: #ffa200 !important;
     cursor: progress;
     color: #fff;
-    margin-top:48px;
+    margin-top:34px;
     margin-left: -40%;
     border: none;
     border-radius:4px;
