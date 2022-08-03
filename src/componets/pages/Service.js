@@ -11,6 +11,7 @@ import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import {Helmet} from "react-helmet";
 import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
+import Footer from '../Footer';
 
 const Service = () => {
   
@@ -219,6 +220,7 @@ const Service = () => {
             
           </ScrollArea>
           </Container>
+          <Footer/>
     </>
   ) 
 }

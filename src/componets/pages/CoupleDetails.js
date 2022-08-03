@@ -52,8 +52,8 @@ const CoupleDetails = () => {
         <Link to="/tellus">Tell Us Your Story</Link>
       </Details>
       <Welcome className="container">
-        <h1>Welcome to Shaadi Pride.</h1>
-        <p>This is where we celebrate Shaadi.com Success Stories.</p>
+        <h1>Welcome to Success Stories</h1>
+        <p>This is where we celebrate MarriageOrbit Success Stories.</p>
       </Welcome>
       <Head className="container">
         <div className="row">
@@ -79,6 +79,7 @@ const CoupleDetails = () => {
 
         </div>
       </Head>
+      <Footer/>
     </>
   );
 };

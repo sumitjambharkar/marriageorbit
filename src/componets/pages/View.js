@@ -11,6 +11,7 @@ import Navbar from '../Nav/Navbar';
 import CallView from '../CallView';
 import EmailView from '../EmailView';
 import ChatIcon from '@mui/icons-material/Chat';
+import Footer from '../Footer';
 
 
 
@@ -191,6 +192,7 @@ const View = () => {
           <hr></hr>
         </Details>
       </AllDetails>
+      <Footer/>
     </>
   )
 }

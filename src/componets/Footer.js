@@ -44,7 +44,7 @@ const Footer = () => {
            <ul>
             <li><a target="blank" href='https://www.facebook.com/profile.php?id=100081940505377'><FacebookIcon/></a></li>
            <li><a target="blank" href='https://www.instagram.com/marriageorbit/'><InstagramIcon/></a></li>
-           <li><a href=''><TwitterIcon/></a></li>
+           <li><a target="blank" href='https://twitter.com/MarriageOrbit'><TwitterIcon/></a></li>
            <li><a target="blank" href='https://www.youtube.com/channel/UC24wskR9nDHv8jnz2apRY0w'><YouTubeIcon/></a></li>
            </ul>
            </FirstDiv>

@@ -18,6 +18,7 @@ import {Helmet} from "react-helmet";
 import Navbar from '../Nav/Navbar';
 import Header from '../Header';
 import images from "../image/bg-border.png";
+import Footer from "../Footer";
 
 
 const MyProfile = () => {
@@ -557,6 +558,7 @@ const MyProfile = () => {
         </div>
     </div>
     </Section>
+    <Footer/>
     </>
   );
 };

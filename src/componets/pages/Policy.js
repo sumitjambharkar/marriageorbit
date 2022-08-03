@@ -5,6 +5,7 @@ import ScrollArea from 'react-scrollbar';
 import { Container } from '@mui/material';
 import Navbar from '../Nav/Navbar';
 import Header from '../Header';
+import Footer from '../Footer';
 
 
 const Policy = () => {
@@ -121,7 +122,7 @@ const Policy = () => {
     <p>If you are below 18, or the age of majority in the jurisdiction in which you reside, you may only use our Website with the consent of your parent or legal guardian. In any case, marriageorbit.com will not be liable for any cause of action that arose due to non-compliance with any section. </p>
     </Section>
     <Container>
-        <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Avialble In Several Locations</h1>
+        <h1 style={{textAlign:"center",fontSize:"24px", fontWeight:600, marginTop:"25px"}}>We Are Available In Several Locations</h1>
     <ScrollArea
             speed={0.8}
             className="area"
@@ -214,6 +215,7 @@ const Policy = () => {
 <p>	upcoming matrimonial companies Ghatkopar	</p>    
           </ScrollArea>
           </Container>
+          <Footer/>
     </>
   )
 }

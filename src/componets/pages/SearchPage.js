@@ -6,6 +6,7 @@ import Navbar from '../Nav/Navbar';
 import Header from '../Header';
 import {Link} from 'react-router-dom';
 import styled from '@emotion/styled';
+import Footer from '../Footer';
 
 
 let motherTounge = [
@@ -300,6 +301,7 @@ const SearchPage = () => {
     </div>
   </div>
   </Section>
+  <Footer/>
   </>
   )
 }
