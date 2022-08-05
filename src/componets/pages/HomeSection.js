@@ -512,12 +512,13 @@ const SingleCard = styled.div`
   > span {
     margin-left: 4px;
   }
-  > button {
-    padding: 4px;
-    background-color: #ffa500;
-    color: white;
-    border: 1px solid #ffa500;
-    margin: 4px;
+  
+> button {
+  padding: 4px;
+  background-color:#FFA500;
+  color: white;
+  border: 1px solid #FFA500;
+  margin: 4px;
   }
   > button :hover {
     color: red;

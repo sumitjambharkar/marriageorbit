@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import DoneIcon from '@mui/icons-material/Done';
 import Login from './Login'
-import Footer from '../Footer';
+
 
 const Subscription = () => {
   return ( 
@@ -67,9 +67,8 @@ const Subscription = () => {
           <div className='col-md-3 mt-5'>
             <div className='card'>
               <p>MOST POPULAR</p>
-              <strong><span>Star </span> Till Marriage</strong>
+              <strong><span>Star </span> 12 Months</strong>
               <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}>1999</span></span>
-
               <ul>
                 <li><DoneIcon/> 600 Contact</li>
                 <li><DoneIcon/>Perfect E-Matches</li>

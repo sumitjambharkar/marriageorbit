@@ -152,10 +152,12 @@ const Form = () => {
             
 
             <div class="col-md-3 col-6 spc">
-                <label className='change'>Aged</label>
+             
               <div class="row">
                   <div class="col-6 spc">
+                  <label className='change'>From</label>
                       <select className='sel'>
+                
                       <option>Select</option>
                           {array.map((ele)=>(
                             <option>{ele}</option>
@@ -164,7 +166,9 @@ const Form = () => {
                   </div>
 
                   <div class="col-6 spc">
+                  <label className='change'>To Age</label>
                     <select className='sel'>
+
                     <option>Select</option>
                           {array.map((ele)=>(
                             <option>{ele}</option>
@@ -251,7 +255,7 @@ a{
 }
 
  .sel{
-    width: 90%;
+    width: 100%;
     height: 35px !important;
     outline: none;
     float: left;
@@ -270,23 +274,19 @@ a{
     cursor: progress;
     color: #fff;
     margin-top:34px;
-    margin-left: -40%;
+    margin-left: -10%;
     border: none;
     border-radius:4px;
 }
 @media (max-width :768px){
     .search input{
-    margin-left: -2%!important;
+    margin-left:0%!important;
     width: 100% !important;
     margin-bottom:12px;
     margin-top: 24px;
 }
 }
 
-.spc{
-    
-     padding-left: 4px !important; 
-}
 
 
 `
