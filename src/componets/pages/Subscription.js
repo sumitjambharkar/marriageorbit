@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import DoneIcon from '@mui/icons-material/Done';
 import Login from './Login'
-import Footer from '../Footer';
+
 
 const Subscription = () => {
   return ( 
@@ -86,7 +86,7 @@ const Subscription = () => {
     </div>
 
     </Sub>
-    <Footer/>
+   
     </>
   )
 }

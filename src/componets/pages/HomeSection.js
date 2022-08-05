@@ -422,7 +422,7 @@ background-color:#eee;
 margin:1%;
 border:1px solid #ffa500;
 >span{
-  margin-left:4px;
+  
 }
 > button {
   padding: 4px;
