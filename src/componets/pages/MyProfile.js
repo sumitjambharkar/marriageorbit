@@ -34,6 +34,8 @@ const MyProfile = () => {
   const [number, setNumber] = useState()
   const [error ,setError] = useState("")
   const [userN, setUserN] = useState()
+
+  
  
   
   useEffect(()=>{
@@ -82,7 +84,8 @@ const MyProfile = () => {
     setData({...data,[e.target.name]:e.target.value})
 
   }
-  const updateDataAll = ()=> {
+  const updateDataAll = (e)=> {
+    e.preventDefault()
       db.collection("users").doc(user.uid).update({
         birth:data.birth,
         city:data.city,
@@ -98,7 +101,7 @@ const MyProfile = () => {
       })
       setShow(false)
   }
-  
+
   
   function calculate_age(dob) {
     var diff_ms = Date.now() - dob.getTime();
@@ -207,6 +210,7 @@ const MyProfile = () => {
      
       
     <Section>
+      <form onSubmit={updateDataAll} >
     <div class="container" style={{justifyContent:'center'}}>
       <div class="bg-colr">
         <div class="row">
@@ -244,7 +248,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="birth" type="date" value={data.birth} onChange={handleChange}/></li>
+                       <li><input name="birth" autoComplete='off' required type="date" value={data.birth} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -263,7 +267,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="maritalStatus" defaultValue={userDetails.maritalStatus} value={data.maritalStatus} onChange={handleChange}/></li>
+                       <li><input name="maritalStatus" autoComplete='off' required  value={data.maritalStatus} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -297,7 +301,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input  name="religion" value={data.religion} onChange={handleChange}/></li>
+                       <li><input autoComplete='off' required  name="religion" value={data.religion} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -317,7 +321,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="tounge" defaultValue={userDetails.tounge} value={data.tounge} onChange={handleChange} /></li>
+                       <li><input autoComplete='off' required name="tounge" value={data.tounge} onChange={handleChange} /></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -352,7 +356,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="diet" defaultValue={userDetails.diet} value={data.diet} onChange={handleChange}/></li>
+                       <li><input name="diet" autoComplete='off' required value={data.diet} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -372,7 +376,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="work" value={data.work} onChange={handleChange}/></li>
+                       <li><input name="work" autoComplete='off' required value={data.work} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -407,7 +411,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="qaulification" value={data.qaulification} onChange={handleChange}/></li>
+                       <li><input name="qaulification" autoComplete='off' required value={data.qaulification} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -427,7 +431,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="collage" value={data.collage } onChange={handleChange}/></li>
+                       <li><input name="collage" autoComplete='off' required value={data.collage } onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -461,7 +465,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="family" value={data.family} onChange={handleChange}/></li>
+                       <li><input name="family" autoComplete='off' required value={data.family} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -481,7 +485,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="members" value={"No Required"} onChange={handleChange}/></li>
+                       <li><input name="members" autoComplete='off' required value={"No Required"} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -516,7 +520,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="city" value={data.city} onChange={handleChange}/></li>
+                       <li><input name="city" autoComplete='off' required value={data.city} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -537,7 +541,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="state" value={data.state} onChange={handleChange}/></li>
+                       <li><input name="state" autoComplete='off' required value={data.state} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -549,9 +553,12 @@ const MyProfile = () => {
                 </div>
                 <p style={{color:"red",textAlign:"center",fontWeight:"bold"}}>{error}</p>
                 <div class="col-md-12">
+                    {show ? 
                     <div class="update">
-                        <button onClick={updateDataAll}>Update</button>
-                    </div>
+                    <button type="submit">Update</button>
+                </div>
+                : null
+                    }
                 </div>
 
             </div>
@@ -559,6 +566,7 @@ const MyProfile = () => {
         </div>
         </div>
     </div>
+    </form>
     </Section>
     <Footer/>
     </>
