@@ -67,8 +67,8 @@ const Subscription = () => {
           <div className='col-md-3 mt-5'>
             <div className='card'>
               <p>MOST POPULAR</p>
-              <strong><span>Star </span> Till Marriage</strong>
-              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}></span></span>
+              <strong><span>Star </span> 12 Months</strong>
+              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}>14999</span></span>
               <ul>
                 <li><DoneIcon/> 600 Contact</li>
                 <li><DoneIcon/>Perfect E-Matches</li>

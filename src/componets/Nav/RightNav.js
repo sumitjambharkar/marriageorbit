@@ -264,7 +264,7 @@ const RightNav = ({ open }) => {
        <li><Link to="/about">About</Link></li>
       </ul>
       <ul>
-      <li><Link to="/myphoto">Help</Link></li>
+      <li><Link to="/">Help</Link></li>
       </ul>
       </>
        :
