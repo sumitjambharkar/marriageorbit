@@ -21,7 +21,7 @@ const Subscription = () => {
             <div className='card'>
               <p>MOST POPULAR</p>
               <strong><span>Gold</span> 3 Months</strong>
-              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}></span></span>
+              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}>499</span></span>
               <ul>
                 <li> <DoneIcon/> 150 Contact</li>
                 <li> <DoneIcon/>Perfect E-Matches</li>
@@ -37,7 +37,7 @@ const Subscription = () => {
             <div className='card'>
               <p>MOST POPULAR</p>
               <strong><span>Diamond</span> 6 Months</strong>
-              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}></span></span>
+              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}>999</span></span>
               <ul>
                 <li> <DoneIcon/> 250 Contact</li>
                 <li> <DoneIcon/>Perfect E-Matches</li>
@@ -53,7 +53,7 @@ const Subscription = () => {
             <div className='card'>
               <p>MOST POPULAR</p>
               <strong><span>Platinum </span> 9 Months</strong>
-              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}></span></span>
+              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}>1499</span></span>
               <ul>
                 <li> <DoneIcon/> 150 Contact</li>
                 <li> <DoneIcon/>Perfect E-Matches</li>
@@ -67,13 +67,9 @@ const Subscription = () => {
           <div className='col-md-3 mt-5'>
             <div className='card'>
               <p>MOST POPULAR</p>
-<<<<<<< HEAD
-              <strong><span>Star </span> 12 Months</strong>
-              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}>14999</span></span>
-=======
               <strong><span>Star </span> Till Marriage</strong>
-              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}></span></span>
->>>>>>> d2024fb86daffc4c858140937ffc53073d37e6ba
+              <span>FREE<CurrencyRupeeIcon/><span style={{textDecoration:"line-through"}}>1999</span></span>
+
               <ul>
                 <li><DoneIcon/> 600 Contact</li>
                 <li><DoneIcon/>Perfect E-Matches</li>
@@ -91,7 +87,6 @@ const Subscription = () => {
     </div>
 
     </Sub>
-    <Footer/>
     </>
   )
 }

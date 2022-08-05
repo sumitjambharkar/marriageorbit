@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useRef} from "react";
 import { signInWithEmailAndPassword,sendPasswordResetEmail} from "firebase/auth";
 import { auth, createUserCollecton } from "../firebase";
 import { Link, useHistory } from "react-router-dom";
@@ -15,8 +15,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { login } from "../userSlice";
-import Logo from '../image/nl.png'
-
+import Logo from '../image/nl.png';
+import emailjs from '@emailjs/browser';
 const style = {
   position: "absolute",
   top: "50%",
@@ -32,9 +32,8 @@ const style = {
 const Loginn = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-
   const [open, setOpen] = React.useState(false);
-
+  
   const [show, setShow] = useState(true);
   const [sign, setSign] = useState(false);
   const [forgot, setForgot] = useState(false);
@@ -127,7 +126,7 @@ const Loginn = () => {
         phoneNumber: user.number,
         isOnline: true,
       });
-      await createUserCollecton(user, { displayName, birth, number, gender,profile });
+      await createUserCollecton(user, { displayName, birth, number, gender,profile,email });
       dispatch(
         login({
           uid: user.uid,
@@ -139,6 +138,14 @@ const Loginn = () => {
       );
       toast.success("Register Successfull");
       history.push("/profile");
+      setTimeout(() => {
+        emailjs.sendForm('service_a4jrbvm', 'template_awicj8n',dataName, 'et6nlU6s_AhpZqRJV')
+        .then((result) => {
+          console.log(result.text);
+        }, (error) => {
+          console.log(error.text);
+      });
+      }, 100);
     } catch (err) {
       console.log(err);
       toast.error("error", err.message);
@@ -265,7 +272,7 @@ const handleMouseLeave = e => {
                             </Div>
                             <Div>
                               <button onClick={handalLogin} className="button">
-                                Register
+                              Sign Up
                               </button>
                             </Div>
                             <Forgot>
@@ -290,7 +297,7 @@ const handleMouseLeave = e => {
               {/* <> */}
                 {sign ? (
                   <div>
-                    <form method="post" onSubmit={handalSign}>
+                    <form  ref={dataName}  method="post" onSubmit={handalSign}>
                       <FormC>
                         <MainDiv>
                           <div
@@ -381,6 +388,7 @@ const handleMouseLeave = e => {
                           </Label>
                           <Input>
                             <input
+                              // name="user_email"
                               name="email"
                               type="email"
                               required
@@ -416,7 +424,7 @@ const handleMouseLeave = e => {
                           </Input>
                           <Div>
                             <button type="submit" className="button">
-                              Register
+                            Sign Up
                             </button>
                           </Div>
                           

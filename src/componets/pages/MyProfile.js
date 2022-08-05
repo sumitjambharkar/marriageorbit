@@ -32,6 +32,7 @@ const MyProfile = () => {
   // if else Close 
   const dispatch = useDispatch();
   const [number, setNumber] = useState()
+  const [error ,setError] = useState("")
   const [userN, setUserN] = useState()
  
   
@@ -82,20 +83,20 @@ const MyProfile = () => {
 
   }
   const updateDataAll = ()=> {
-    db.collection("users").doc(user.uid).update({
-      birth:data.birth,
-      city:data.city,
-      state:data.state,
-      diet:data.diet,
-      family:data.family,
-      maritalStatus:data.maritalStatus,
-      collage:data.collage,
-      qaulification:data.qaulification,
-      religion:data.religion,
-      tounge:data.tounge,
-      work:data.work,
-    })
-    setShow(false)
+      db.collection("users").doc(user.uid).update({
+        birth:data.birth,
+        city:data.city,
+        state:data.state,
+        diet:data.diet,
+        family:data.family,
+        maritalStatus:data.maritalStatus,
+        collage:data.collage,
+        qaulification:data.qaulification,
+        religion:data.religion,
+        tounge:data.tounge,
+        work:data.work,
+      })
+      setShow(false)
   }
   
   function calculate_age(dob) {
@@ -242,7 +243,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="birth" type="date" value={data.birth || userDetails.birth} onChange={handleChange}/></li>
+                       <li><input name="birth" type="date" value={data.birth} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -261,7 +262,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="maritalStatus" defaultValue={userDetails.maritalStatus} value={data.maritalStatus || userDetails.maritalStatus} onChange={handleChange}/></li>
+                       <li><input name="maritalStatus" defaultValue={userDetails.maritalStatus} value={data.maritalStatus} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -295,7 +296,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input  name="religion" value={data.religion || userDetails.religion} onChange={handleChange}/></li>
+                       <li><input  name="religion" value={data.religion} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -315,7 +316,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="tounge" defaultValue={userDetails.tounge} value={data.tounge || userDetails.tounge} onChange={handleChange} /></li>
+                       <li><input name="tounge" defaultValue={userDetails.tounge} value={data.tounge} onChange={handleChange} /></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -350,7 +351,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="diet" defaultValue={userDetails.diet} value={data.diet || userDetails.diet} onChange={handleChange}/></li>
+                       <li><input name="diet" defaultValue={userDetails.diet} value={data.diet} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -370,7 +371,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="work" value={data.work || userDetails.work} onChange={handleChange}/></li>
+                       <li><input name="work" value={data.work} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -405,7 +406,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="qaulification" value={data.qaulification || userDetails.qaulification} onChange={handleChange}/></li>
+                       <li><input name="qaulification" value={data.qaulification} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -425,7 +426,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="collage" value={data.collage || userDetails.collage} onChange={handleChange}/></li>
+                       <li><input name="collage" value={data.collage } onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -459,7 +460,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="family" value={data.family || userDetails.family} onChange={handleChange}/></li>
+                       <li><input name="family" value={data.family} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -479,7 +480,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="members" value={data.members || "No Required"} onChange={handleChange}/></li>
+                       <li><input name="members" value={"No Required"} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -514,7 +515,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="city" value={data.city || userDetails.city} onChange={handleChange}/></li>
+                       <li><input name="city" value={data.city} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -535,7 +536,7 @@ const MyProfile = () => {
                        </>
                         : 
                        <>
-                       <li><input name="state" value={data.state || userDetails.state} onChange={handleChange}/></li>
+                       <li><input name="state" value={data.state} onChange={handleChange}/></li>
                         <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
                         </li>
                        </>
@@ -545,7 +546,7 @@ const MyProfile = () => {
 
 
                 </div>
-
+                <p style={{color:"red",textAlign:"center",fontWeight:"bold"}}>{error}</p>
                 <div class="col-md-12">
                     <div class="update">
                         <button onClick={updateDataAll}>Update</button>

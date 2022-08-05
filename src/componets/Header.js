@@ -25,7 +25,7 @@ margin:12px;
     font-family:romon
 }
 @media(max-width: 768px){
-  >p {
+  >.btnss p {
     display: none;
   }
 }
