@@ -4,7 +4,6 @@ import Abouts from './Abouts';
 import Story from './Story';
 import Main from './Main';
 import styled from '@emotion/styled';
-import {Helmet} from "react-helmet";
 import Subscription from './pages/Subscription';
 import Footer from './Footer';
 
@@ -19,7 +18,7 @@ const Home = () => {
     <Subscription/>
     <Abouts/>
     </Section>
-  
+    <Footer/>
     </>
   )
 }

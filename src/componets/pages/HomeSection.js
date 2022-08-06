@@ -136,8 +136,7 @@ const HomeSection = () => {
     <Container>
   
     <SearchBar>  
-        <Button style={{backgroundColor:'#fff'}} onClick={handleSearch} type="submit"><img src="https://img.icons8.com/ios/40/fab90a/filter--v1.png"/></Button>
-      <input type="search" value={search} onChange={(e)=>setSearch(e.target.value)} placeholder="search"/>
+        <Button style={{backgroundColor:'#fff'}} onClick={handleSearch} type="submit"><img src="https://img.icons8.com/ios/40/fab90a/filter--v1.png"/></Button><input type="search" value={search} onChange={(e)=>setSearch(e.target.value)} placeholder="search"/>
     <button onClick={handleSearch} type="submit">Search</button>
 
   </SearchBar>

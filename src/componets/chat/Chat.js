@@ -32,9 +32,22 @@ const Home = () => {
   const [text, setText] = useState("");
   const [img, setImg] = useState("");
   const [msgs, setMsgs] = useState([]);
+  const [gender, setGender] = useState("");
+  console.log(gender.gender);
 
 
   const user1 = auth.currentUser.uid;
+  console.log(user1);
+
+  useEffect(() => {
+    if (user1) {
+      db.collection("users")
+        .doc(user1)
+        .onSnapshot((snapshot) => {
+          setGender(snapshot.data());
+        });
+    }
+  }, [user1]);
 
   useEffect(() => {
     const usersRef = collection(db, "users");
@@ -50,7 +63,6 @@ const Home = () => {
     });
     return () => unsub();
   }, []);
-
   const selectUser = async (user) => {
     console.log(user);
     setChat(user);
@@ -127,8 +139,9 @@ const Home = () => {
             <Navbar/>
     <HomeContainer>
       <UserContainer>
-        <ScrollToBottom>
-        {users.map((user) => (
+        {users
+        .filter((item)=>item.gender !== gender.gender )
+        .map((user) => (
           <User
             key={user.uid}
             user={user}
@@ -137,7 +150,6 @@ const Home = () => {
             chat={chat}
           />
         ))}
-        </ScrollToBottom>
       </UserContainer>
       <MessageContainer>
         {chat ? (
@@ -174,7 +186,7 @@ export default Home;
 const HomeContainer = styled.div`
 display:flex;
 width:auto;
-height:100vh;`
+height:600px;`
 const UserContainer = styled.div`
 margin:24px;
 flex:3;
@@ -189,6 +201,7 @@ const MessageContainer = styled.div`
 flex:7;
 position: relative;
 margin:24px;
+overflow: hidden;
 width:auto;
 @media (max-width:500px) {
   margin:0px;

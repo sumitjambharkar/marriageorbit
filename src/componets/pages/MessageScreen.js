@@ -10,8 +10,6 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../userSlice";
 import ScrollToBottom from 'react-scroll-to-bottom';
 
-
-
 const MessageScreen = () => {
   const user = useSelector(selectUser)
 
