@@ -16,7 +16,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { login } from "../userSlice";
 import Logo from '../image/nl.png';
-import emailjs from '@emailjs/browser';
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -138,14 +138,7 @@ const Loginn = () => {
       );
       toast.success("Register Successfull");
       history.push("/profile");
-      setTimeout(() => {
-        emailjs.sendForm('service_a4jrbvm', 'template_awicj8n',dataName, 'et6nlU6s_AhpZqRJV')
-        .then((result) => {
-          console.log(result.text);
-        }, (error) => {
-          console.log(error.text);
-      });
-      }, 100);
+     
     } catch (err) {
       console.log(err);
       toast.error("error", err.message);

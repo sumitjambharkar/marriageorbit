@@ -15,7 +15,6 @@ import ScrollArea from "react-scrollbar";
 import Navbar from "../Nav/Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
-import Filter from "./Filter";
 
 const city = [
   "mumbai",
@@ -164,7 +163,6 @@ const HomeSection = () => {
           <Button style={{ backgroundColor: "#fff" }} type="submit">
             <img src="https://img.icons8.com/ios/40/fab90a/filter--v1.png" />
           </Button>
-         
           <input
             type="search"
             value={search}
@@ -178,99 +176,7 @@ const HomeSection = () => {
         <SectionFiltter>
           <Filtter>
             <Fil>
-              <p>Select Location</p>
-              <select ref={input} onChange={handleSelect}>
-                <option>Select Location</option>
-                {city.map((ele) => (
-                  <option>{ele}</option>
-                ))}
-              </select>
-
-              <p>Country?</p>
-              <ul>
-                <li>
-                  <input type="checkbox"></input>
-                  <label>All</label>
-                </li>
-                <li>
-                  <input type="checkbox"></input>
-                  <label>India</label>
-                </li>
-              </ul>
-
-              <p>Height</p>
-              <Slider
-                aria-label="Temperature"
-                defaultValue={30}
-                // getAriaValueText={valuetext}
-                color="warning"
-              />
-              <p>Age</p>
-              <Slider
-                aria-label="Temperature"
-                defaultValue={30}
-                // getAriaValueText={valuetext}
-                color="warning"
-              />
-              <p>Religion</p>
-              <ul>
-                <li>
-                  <input type="checkbox"></input>
-                  <label>All</label>
-                </li>
-                <li>
-                  <input type="checkbox"></input>
-                  <label>Hindu</label>
-                </li>
-              </ul>
-
-              <p>Caste</p>
-              <ul>
-                <li>
-                  <input type="checkbox"></input>
-                  <label>All</label>
-                </li>
-                <li>
-                  <input type="checkbox"></input>
-                  <label>96 Kuli Maratha</label>
-                </li>
-                <li>
-                  <input type="checkbox"></input>
-                  <label>Maratha</label>
-                </li>
-              </ul>
-
-              <p>Mother Tongue</p>
-              <ul>
-                <li>
-                  <input type="checkbox"></input>
-                  <label>All</label>
-                </li>
-                <li>
-                  <input type="checkbox"></input>
-                  <label>Marathi</label>
-                </li>
-                <li>
-                  <input type="checkbox"></input>
-                  <label>Konkani</label>
-                </li>
-              </ul>
-
-              <p>Occupation</p>
-              <ul>
-                <li>
-                  <input type="checkbox"></input>
-                  <label>All</label>
-                </li>
-                <li>
-                  <input type="checkbox"></input>
-                  <label>HR, Admin & Managers</label>
-                </li>
-                <li>
-                  <input type="checkbox"></input>
-                  <label>Non-Working</label>
-                </li>
-              </ul>
+              
             </Fil>
           </Filtter>
         </SectionFiltter>
