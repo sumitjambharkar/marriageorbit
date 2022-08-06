@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { onSnapshot, doc } from "firebase/firestore";
+import { onSnapshot, doc,orderBy } from "firebase/firestore";
 import { db } from "../firebase";
 import Avatar from '@mui/material/Avatar';
 
 const User = ({ user1, user, selectUser, chat }) => {
+  
   const user2 = user?.uid;
   const [data, setData] = useState("");
 
   useEffect(() => {
     const id = user1 > user2 ? `${user1 + user2}` : `${user2 + user1}`;
-    let unsub = onSnapshot(doc(db, "lastMsg", id), (doc) => {
+    let unsub = onSnapshot(doc(db, "lastMsg", id),
+     (doc) => {
       setData(doc.data());
     });
     return () => unsub();

@@ -15,6 +15,7 @@ import ScrollArea from "react-scrollbar";
 import Navbar from "../Nav/Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
+import Filter from "./Filter";
 
 const city = [
   "mumbai",
@@ -163,6 +164,7 @@ const HomeSection = () => {
           <Button style={{ backgroundColor: "#fff" }} type="submit">
             <img src="https://img.icons8.com/ios/40/fab90a/filter--v1.png" />
           </Button>
+         
           <input
             type="search"
             value={search}

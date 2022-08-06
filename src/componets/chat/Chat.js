@@ -50,9 +50,10 @@ const Home = () => {
   }, [user1]);
 
   useEffect(() => {
-    const usersRef = collection(db, "users");
+    const usersRef = collection(db, "users")  
     // create query object
-    const q = query(usersRef, where("uid", "not-in", [user1]));
+    const q = query(usersRef, where("uid", "not-in",[user1])
+    )
     // execute query
     const unsub = onSnapshot(q, (querySnapshot) => {
       let users = [];
