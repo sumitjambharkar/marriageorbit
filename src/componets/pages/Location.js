@@ -1,130 +1,117 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useRef, useState } from "react";
+import styled from "styled-components";
+
+const city = [
+  "mumbai",
+  "pune",
+  "new delhi",
+  "surat",
+  "nashik",
+  "nagpur",
+  "kolkata",
+  "ahmedabad",
+  "hyderabad",
+  "bangalore",
+  "jaipur",
+  "kochi",
+  "kanpur",
+  "vadodara",
+  "faridabad",
+  "coimbatore",
+  "karnataka",
+  "chennai",
+  "lucknow",
+  "indore",
+  "dehradun",
+  "jamshedpur",
+  "trivandrum",
+  "rajasthan",
+];
+
 const Location = () => {
-
-    
-
-    return(
-        <>
-
-        {/* ==================Start Location===================== */}
-        <Section><br></br>
-            <strong>Filter By Categories</strong>
+  const [location,setLocation] = useState("")
+  console.log(location);
+  const handleLocation =(e)=> {
+      setLocation({...location,[e.target.name]:e.target.value})
+  }
+  return (
+    <>
+      {/* ==================Start Location===================== */}
+      <Section>
+        <br></br>
+        <strong>Filter By Categories</strong>
         <div class="dropdown">
-  <button class="dropbtn">Select Location</button>
-  <div class="dropdown-content">
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
+          <select class="dropbtn" name="location" value={location} onChange={handleLocation}>
+            <option>Select Location</option>
+          {city.map(doc=>(
+            <option class="dropdown-content">{doc}</option>
+            ))}
+          </select>
+        </div>
+      </Section>
+      {/* ==================End Location===================== */}
 
+      {/* ==================Start Age===================== */}
+      <Section>
+      <div class="dropdown">
+          <select class="dropbtn" >
+            <option>Select Age</option>
+          {city.map(doc=>(
+            <option class="dropdown-content">{doc}</option>
+            ))}
+          </select>
+        </div>
+      </Section>
 
-  </div>
-</div>
+      {/* ==================End Age===================== */}
 
-        </Section>
- {/* ==================End Location===================== */}
+      {/* ==================Start Height===================== */}
+      <Section>
+      <div class="dropdown">
+          <select class="dropbtn">
+            <option>Select Religion</option>
+          {city.map(doc=>(
+            <option class="dropdown-content">{doc}</option>
+            ))}
+          </select>
+        </div>
+      </Section>
 
+      {/* ==================End Height===================== */}
 
- {/* ==================Start Age===================== */}
-        <Section>
-        <div class="dropdown">
-  <button class="dropbtn">Select Age</button>
-  <div class="dropdown-content">
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
+      {/* ==================Start Religion===================== */}
+      <Section>
+      <div class="dropdown">
+          <select class="dropbtn" >
+            <option>Select MotherTounge</option>
+          {city.map(doc=>(
+            <option class="dropdown-content">{doc}</option>
+            ))}
+          </select>
+        </div>
+      </Section>
 
+      {/* ==================end Religion===================== */}
 
-  </div>
-</div>
+      {/* ==================End mothertounge===================== */}
+      <Section>
+      <div class="dropdown">
+          <select class="dropbtn">
+            <option>Select Height</option>
+          {city.map(doc=>(
+            <option class="dropdown-content">{doc}</option>
+            ))}
+          </select>
+        </div>
+      </Section>
 
-        </Section>
-
- {/* ==================End Age===================== */}
-
-
-
- {/* ==================Start Height===================== */}
-        <Section>
-        <div class="dropdown">
-  <button class="dropbtn">Select Height</button>
-  <div class="dropdown-content">
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
-
-
-  </div>
-</div>
-
-        </Section>
-        
- {/* ==================End Height===================== */}
-
-
-
-
-
- 
- {/* ==================Start Religion===================== */}
- <Section>
-        <div class="dropdown">
-  <button class="dropbtn">Select Religion</button>
-  <div class="dropdown-content">
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
-
-
-  </div>
-</div>
-
-        </Section>
-        
- {/* ==================end Religion===================== */}
-
-
-
- 
- {/* ==================End mothertounge===================== */}
- <Section>
-        <div class="dropdown">
-  <button class="dropbtn">Select Mothertounge</button>
-  <div class="dropdown-content">
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
- <li>Mumbai</li>
-
-
-  </div>
-</div>
-
-        </Section>
-        
- {/* ==================End mothertounge===================== */}
-
-        </>
-    )
-
-}
-export default Location
+      {/* ==================End mothertounge===================== */}
+    </>
+  );
+};
+export default Location;
 const Section = styled.div`
-.dropbtn {
+  .dropbtn {
     background-color: #ffa500;
     color: white;
     padding: 10px;
@@ -135,50 +122,49 @@ const Section = styled.div`
 
     cursor: pointer;
   }
-  
+
   .dropdown {
     position: relative;
     display: inline-block;
-    transition:0.3s;
+    transition: 0.3s;
   }
-  
+
   .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    transition:0.3s;
+    transition: 0.3s;
     min-width: 270px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
-  
-  .dropdown-content a {
+
+  .dropdown-content {
     color: black;
     padding: 12px 16px;
-  
+
     text-decoration: none;
     display: block;
   }
-  .dropdown-content li{
-    list-style:none;
-    cursor:pointer;
-    transition:0.3s;
- 
-padding:10px;
-}
+  .dropdown-content {
+    list-style: none;
+    cursor: pointer;
+    transition: 0.3s;
 
+    padding: 10px;
+  }
 
-  .dropdown-content li:hover {background-color: #fab90a;color:#fff;}
-  
+  .dropdown-content li:hover {
+    background-color: #fab90a;
+    color: #fff;
+  }
+
   .dropdown:hover .dropdown-content {
     display: block;
-    transition:0.3s;
+    transition: 0.3s;
   }
-  
+
   .dropdown:hover .dropbtn {
     background-color: #ff8507;
-
-
   }
-
-`
+`;

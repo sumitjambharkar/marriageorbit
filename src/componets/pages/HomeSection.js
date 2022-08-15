@@ -15,6 +15,7 @@ import ScrollArea from "react-scrollbar";
 import Navbar from "../Nav/Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
+import Location from "./Location";
 
 const city = [
   "mumbai",
@@ -176,7 +177,7 @@ const HomeSection = () => {
         <SectionFiltter>
           <Filtter>
             <Fil>
-              
+           <Location/>
             </Fil>
           </Filtter>
         </SectionFiltter>
@@ -482,12 +483,7 @@ const SearchBar = styled.div`
     font-weight: 700;
     border: 0;
   }
-  > Button {
-    display: none;
-  }
   @media (max-width: 768px) {
-    Button {
-      display: block;
-    }
+    
   }
 `;
