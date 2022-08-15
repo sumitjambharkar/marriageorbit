@@ -49,7 +49,7 @@ const Main = () => {
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
     <MainContainer>
-      <h1 style={{ textAlign: "center", marginTop: "2rem", color: "#FFA500", fontWeight: "500" }}>Find your Special Someone</h1>
+      <h3 style={{ textAlign: "center", marginTop: "2rem", color: "#FFA500", fontWeight: "500" }}>Find your Special Someone</h3>
       <div class="fancy2"><img src={images}/></div>
       <Selection>
         {array.map((ele,i) => {

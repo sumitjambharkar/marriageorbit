@@ -43,7 +43,7 @@ const Header = () => {
             </Loginn>
         </Navbar>
         <Heading>
-          <h1>Trusted Matrimony & Matchmaking Service</h1>
+          <h2>Trusted Matrimony & Matchmaking Service</h2>
           <p>Let's Start New Journey</p>
         </Heading>
        <Form/>
