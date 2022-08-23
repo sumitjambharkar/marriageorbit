@@ -86,12 +86,12 @@ const HomeSection = () => {
     []
   );
 
-  const handleSelect =()=> { 
-  var newData = data.filter((item)=>{
-    return item.city === input.current.value
-  })
-  setData(newData)
-  }
+  // const handleSelect =()=> { 
+  // var newData = data.filter((item)=>{
+  //   return item.city === input.current.value
+  // })
+  // setData(newData)
+  // }
 
   return (
     <>
@@ -185,7 +185,7 @@ const HomeSection = () => {
           <Card>
             {data.map((doc) => (
               <>
-                {userData.gender !== doc.gender ?
+                {userData?.gender !== doc.gender ?
                 <>
                 {doc.displayName === user.displayName ? null : (
                   <SingleCard>
@@ -205,7 +205,7 @@ const HomeSection = () => {
                         fontFamily: "emoji",
                       }}
                     >
-                      {doc.gender}
+                      {doc?.gender}
                     </span>
                     <span style={{ fontFamily: "cursive" }}>
                       {calculate_age(new Date(doc.birth))}

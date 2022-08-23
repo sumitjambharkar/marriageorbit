@@ -1,5 +1,6 @@
 {
   "name": "frontend",
+  "homepage": "https://marriageorbit.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -33,6 +34,7 @@
     "react-scroll-to-bottom": "^4.2.0",
     "react-scrollbar": "^0.5.6",
     "react-slideshow-image": "^3.7.5",
+    "react-snap": "^1.23.0",
     "react-toastify": "^8.2.0",
     "redux": "^4.1.2",
     "styled-components": "^5.3.5",
