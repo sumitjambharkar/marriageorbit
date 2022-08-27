@@ -10,15 +10,16 @@ import Footer from './Footer';
 const Home = () => {
   return (
     <>
-   
-    <Head/>
-    <Section>
-    <Main/>
-    <Story/>
-    <Subscription/>
-    <Abouts/>
-    </Section>
-    <Footer/>
+
+      <Head />
+      <Section>
+        
+        <Main />
+        <Story />
+        <Subscription />
+        <Abouts />
+      </Section>
+      <Footer />
     </>
   )
 }
