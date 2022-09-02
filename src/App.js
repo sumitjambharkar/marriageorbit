@@ -31,9 +31,9 @@ import SearchPage from './componets/pages/SearchPage';
 import MyPhoto from './componets/pages/MyPhoto';
 import Filter from './componets/Filter'
 import Header from './componets/Header';
-import Footer from './componets/Footer';
 import Gallery from './componets/pages/Gallery';
 import Service from './componets/pages/Service';
+import Inbox from './componets/pages/Inbox'
 
 function App() {
   const user = useSelector(selectUser)
@@ -131,6 +131,9 @@ function App() {
 
         <Route exact path="/gallery">
         <Gallery/>
+        </Route>
+        <Route exact path="/inbox">
+        <Inbox/>
         </Route>
 
       <Route exact path="/MyPhoto">

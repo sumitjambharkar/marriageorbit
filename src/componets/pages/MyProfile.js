@@ -316,13 +316,13 @@ const MyProfile = () => {
                         {!show? 
                        <>
                        <li>{userDetails.tounge}</li>
-                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
+                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" alt="" /></button>
                         </li>
                        </>
                         : 
                        <>
                        <li><input autoComplete='off' required name="tounge" value={data.tounge} onChange={handleChange} /></li>
-                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
+                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png" alt=""/></button>
                         </li>
                        </>
                        }
@@ -351,13 +351,13 @@ const MyProfile = () => {
                         {!show? 
                        <>
                        <li>{userDetails.diet}</li>
-                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
+                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" alt=""/></button>
                         </li>
                        </>
                         : 
                        <>
                        <li><input name="diet" autoComplete='off' required value={data.diet} onChange={handleChange}/></li>
-                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
+                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png" alt=""/></button>
                         </li>
                        </>
                        }
@@ -371,13 +371,13 @@ const MyProfile = () => {
                         {!show? 
                        <>
                        <li>{userDetails.work}</li>
-                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
+                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" alt=""/></button>
                         </li>
                        </>
                         : 
                        <>
                        <li><input name="work" autoComplete='off' required value={data.work} onChange={handleChange}/></li>
-                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
+                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png" alt=""/></button>
                         </li>
                        </>
                        }
@@ -406,13 +406,13 @@ const MyProfile = () => {
                         {!show? 
                        <>
                        <li>{userDetails.qaulification}</li>
-                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
+                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" alt=""/></button>
                         </li>
                        </>
                         : 
                        <>
                        <li><input name="qaulification" autoComplete='off' required value={data.qaulification} onChange={handleChange}/></li>
-                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
+                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png" alt=""/></button>
                         </li>
                        </>
                        }
@@ -426,13 +426,13 @@ const MyProfile = () => {
                         {!show? 
                        <>
                        <li>{userDetails.collage}</li>
-                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
+                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" alt="" /></button>
                         </li>
                        </>
                         : 
                        <>
                        <li><input name="collage" autoComplete='off' required value={data.collage } onChange={handleChange}/></li>
-                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
+                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png" alt=""/></button>
                         </li>
                        </>
                        }
@@ -460,13 +460,13 @@ const MyProfile = () => {
                         {!show? 
                        <>
                        <li>{userDetails.family}</li>
-                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
+                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" alt=""/></button>
                         </li>
                        </>
                         : 
                        <>
                        <li><input name="family" autoComplete='off' required value={data.family} onChange={handleChange}/></li>
-                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
+                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png" alt=""/></button>
                         </li>
                        </>
                        }
@@ -480,13 +480,13 @@ const MyProfile = () => {
                         {!show? 
                        <>
                        <li>No Required</li>
-                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
+                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" alt=""/></button>
                         </li>
                        </>
                         : 
                        <>
                        <li><input name="members" autoComplete='off' required value={"No Required"} onChange={handleChange}/></li>
-                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
+                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png" alt=""/></button>
                         </li>
                        </>
                        }
@@ -515,13 +515,13 @@ const MyProfile = () => {
                         {!show? 
                        <>
                        <li>{userDetails.city}</li>
-                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
+                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png"  alt=""/></button>
                         </li>
                        </>
                         : 
                        <>
                        <li><input name="city" autoComplete='off' required value={data.city} onChange={handleChange}/></li>
-                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
+                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png" alt=""/></button>
                         </li>
                        </>
                        }
@@ -536,13 +536,13 @@ const MyProfile = () => {
                         {!show? 
                        <>
                        <li>{userDetails.state}</li>
-                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
+                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" alt="" /></button>
                         </li>
                        </>
                         : 
                        <>
                        <li><input name="state" autoComplete='off' required value={data.state} onChange={handleChange}/></li>
-                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
+                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png" alt=""/></button>
                         </li>
                        </>
                        }

@@ -92,7 +92,7 @@ const HomeSection = () => {
   // })
   // setData(newData)
   // }
-
+  
   return (
     <>
       <Helmet>
@@ -210,7 +210,7 @@ const HomeSection = () => {
                     <span style={{ fontFamily: "cursive" }}>
                       {calculate_age(new Date(doc.birth))}
                     </span>
-                    <Button>
+                    <Button >
                       <Link to={`/view/${doc.uid}`}>Send Message</Link>
                     </Button>
                   </SingleCard>

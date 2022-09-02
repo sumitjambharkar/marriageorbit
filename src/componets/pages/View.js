@@ -12,11 +12,15 @@ import CallView from '../CallView';
 import EmailView from '../EmailView';
 import ChatIcon from '@mui/icons-material/Chat';
 import Footer from '../Footer';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../userSlice';
 
 
 
 const View = () => {
 
+  const user = useSelector(selectUser)
+  console.log(user);
   function calculate_age(dob) {
     var diff_ms = Date.now() - dob.getTime();
     var age_dt = new Date(diff_ms);
@@ -31,7 +35,14 @@ const View = () => {
   let date = new Date(x)
   let dateMDY = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
 
-
+  const sendNot =()=>{
+    console.log("send dat");
+    db.collection("users").doc(Id).collection("send").add({
+        uid:user.uid,
+        email:user.email,
+        displayName:user.displayName
+    })
+  }
 
   useEffect(() => {
     if (Id) {
@@ -98,6 +109,9 @@ const View = () => {
               </li>
               <li>
                 <Link to="/chat"><button><ChatIcon /></button></Link>
+              </li> 
+              <li>
+                <button onClick={sendNot}>send Notifivation</button>
               </li>
             </Second>
           </ImageDetails>
