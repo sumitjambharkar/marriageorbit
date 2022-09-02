@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import "./Inbox.css";
 import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
 import QuestionAnswerOutlinedIcon from "@mui/icons-material/QuestionAnswerOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -17,8 +16,11 @@ import Navbar from "../Nav/Navbar";
 import { selectUser } from "../userSlice";
 import { db } from "../firebase";
 import { useSelector } from "react-redux";
+import styled from "styled-components";
 
 const Inbox = () => {
+
+
   const user = useSelector(selectUser);
   const [data, setData] = useState([]);
   console.log(data);
@@ -69,6 +71,7 @@ const Inbox = () => {
       <Navbar />
       <div className="container">
         <div className="row">
+          <Inboxs>
           <div className="col-3"></div>
           <div className="col-6">
             <ul className="nav">
@@ -87,6 +90,7 @@ const Inbox = () => {
             </ul>
           </div>
           <div className="col-3"></div>
+          </Inboxs>
         </div>
        {received ? 
         <div className="mah">
@@ -94,6 +98,7 @@ const Inbox = () => {
           <p>Received</p>
         </div>
         <div className="row">
+        <Inboxs>
           <div className="col-2"></div>
           <div className="col-8">
             <div className="fl">
@@ -159,7 +164,8 @@ const Inbox = () => {
               </div>
             </div>
           </div>
-          <div className="col-"></div>
+          <div className="col-2"></div>
+          </Inboxs>
         </div>
       </div> 
        : ""}
@@ -169,6 +175,7 @@ const Inbox = () => {
               <p>Accepted Invitations</p>
             </div>
             <div className="row">
+              <Inbox>
               <div className="col-2"></div>
               <div className="col-8">
                 <div className="fl">
@@ -248,6 +255,7 @@ const Inbox = () => {
                 </div>
               </div>
               <div className="col-3"></div>
+              </Inbox>
             </div>
           </div>
         ) : (
@@ -261,6 +269,7 @@ const Inbox = () => {
           <p>Request</p>
       </div>
   <div className='row'>
+    <Inboxs>
   <div className='col-2'></div>
   <div className='col-8'>
            <div className='fl'>
@@ -298,6 +307,7 @@ const Inbox = () => {
            </div>
       </div>
       <div className='col-3'></div>
+      </Inboxs>
   </div>
         </div>
         </>
@@ -311,6 +321,7 @@ const Inbox = () => {
         <p>Sent</p>
     </div>
 <div className='row'>
+  <Inboxs>
 <div className='col-2'></div>
 <div className='col-8'>
 
@@ -361,6 +372,7 @@ const Inbox = () => {
          </div>
     </div>
     <div className='col-3'></div>
+    </Inboxs>
 </div>
 </div>:""
 }
@@ -370,3 +382,224 @@ const Inbox = () => {
 };
 
 export default Inbox;
+const Inboxs = styled.div`
+
+.hi p{
+    font-size: 20px;
+    color:red;
+    font-weight: 600;
+  }
+  a{
+    text-decoration: none;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav{
+    display: flex;
+    margin: auto;
+    gap: 50px;
+  }
+  .mh {
+    display: inline;
+
+    TEXT-ALIGN: CENTER;
+  }
+
+.fl{
+    border: 2px solid #9994;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+  .mh {
+   color:#ffa500 !important;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #878787;
+  }
+  .mh a{
+    color:#ffa500;
+  }
+
+  .mh:hover{
+    background: #ffa500;
+    padding: 10px 12px;
+  }
+  .mh:hover a{
+ color: #fff;
+    
+  }
+.fl:hover{
+   
+    box-shadow: 3px 3px 2px 3px #6667;
+}
+.im{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.im .MuiSvgIcon-root{
+    width: 130px;
+    height: 130px;
+    color:#999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mah{
+    margin-top: 50px;
+}
+
+.gd p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #158dea;
+}
+.sid{
+    padding-top: 25px;
+}
+.sid span{
+    color:#baba00;
+}
+.sid h2{
+    font-size: 14px;
+}
+
+.sid small{
+    font-size: 15px;
+}
+
+.lov {
+    color: rgb(81, 80, 93);
+    text-align: center;
+    border: 1px dashed #158dea;
+    border-radius: 3px;
+    background: rgb(255, 255, 255);
+    position: relative;
+    padding: 14px 20px 12px;
+    margin: 21px 0px 10px;
+}
+
+.lovv {
+    color: #158dea;
+    text-align: center;
+   border-radius: 3px;
+    background: rgb(255, 255, 255);
+    position: relative;
+    padding: 14px 20px 12px;
+    margin: 21px 0px 10px;
+}
+.lov span{
+    color: #999;
+    padding-top: 6px;
+}
+.lov p{
+    font-size: 13px;
+    display: flex;
+    text-align: center;
+    padding-top: 5px;
+}    
+
+.sib{
+    border-right: 1px dotted #999;
+}
+.inv{
+    text-align: center;
+    margin-top: 100px;
+}
+.inv .MuiSvgIcon-root{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    color:#fff;
+    background:#158dea;
+    transition: 0.5s;
+}
+
+.inv .MuiSvgIcon-root:hover{
+    background: #ffa500;
+}
+.invv{
+    text-align: center;
+    margin-top: 100px;
+}
+.invv .MuiSvgIcon-root{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color:#158dea;
+    
+    transition: 0.5s;
+}
+
+.piku{
+    border: 1px solid #adadad;
+    border-radius: 30px;
+    width: 187px;
+    padding: 6px;
+}
+
+.piku:hover{
+   
+    box-shadow: rgb(11 226 255 / 39%) 0px 5px 9px;
+    color: #000;
+}
+.pik{
+    border: 1px solid #adadad;
+    border-radius: 30px;
+    width: 187px;
+    padding: 6px;
+}
+
+.pik:hover{
+    box-shadow: #5bf276 0px 3px 9px;
+    color:#000;
+}
+.pikk{
+    border: 1px solid #adadad;
+    border-radius: 30px;
+    width: 187px;
+    padding: 6px;
+}
+
+.pikk:hover{
+   
+    box-shadow: #3fa8ef 0px 3px 9px;
+    color:#000;
+}
+
+.invx{
+    text-align: center;
+    margin-top: 100px;
+}
+.invx .MuiSvgIcon-root{
+    width: 65px;
+    height: 65px;
+    padding: 7px;
+    border-radius: 50%;
+    color:#fff;
+    background:#158dea;
+    transition: 0.5s;
+}
+
+.invx .MuiSvgIcon-root:hover{
+    background: #ffa500;
+}
+
+.love h3{
+    background-color: #dbf7fb;
+    color: #424242;
+    font-size: 16px;
+    padding: 24px;
+    text-align: center;
+}
+
+.love span{
+    color:#7fe1ee;
+}
+`
