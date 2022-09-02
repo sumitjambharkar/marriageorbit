@@ -17,7 +17,7 @@
     margin: auto;
     gap: 50px;
   }
-  li {
+  .mh {
     display: inline;
 
     TEXT-ALIGN: CENTER;

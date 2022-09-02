@@ -132,8 +132,11 @@ const Sub = styled.div`
 }
 
 .card span{
+ 
   text-align: center;
-  font-size: 35px;
+    font-size: 22px;
+    color: red;
+    font-weight: 600;
 }
 
 .card ul li{
@@ -144,7 +147,7 @@ const Sub = styled.div`
 .card a{
   text-align: center;
   padding: 5px 0;
-  margin: 0 45px;
+  margin: 20px 45px;
   background-color: #ffa500;
   border-radius: 15px;
   color: #fff;
