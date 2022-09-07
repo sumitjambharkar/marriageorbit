@@ -30,6 +30,7 @@ const Nav = styled.div`
   flex-flow: row nowrap;
   padding-left:0;
   }
+  
   a {
     color: white;
       text-decoration: none;
@@ -37,8 +38,12 @@ const Nav = styled.div`
       font-size: 14px;
       line-height:50px;
       font-weight:600;
+    
   }
   .name {
+    display:none;
+  }
+  .menu{
     display:none;
   }
   .logout {
@@ -65,9 +70,13 @@ const Nav = styled.div`
     }
     li {
       color: #fff;
-      height: 60px;
+      padding-left: 15px;
       border-bottom: 1px solid #ffa500;
     }
+    li a {
+      padding: 0;
+    }
+    
     .name {
       display: block;
       background-color: white;
@@ -75,6 +84,9 @@ const Nav = styled.div`
       height: 150px;
       padding: 10px;
 
+    }
+    .menu{
+      display: block;
     }
 
     .use{
@@ -108,6 +120,7 @@ const Nav = styled.div`
         margin-left: -14px;
         font-size: 16px;
         margin-top: -70px;
+        padding: 15px;
       }
       >span p{
         font-size: 13px;
@@ -278,8 +291,12 @@ const RightNav = ({ open }) => {
        <li><Link to="/myphoto">My Photo</Link></li>
        <li><Link to="/gallery">Gallery</Link></li>
        <li><Link to="/service">Service</Link></li>
+       <li className='menu'><Setting/></li>
+        <li className='menu'><DeleteUser/></li>
+       
        {/* <li><Link to="/inbox">Inbox</Link></li> */}
        <li onClick={handalLogout} className='logout'><Link>Logout</Link></li>
+      
        </ul>
        <ul>
        <li className='hide'>
