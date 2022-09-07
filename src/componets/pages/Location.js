@@ -151,7 +151,7 @@ const Location = () => {
         <br></br>
         <strong>Filter By Categories</strong>
         <div class="dropdown">
-          <select class="dropbtn" name="location" value={location} onChange={handleLocation}>
+          <select class="dropbtn" name="location" onChange={(e)=>setLocation(e.target.value)}>
             <option>Select Location</option>
           {city.map(doc=>(
             <option class="dropdown-content">{doc}</option>

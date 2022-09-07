@@ -106,7 +106,7 @@ const Steptwo = () => {
                  <option>Private Firm</option>
                  <option>Not Work</option>
              </select>
-             <button onClick={submitForm}><Link to="/top-matches">Continue</Link></button> 
+             <button onClick={submitForm}><Link to="/send-verification">Continue</Link></button> 
          </Form>
         </Card>
     </CreateSection>

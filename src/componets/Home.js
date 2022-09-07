@@ -10,10 +10,8 @@ import Footer from './Footer';
 const Home = () => {
   return (
     <>
-
       <Head />
       <Section>
-        
         <Main />
         <Story />
         <Subscription />

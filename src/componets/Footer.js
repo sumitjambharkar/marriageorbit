@@ -42,7 +42,7 @@ const Footer = () => {
            <strong>Let's Start New Journey With India's <br></br>matrimonial and matchmaking service.</strong>
            <p></p>
            <ul>
-            <li><a target="blank" href='https://www.facebook.com/marrigeorbit'><FacebookIcon/></a></li>
+            <li><a target="blank" href='https://www.facebook.com/marriageorbit.co'><FacebookIcon/></a></li>
            <li><a target="blank" href='https://www.instagram.com/marriageorbit/'><InstagramIcon/></a></li>
            <li><a target="blank" href='https://twitter.com/MarriageOrbit'><TwitterIcon/></a></li>
            <li><a target="blank" href='https://www.youtube.com/channel/UC24wskR9nDHv8jnz2apRY0w'><YouTubeIcon/></a></li>

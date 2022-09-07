@@ -14,7 +14,7 @@ import ChatIcon from '@mui/icons-material/Chat';
 import Footer from '../Footer';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../userSlice';
-
+import emailjs from '@emailjs/browser';
 
 
 const View = () => {
@@ -35,13 +35,27 @@ const View = () => {
   let date = new Date(x)
   let dateMDY = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
 
+  var templateParams = {
+    to:"sujam3545@gmail.com",
+    email:personData.email,
+    fullName:"sumit jam",
+    role:"ldlld",
+
+  };
+ 
   const sendNot =()=>{
-    console.log("send dat");
-    db.collection("users").doc(Id).collection("send").add({
-        uid:user.uid,
-        email:user.email,
-        displayName:user.displayName
-    })
+    console.log(personData.email);
+    emailjs.send('service_a4jrbvm', 'template_awicj8n', templateParams,"et6nlU6s_AhpZqRJV")
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+    // db.collection("users").doc(Id).collection("send").add({
+    //     uid:user.uid,
+    //     email:user.email,
+    //     displayName:user.displayName
+    // })
   }
 
   useEffect(() => {
@@ -101,7 +115,7 @@ const View = () => {
             </Section>
 
             <Second>
-              <li>
+              <li onClick={sendNot}>
                 <EmailView email={personData.email} />
               </li>
               <li>
@@ -110,9 +124,6 @@ const View = () => {
               <li>
                 <Link to="/chat"><button><ChatIcon /></button></Link>
               </li> 
-              <li>
-                <button onClick={sendNot}>send Notifivation</button>
-              </li>
             </Second>
           </ImageDetails>
         </ImageSection>

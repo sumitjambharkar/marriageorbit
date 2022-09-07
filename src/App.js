@@ -34,6 +34,7 @@ import Header from './componets/Header';
 import Gallery from './componets/pages/Gallery';
 import Service from './componets/pages/Service';
 import Inbox from './componets/pages/Inbox'
+import Verification from './componets/Verification';
 
 function App() {
   const user = useSelector(selectUser)
@@ -99,6 +100,9 @@ function App() {
           <PrivateRoute exact path="/profile/step/2">
             <Steptwo/>
           </PrivateRoute>
+          <Route exact path="/send-verification">
+            <Verification/>
+          </Route>
           <Route exact path="/top-matches">
             <Topmatch/>
           </Route>
