@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import {logout,login} from '../userSlice';
 import { auth,db } from '../firebase';
-import { updateDoc, doc } from "firebase/firestore";
+import { updateDoc, doc, onSnapshot } from "firebase/firestore";
 import { useHistory } from 'react-router-dom';
 import {selectUser} from '../userSlice';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -87,6 +87,7 @@ const Nav = styled.div`
     }
     .menu{
       display: block;
+      cursor: pointer;
     }
 
     .use{
@@ -233,7 +234,6 @@ const RightNav = ({ open }) => {
 
   const user = useSelector(selectUser)
 
-
   const dispatch = useDispatch()
   const history = useHistory()
   
@@ -282,7 +282,7 @@ const RightNav = ({ open }) => {
       </>
        :
        <>
-       <ul>
+       <ul className=''>
        {/* <li><Link to="/">Home</Link></li> */}
        <li><Link to="/">Matches</Link></li>
        <li><Link to="/my-profile">Account</Link></li>

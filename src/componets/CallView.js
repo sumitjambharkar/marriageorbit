@@ -39,7 +39,7 @@ const Div = styled.div`
     font-size: 18px;
     border: 1px solid #ffa500;
   
-    >.MuiSvgIcon-root {
+  >.MuiSvgIcon-root {
   font-size:35px;
   color:#FFA500;
 }

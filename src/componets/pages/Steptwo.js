@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Footer from '../Footer';
 import { auth, db } from '../firebase';
 import {Helmet} from "react-helmet";
 
 const Steptwo = () => {
+    const history = useHistory()
     const [data, setData] = useState({
        qaulification :"" ,
        collage :"",
@@ -28,6 +29,7 @@ const Steptwo = () => {
                 })
             }
         })
+        history.push("/send-verification")
     }
     let name, value
     const handalChange =(e)=>{
@@ -106,7 +108,7 @@ const Steptwo = () => {
                  <option>Private Firm</option>
                  <option>Not Work</option>
              </select>
-             <button onClick={submitForm}><Link to="/send-verification">Continue</Link></button> 
+             <button onClick={submitForm}>Continue</button> 
          </Form>
         </Card>
     </CreateSection>

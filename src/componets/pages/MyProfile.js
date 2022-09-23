@@ -27,7 +27,7 @@ const MyProfile = () => {
   var user = useSelector(selectUser);
   // if else Start
   const [num,setNum] = useState(false)
-  const [data ,setData] = useState({maritalStatus:"",birth:"",diet:"",work:"",qaulification:"",collage:"",family:"",members:"",city:"",state:"",religion:"",tounge:""})
+  const [data ,setData] = useState({maritalStatus:"",birth:"",diet:"",work:"",qaulification:"",collage:"",family:"",members:"",city:"",state:"",religion:"",tounge:"",about:""})
   const [show ,setShow] = useState(false)
   // if else Close 
   const dispatch = useDispatch();
@@ -98,6 +98,7 @@ const MyProfile = () => {
         religion:data.religion,
         tounge:data.tounge,
         work:data.work,
+        about:data.about
       })
       setShow(false)
   }
@@ -221,8 +222,22 @@ const MyProfile = () => {
                 </div>
                 <div class="section2">
                     <strong>About</strong>
-                    {/* <p>{userDetails.about}</p> */}
+                    <div style={{display:"flex",justifyContent:"space-evenly"}}>
+                    {!show? 
+                       <>
+                       <li>{userDetails.about}</li>
+                        <li><button onClick={()=>setShow(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" /></button>
+                        </li>
+                       </>
+                        : 
+                       <>
+                       <li><input name="about" autoComplete='off' required type="text" value={data.about} onChange={handleChange}/></li>
+                        <li><button><img src="https://img.icons8.com/windows/30/000000/assessments.png"/></button>
+                        </li>
+                       </>
+                       }
                     <hr></hr>
+                    </div>
                 </div>
 
             </div>

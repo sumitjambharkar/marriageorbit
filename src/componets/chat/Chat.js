@@ -22,11 +22,11 @@ import MessageForm from "./MessageForm";
 import Message from "./Message";
 import {Helmet} from "react-helmet";
 import Navbar from "../Nav/Navbar";
-import Header from "../Header";
 import Footer from "../Footer";
 
 
 const Home = () => {
+  const [search,setSearch] = useState("")
   const [users, setUsers] = useState([]);
   const [chat, setChat] = useState("");
   const [text, setText] = useState("");
@@ -50,20 +50,13 @@ const Home = () => {
   }, [user1]);
 
   useEffect(() => {
-    const usersRef = collection(db, "users")  
-    // create query object
-    const q = query(usersRef, where("uid", "not-in",[user1])
-    )
-    // execute query
-    const unsub = onSnapshot(q, (querySnapshot) => {
-      let users = [];
-      querySnapshot.forEach((doc) => {
-        users.push(doc.data());
-      });
-      setUsers(users);
-    });
-    return () => unsub();
+    if (user1) {
+      db.collection("users").doc(user1).collection("messages").orderBy("createdAt","desc").onSnapshot(snapshot=>(
+        setUsers(snapshot.docs.map((doc)=>(doc.data())))
+      ))
+    }
   }, []);
+  
   const selectUser = async (user) => {
     console.log(user);
     setChat(user);
@@ -136,11 +129,15 @@ const Home = () => {
                 <title>Chat</title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
-            <Header/>
+           <Header>
+            <h3>Marroageorbit.com</h3>
+            <input placeholder="search Name" value={search} onChange={(e)=>setSearch(e.target.value)}/>
+           </Header>
             <Navbar/>
     <HomeContainer>
       <UserContainer>
         {users
+        .filter((doc)=>doc.displayName?.toLowerCase().indexOf(search.toLowerCase()) !== -1)
         .filter((item)=>item.gender !== gender.gender )
         .map((user) => (
           <User
@@ -178,7 +175,9 @@ const Home = () => {
         )}
       </MessageContainer>
     </HomeContainer>
+    <Section>
     <Footer/>
+    </Section>
     </>
   );
 };
@@ -197,6 +196,7 @@ border-right: 1px solid black;
 @media (max-width:500px) {
   margin:0px;
   flex: 2;
+  height:100%;
 }`
 const MessageContainer = styled.div`
 flex:7;
@@ -207,5 +207,30 @@ width:auto;
 @media (max-width:500px) {
   margin:0px;
   flex: 8;
+  height:100%;
 }`
+const Section = styled.div`
+@media (max-width:500px) {
+ display: none;
+}
+`
+const Header = styled.div`
+display: flex;
+justify-content: space-around;
+align-items: center;
+height: 80px;
+> input {
+  padding: 4px;
+  border-color: darkgoldenrod;
+  border-radius: 12px;
+}
+> input:focus {
+  outline: none;
+}
+@media (max-width:500px) {
+  >h3 {
+    display: none;
+  }
+}
 
+`

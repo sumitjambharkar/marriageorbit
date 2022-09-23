@@ -84,7 +84,7 @@ const Topmatch = () => {
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
       <Header>
-        <h1>Trushaddi.com</h1>
+        <h1>MARRIGEORBIT</h1>
       </Header>
       <CreateSection>
         <Card className="container">
@@ -111,9 +111,7 @@ const Topmatch = () => {
             })}
           </Tamplte>
           <Button>
-            <button>
               <Link to="/">Connect with match</Link>
-            </button>
           </Button>
         </Card>
       </CreateSection>
@@ -173,16 +171,17 @@ const Tamplte = styled.div`
 const Button = styled.div`
   display: flex;
   justify-content: center;
-  > button {
+  > a {
     width: 210px;
-    height: 40px;
+    text-align: center;
+    padding:8px;
     border: 1px solid #ffa500;
     background-color: #ffa500;
     border-radius: 24px;
     font-weight: 700;
     margin: 8px;
   }
-  > button a {
+  > a {
     text-decoration: none;
     color: white;
   }

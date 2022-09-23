@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
-import { db } from '../firebase';
-import { Link } from 'react-router-dom';
-import { Avatar } from '@mui/material';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { useHistory, useParams } from "react-router-dom";
+import { db } from "../firebase";
+import { Link} from "react-router-dom";
+import { Avatar } from "@mui/material";
 import images from "../image/bg-border.png";
 import { Helmet } from "react-helmet";
-import Header from '../Header';
-import Navbar from '../Nav/Navbar';
-import CallView from '../CallView';
-import EmailView from '../EmailView';
-import ChatIcon from '@mui/icons-material/Chat';
-import Footer from '../Footer';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../userSlice';
-import emailjs from '@emailjs/browser';
+import Header from "../Header";
+import Navbar from "../Nav/Navbar";
+import CallView from "../CallView";
+import EmailView from "../EmailView";
+import ChatIcon from "@mui/icons-material/Chat";
+import Footer from "../Footer";
+import { useSelector } from "react-redux";
+import { selectUser } from "../userSlice";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import CallIcon from "@mui/icons-material/Call";
 
-
-const View = () => {
-
-  const user = useSelector(selectUser)
+const View = (props) => {
+  const history =  useHistory()
+  const user = useSelector(selectUser);
   console.log(user);
   function calculate_age(dob) {
     var diff_ms = Date.now() - dob.getTime();
@@ -27,45 +28,89 @@ const View = () => {
 
     return Math.abs(age_dt.getUTCFullYear() - 1970);
   }
-  const { Id } = useParams()
+  const { Id } = useParams();
   console.log(Id);
-  const [personData, setPersonData] = useState([])
+  const [getImage,setGetImage] = useState('')
+  const [personData, setPersonData] = useState([]);
+  
+  let x = personData.birth;
+  let date = new Date(x);
+  let dateMDY = `${date.getDate()}-${
+    date.getMonth() + 1
+  }-${date.getFullYear()}`;
 
-  let x = personData.birth
-  let date = new Date(x)
-  let dateMDY = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
-
-  var templateParams = {
-    to:"sujam3545@gmail.com",
-    email:personData.email,
-    fullName:"sumit jam",
-    role:"ldlld",
-
+  const sendNot = async (e) => {
+    e.preventDefault();
+    const respone = await fetch(
+      "https://marriageorbit-backend-api.herokuapp.com/send-email",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          to: personData.email,
+          from: user.email,
+          subject: `${user.displayName} Members visited your Profile`,
+          message: `Hi ${personData.displayName} ${
+            user.displayName
+          } may be interested in you as they visisted your Profile.Take the first step and connect with them ${`https://marriageorbit.com/view/${user.uid}`}`,
+        }),
+      }
+    );
+    const result = await respone.json();
+    toast.success("Notification send");
+    console.log(result);
   };
- 
-  const sendNot =()=>{
-    console.log(personData.email);
-    emailjs.send('service_a4jrbvm', 'template_awicj8n', templateParams,"et6nlU6s_AhpZqRJV")
-    .then(function(response) {
-       console.log('SUCCESS!', response.status, response.text);
-    }, function(error) {
-       console.log('FAILED...', error);
-    });
-    // db.collection("users").doc(Id).collection("send").add({
-    //     uid:user.uid,
-    //     email:user.email,
-    //     displayName:user.displayName
-    // })
-  }
 
   useEffect(() => {
     if (Id) {
-      db.collection("users").doc(Id).onSnapshot(snapshot => {
-        setPersonData(snapshot.data())
+      db.collection("users")
+        .doc(Id)
+        .onSnapshot((snapshot) => {
+          setPersonData(snapshot.data());
+        });
+    }
+  }, [Id]);
+
+  useEffect(() => {
+    if (user.uid) {
+      db.collection("users").doc(user.uid).onSnapshot(snapshot => {
+        setGetImage(snapshot.data())
       })
     }
 
-  }, [Id])
+  }, [user.uid])
+  
+  const getData =async() => {
+    const uid = personData.uid
+    const displayName = personData.displayName
+    const image = personData.image
+
+    const id = user.uid > uid ? `${user.uid + uid}` : `${uid + user.ui}`;
+    if(user.uid){
+    db.collection("users").doc(user.uid).collection("messages").doc(id).set({
+      uid:uid,
+      displayName,
+      image:image || null,
+      createdAt :new Date(),
+    })
+    if (uid) {
+      db.collection("users").doc(uid).collection("messages").doc(id).set({
+        uid : user.uid,
+        displayName:getImage.displayName,
+        image :getImage.image || null,
+        createdAt :new Date(),
+      })
+    }
+    history.push({
+      pathname: '/chat',
+      state:{uid:personData.uid}
+    });
+  }
+  }
+
+  
   return (
     <>
       <Helmet>
@@ -86,17 +131,28 @@ const View = () => {
 
         <title></title>
 
-        <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
+        <link
+          rel="icon"
+          href="imagelink.png"
+          sizes="16x16"
+          type="image/png"
+        ></link>
       </Helmet>
       <Header />
       <Navbar />
       <ProfileSection>
         <ImageSection>
           <CardImage>
-            <Avatar src={personData.image} sx={{ width: 224, height: 250 }} variant="square" />
+            <Avatar
+              src={personData.image}
+              sx={{ width: 224, height: 250 }}
+              variant="square"
+            />
           </CardImage>
           <ImageDetails>
-            <h3 style={{ textTransform: 'capitalize' }}>{personData.displayName}</h3>
+            <h3 style={{ textTransform: "capitalize" }}>
+              {personData.displayName}
+            </h3>
             <hr></hr>
             <Section>
               <Firsts>
@@ -110,7 +166,9 @@ const View = () => {
                 <li>Not Specified</li>
                 <li>Lives in {personData.city}</li>
                 {/* <li><Link to="/chats/:roomId">Group Chat</Link></li> */}
-                <li><Link >Online Now</Link></li>
+                <li>
+                  <Link>Online Now</Link>
+                </li>
               </Firsts>
             </Section>
 
@@ -119,23 +177,28 @@ const View = () => {
                 <EmailView email={personData.email} />
               </li>
               <li>
-                <CallView number={personData.number} />
+              <a href={`tel:+91${personData.number}`}><CallIcon/></a>
               </li>
               <li>
-                <Link to="/chat"><button><ChatIcon /></button></Link>
-              </li> 
+                 <a><button onClick={getData}>
+                    <ChatIcon />
+                  </button></a>
+              </li>
             </Second>
           </ImageDetails>
         </ImageSection>
       </ProfileSection>
       <AllDetails>
-        <Details className='container'>
-          <h1 style={{marginTop:"15px"}}>Details of Profile</h1>
-          <div class="fancy2"><img src={images} alt="" /></div>
+        <Details className="container">
+          <h1 style={{ marginTop: "15px" }}>Details of Profile</h1>
+          <div class="fancy2">
+            <img src={images} alt="" />
+          </div>
           <Box>
             <h3>About</h3>
             <span>{personData.about}</span>
-          </Box><hr></hr>
+          </Box>
+          <hr></hr>
           <Box>
             <h3>Basic Info</h3>
             <Agent>
@@ -158,10 +221,10 @@ const View = () => {
                 <li>{personData.tounge}</li>
               </First>
             </Agent>
-
           </Box>
           <hr></hr>
-          <Box><h3>Lifestyle and Intrests</h3>
+          <Box>
+            <h3>Lifestyle and Intrests</h3>
             <Agent>
               <First>
                 <li>Eating Habit</li>
@@ -172,10 +235,10 @@ const View = () => {
                 <li>{personData.height}</li>
               </First>
             </Agent>
-
           </Box>
           <hr></hr>
-          <Box><h3>Education and profession</h3>
+          <Box>
+            <h3>Education and profession</h3>
             <Agent>
               <First>
                 <li>Qaulification</li>
@@ -186,10 +249,10 @@ const View = () => {
                 <li>{personData.collage}</li>
               </First>
             </Agent>
-
           </Box>
           <hr></hr>
-          <Box><h3>Family Details</h3>
+          <Box>
+            <h3>Family Details</h3>
             <Agent>
               <First>
                 <li>Live in Family</li>
@@ -202,7 +265,8 @@ const View = () => {
             </Agent>
           </Box>
           <hr></hr>
-          <Box><h3>Location</h3>
+          <Box>
+            <h3>Location</h3>
             <Agent>
               <First>
                 <li>Live in</li>
@@ -217,123 +281,142 @@ const View = () => {
           <hr></hr>
         </Details>
       </AllDetails>
-      <Footer/>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
 export default View;
 
 const ProfileSection = styled.div`
-display:flex;
-justify-content:center;
-background-color:white;`
+  display: flex;
+  justify-content: center;
+  background-color: white;
+`;
 const ImageSection = styled.div`
-display: flex;
-justify-content:center;
-flex-wrap:wrap;
-`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
 const CardImage = styled.div`
-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
-background-color:#eee;
-padding:12px;
-margin:12px;
-> img {
-    width:200px;
-}`
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+  background-color: #eee;
+  padding: 12px;
+  margin: 12px;
+  > img {
+    width: 200px;
+  }
+`;
 const ImageDetails = styled.div`
-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
-width:450px;
-margin-top:28px;
-padding:12px;
-background-color:#eee;
-> h3 {
-  font-size: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+  width: 450px;
+  margin-top: 28px;
+  padding: 12px;
+  background-color: #eee;
+  > h3 {
+    font-size: 1.2rem;
     font-weight: bold;
     font-family: ui-serif;
-    color:#564343;
-}
-> p {
-  display:flex;
-  justify-content:space-around;
-  font-size: 15px;
-  color: #666;
-}
-@media (max-width:600px) {
-    width:230px;
+    color: #564343;
   }
-`
+  > p {
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+    color: #666;
+  }
+  @media (max-width: 600px) {
+    width: 230px;
+  }
+`;
 const Section = styled.div`
-display:flex;
-justify-content:space-around;`
+  display: flex;
+  justify-content: space-around;
+`;
 const Firsts = styled.div`
-> li {
-  list-style:none;
-  font-size: 15px;
-  color: #666;
-  margin:4px;
-}
-> li > a {
-  text-decoration: none;
-  font-size: 15px;
-  color: #666;
-}`
+  > li {
+    list-style: none;
+    font-size: 15px;
+    color: #666;
+    margin: 4px;
+  }
+  > li > a {
+    text-decoration: none;
+    font-size: 15px;
+    color: #666;
+  }
+`;
 const AllDetails = styled.div`
-display:flex;
-justify-content:start;
-padding:30px;
-background-color:white;`
+  display: flex;
+  justify-content: start;
+  padding: 30px;
+  background-color: white;
+`;
 const Details = styled.div`
-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
-background-color:#eee;
-width: 70%;
->h1 {
-  font-size: 1.8rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+  background-color: #eee;
+  width: 70%;
+  > h1 {
+    font-size: 1.8rem;
     font-weight: bold;
     font-family: auto;
-    color:#FFA500;
-}
-@media (max-width:600px) {
-    width:100%;
+    color: #ffa500;
   }
-> h1 {
-  text-align:center;
-}`
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+  > h1 {
+    text-align: center;
+  }
+`;
 const Box = styled.div`
-padding:24px;
->h3 {
-  font-size: 1rem;
+  padding: 24px;
+  > h3 {
+    font-size: 1rem;
     font-weight: 600;
     font-family: auto;
-}
-`
+  }
+`;
 const Agent = styled.div`
-display:flex;
-justify-content:space-around;
-`
-const First = styled.div`
-padding-left:8px;
-margin:4px;
-> li {
-  list-style:none;
-  font-size: 15px;
-  color: #666;
-  width: 100px;
-  
-}
-`
-const Second = styled.div`
-width: 100%;
-text-align: center;
-> li{
-  width: 33%; 
   display: flex;
-  float: left;
-  flex-direction: column;
-  flex-direction: column;
- align-items: center;
- margin-top: 5px;
- > a button{
+  justify-content: space-around;
+`;
+const First = styled.div`
+  padding-left: 8px;
+  margin: 4px;
+  > li {
+    list-style: none;
+    font-size: 15px;
+    color: #666;
+    width: 100px;
+  }
+`;
+const Second = styled.div`
+  width: 100%;
+  text-align: center;
+  > li {
+    width: 33%;
+    display: flex;
+    float: left;
+    flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    > a button {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      line-height: 50px;
+      color: #ffa500;
+      font-size: 18px;
+      border: 1px solid #ffa500;
+
+      > .MuiSvgIcon-root {
+        font-size: 35px;
+        color: #ffa500;
+      }
+    }
+    > a {
     width:60px;
     height:60px;
     border-radius:50%;
@@ -341,13 +424,12 @@ text-align: center;
     color: #ffa500;
     font-size: 18px;
     border: 1px solid #ffa500;
-  
+
     >.MuiSvgIcon-root {
   font-size:35px;
   color:#FFA500;
-}
-}
- 
-
-}
-`
+   }
+    }
+  
+  }  
+`;

@@ -1,13 +1,13 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import Footer from '../Footer';
 import { auth, db } from '../firebase';
 import {Helmet} from "react-helmet";
 
 
 const Profile = () => {
-
+    const history = useHistory()
     const [data, setData] = useState({
         city: "",
         family : "",
@@ -33,6 +33,7 @@ const Profile = () => {
                     })
                 }
             })
+            history.push('/profile/step/2')
         }
     
     let name, value
@@ -122,7 +123,7 @@ const Profile = () => {
                     return  <option >{ele}</option>
                 })}
              </select>
-             <button onClick={submitForm} ><Link to="/profile/step/2">Continue</Link></button>
+             <button onClick={submitForm} >Continue</button>
              
          </Form>
         </Card>

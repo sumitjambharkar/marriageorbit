@@ -12,44 +12,50 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Verification = () => {
     const history = useHistory()
-  const [phone, setPhone] = useState("");
+  const [number, setNumber] = useState("");
   const [show, setShow] = useState(false);
   const [code, setCode] = useState("");
+  const [userId,setUserId] = useState(null)
   
   const sendOtp = async (e) => {
     e.preventDefault();
-    if (!phone) {
+    if (!number) {
       toast.error("Please Enter Your Number");
     }else{
-      const respone = await fetch("http://localhost:5000/send-verification", {
+      const respone = await fetch("http://localhost:8000/send-otp", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        phone:phone,
+        number:number,
+
       }),
     });
     const data = await respone.json();
     if (!data) {
-      toast.error("Please Enter Vaild Number");;
+      toast.error("Please Enter Vaild Number");
+      console.log(data);
     } else {
       toast.success("OTP Send");
+      setUserId(data.id)
       setShow(true);
+      console.log(data);
     }
     }
   };
 
   const verify = async (e) => {
     e.preventDefault();
-    const respone = await fetch("http://localhost:5000/verify-otp", {
+    const respone = await fetch("http://localhost:8000/check-code", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         code:code,
-        phone:phone
+        number:number,
+        id:userId
       }),
     });
     const result = await respone.json();
@@ -62,6 +68,7 @@ const Verification = () => {
       console.log(result);
       toast.success("Number Verification Successfully");
       history.push("/top-matches")
+
     }
   };
 
@@ -91,15 +98,15 @@ const Verification = () => {
                 logged in always with marriageorbit.com
               </h4>
               <hr></hr>
-              {!show ?
+              {!userId ?
                 <div className="verify">
                   <h2>Verify Your Mobile Number</h2>
                   &nbsp;&nbsp;
                   <form>
                     <input
                       name="phone"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
+                      value={number}
+                      onChange={(e) => setNumber(e.target.value)}
                       className="se"
                       type="text"
                       placeholder="Enter Mobile Number"
@@ -125,7 +132,7 @@ const Verification = () => {
                 <div className="verify">
                   <h2>Verify Your Mobile Number</h2>
                   <p>
-                    You will receive a 6-digit confirmation code vis SMS to {phone} 
+                    You will receive a 6-digit confirmation code vis SMS to {number} 
                     &nbsp;<small>(Edit)</small>
                   </p>
                   &nbsp;&nbsp;&nbsp;

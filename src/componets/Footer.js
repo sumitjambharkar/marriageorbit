@@ -32,7 +32,7 @@ const Footer = () => {
       <link rel="icon" href="imagelink.png" sizes="16x16" type="image/png"></link>
       </Helmet>
     <FooterSection >
-    <a href="https://api.whatsapp.com/send?phone=9833188536&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+    <a href="https://api.whatsapp.com/send?phone=9833188050&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
     <SmsIcon style={{color:"#fff",fontSize:40}}/>
 </a>
           <FirstDiv data-aos="zoom-in-right" data-aos-duration="1500">

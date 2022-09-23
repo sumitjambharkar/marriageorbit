@@ -3,6 +3,7 @@ import { onSnapshot, doc,orderBy } from "firebase/firestore";
 import { db } from "../firebase";
 import Avatar from '@mui/material/Avatar';
 
+
 const User = ({ user1, user, selectUser, chat }) => {
   
   const user2 = user?.uid;
@@ -28,7 +29,9 @@ const User = ({ user1, user, selectUser, chat }) => {
             <Avatar src={user.image} alt="avatar" />
             <h4>{user.displayName}</h4>
             {data?.from !== user1 && data?.unread && (
-              <small className="unread">New</small>
+             <>
+              <small className="unread" >New</small>
+             </>
             )}
           </div>
           <div
@@ -55,3 +58,4 @@ const User = ({ user1, user, selectUser, chat }) => {
 };
 
 export default User;
+
