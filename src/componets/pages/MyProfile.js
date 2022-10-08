@@ -142,8 +142,6 @@ const MyProfile = () => {
   
     <Helmet>
 
-
-
     <meta charset="utf-8"/>
   <meta name="robots" content="follow,index"/>
   <meta http-equiv="content-language" content="en"/>

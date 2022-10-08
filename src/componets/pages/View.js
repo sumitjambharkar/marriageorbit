@@ -8,9 +8,8 @@ import images from "../image/bg-border.png";
 import { Helmet } from "react-helmet";
 import Header from "../Header";
 import Navbar from "../Nav/Navbar";
-import CallView from "../CallView";
-import EmailView from "../EmailView";
 import ChatIcon from "@mui/icons-material/Chat";
+import EmailIcon from '@mui/icons-material/Email';
 import Footer from "../Footer";
 import { useSelector } from "react-redux";
 import { selectUser } from "../userSlice";
@@ -173,16 +172,19 @@ const View = (props) => {
             </Section>
 
             <Second>
-              <li onClick={sendNot}>
-                <EmailView email={personData.email} />
+              <li>
+                <a onClick={sendNot}><EmailIcon email={personData.email} /></a>
+                <p>Connect now</p>
               </li>
               <li>
               <a href={`tel:+91${personData.number}`}><CallIcon/></a>
+              <p>Call now</p>
               </li>
               <li>
-                 <a><button onClick={getData}>
+                 <a onClick={getData}>
                     <ChatIcon />
-                  </button></a>
+                  </a>
+                  <p>Chat now</p>
               </li>
             </Second>
           </ImageDetails>
@@ -402,34 +404,44 @@ const Second = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 5px;
-    > a button {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      line-height: 50px;
-      color: #ffa500;
-      font-size: 18px;
-      border: 1px solid #ffa500;
-
-      > .MuiSvgIcon-root {
-        font-size: 35px;
-        color: #ffa500;
-      }
-    }
     > a {
     width:60px;
     height:60px;
     border-radius:50%;
-    line-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #ffa500;
     font-size: 18px;
     border: 1px solid #ffa500;
+    cursor: pointer;
 
     >.MuiSvgIcon-root {
-  font-size:35px;
-  color:#FFA500;
-   }
+    font-size:35px;
+    color:#FFA500;
     }
-  
+    }
+    a:hover {
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    line-height: 50px;
+    color:white;
+    font-size: 18px;
+    background-color: #ffa500;
+    border: 1px solid white;
+    >.MuiSvgIcon-root {
+    font-size:35px;
+    color:white;
+    }
+    }
+    p {
+      font-size:12px;
+      margin:2px;
+    }
+    p:hover{
+      cursor: pointer;
+      color: #FFA500;
+    }
   }  
 `;

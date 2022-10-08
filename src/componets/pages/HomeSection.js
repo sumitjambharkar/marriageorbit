@@ -15,37 +15,58 @@ import ScrollArea from "react-scrollbar";
 import Navbar from "../Nav/Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
-
-const city = [
-  "mumbai",
-  "pune",
-  "new delhi",
-  "surat",
-  "nashik",
-  "nagpur",
-  "kolkata",
-  "ahmedabad",
-  "hyderabad",
-  "bangalore",
-  "jaipur",
-  "kochi",
-  "kanpur",
-  "vadodara",
-  "faridabad",
-  "coimbatore",
-  "karnataka",
-  "chennai",
-  "lucknow",
-  "dore",
-  "dehradun",
-  "jamshedpur",
-  "trivandrum",
-  "rajasthan",
-];
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import city from './city.json'
 
 const age = [
-  "18", "19","20","21","22", "23","24","25","26", "27","28","29","30", "31","32","33","34", "35","36","37 ","38", "39","40","41","42", "43","44","45","46", "47","48","49","50", "51","52","53","54", "55","56","57",
-  "58","59","60","61", "62","63","64","65", 
+  "18",
+  "19",
+  "20",
+  "21",
+  "22",
+  "23",
+  "24",
+  "25",
+  "26",
+  "27",
+  "28",
+  "29",
+  "30",
+  "31",
+  "32",
+  "33",
+  "34",
+  "35",
+  "36",
+  "37 ",
+  "38",
+  "39",
+  "40",
+  "41",
+  "42",
+  "43",
+  "44",
+  "45",
+  "46",
+  "47",
+  "48",
+  "49",
+  "50",
+  "51",
+  "52",
+  "53",
+  "54",
+  "55",
+  "56",
+  "57",
+  "58",
+  "59",
+  "60",
+  "61",
+  "62",
+  "63",
+  "64",
+  "65",
 ];
 
 let religion = [
@@ -59,6 +80,7 @@ let religion = [
   "Jewish",
   "No_Religion",
   "Spiritual",
+  "Sindhi",
   "Other",
 ];
 
@@ -148,11 +170,13 @@ let motherTounge = [
   "Other",
 ];
 
-const height = [4.0,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,5.0,5.1,5.2,5.3,5.4,5.5,5.6,5.7,5.8,5.9,6.0,6.1,
-  6.2,6.3,6.4,6.5,6.6,6.7,6.8,6.9,6.0,7.0,7.1 ]
+const height = [
+  4.0, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 5.4,
+  5.5, 5.6, 5.7, 5.8, 5.9, 6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9,
+  6.0, 7.0, 7.1,
+];
 
 const HomeSection = () => {
-
   function calculate_age(dob) {
     var diff_ms = Date.now() - dob.getTime();
     var age_dt = new Date(diff_ms);
@@ -163,13 +187,13 @@ const HomeSection = () => {
   const user = useSelector(selectUser);
   const [search, setSearch] = useState("");
   console.log(search);
-  const [ location,setLocation] = useState("")
-  const [selectAge,setSelectAge] = useState("")
-  const [selectReligion,setSelectReligion] = useState("")
-  const [selectTounge,setSelectTounge] = useState("")
-  const [selectHeight,setSelectHeight] = useState("")
+  const [location, setLocation] = useState("");
+  const [showFiltter, setShowFiltter] = useState(false);
+  const [selectAge, setSelectAge] = useState("");
+  const [selectReligion, setSelectReligion] = useState("");
+  const [selectTounge, setSelectTounge] = useState("");
+  const [selectHeight, setSelectHeight] = useState("");
   const [userData, setUserData] = useState("");
-  
 
   // const handleSearch =()=> {
 
@@ -178,7 +202,6 @@ const HomeSection = () => {
   //   })
   //   setLocation(newData)
   // }
-
 
   useEffect(() => {
     if (user.uid) {
@@ -192,12 +215,14 @@ const HomeSection = () => {
 
   useEffect(
     () =>
-      db.collection("users").orderBy("createdAt","desc").onSnapshot((snapshot) => {
-        setData(snapshot.docs.map((doc) => doc.data()))
-      }),
+      db
+        .collection("users")
+        .orderBy("createdAt", "desc")
+        .onSnapshot((snapshot) => {
+          setData(snapshot.docs.map((doc) => doc.data()));
+        }),
     []
   );
- 
 
   return (
     <>
@@ -267,140 +292,247 @@ const HomeSection = () => {
       </h3>
       <Container>
         <SearchBar>
-          <Button style={{ backgroundColor: "#fff" }} type="submit">
-            <img src="https://img.icons8.com/ios/40/fab90a/filter--v1.png" />
-          </Button>
-          <input
-            type="search"
-            value={search}
-            onChange={(e)=>setSearch(e.target.value)}
-            placeholder="search"
-          />
-          <button type="submit">Search</button>
+          <Speed>
+            <a onClick={() => setShowFiltter(!showFiltter)}>
+              <FilterAltIcon />
+            </a>
+            {showFiltter ? (
+              <ul>
+                <li data-aos="fade-down" data-aos-duration="500">
+                  <select
+                    class="dropbtn"
+                    name="location"
+                    onChange={(e) => setLocation(e.target.value)}
+                  >
+                    <option>Select Location</option>
+                    {city.map((doc) => (
+                      <option class="dropdown-content">{doc}</option>
+                    ))}
+                  </select>
+                </li>
+                <li data-aos="fade-down" data-aos-duration="600">
+                  <select
+                    class="dropbtn"
+                    onChange={(e) => setSelectAge(e.target.value)}
+                  >
+                    <option>Select Age</option>
+                    {age.map((doc) => (
+                      <option class="dropdown-content">{doc}</option>
+                    ))}
+                  </select>
+                </li>
+                <li data-aos="fade-down" data-aos-duration="700">
+                  <select
+                    class="dropbtn"
+                    onChange={(e) => setSelectReligion(e.target.value)}
+                  >
+                    <option>Select Religion</option>
+                    {religion.map((doc) => (
+                      <option class="dropdown-content">{doc}</option>
+                    ))}
+                  </select>
+                </li>
+                <li data-aos="fade-down" data-aos-duration="800">
+                  <select
+                    class="dropbtn"
+                    onChange={(e) => setSelectTounge(e.target.value)}
+                  >
+                    <option>Select MotherTounge</option>
+                    {motherTounge.map((doc) => (
+                      <option class="dropdown-content">{doc}</option>
+                    ))}
+                  </select>
+                </li>
+                <li data-aos="fade-down" data-aos-duration="900">
+                  <select
+                    class="dropbtn"
+                    onChange={(e) => setSelectHeight(e.target.value)}
+                  >
+                    <option>Select Height</option>
+                    {height.map((doc) => (
+                      <option class="dropdown-content">{doc}</option>
+                    ))}
+                  </select>
+                </li>
+              </ul>
+            ) : (
+              ""
+            )}
+          </Speed>
+          <Input>
+            <input
+              type="search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="search"
+            />
+            <button type="submit">Search</button>
+          </Input>
         </SearchBar>
       </Container>
       <Section className="container">
         <SectionFiltter>
           <Filtter>
             <Fil>
-             {/* ==================Start Location===================== */}
-      <Filter>
-        <br></br>
-        <strong>Filter By Categories</strong>
-        <div class="dropdown">
-          <select class="dropbtn" name="location" onChange={(e)=>setLocation(e.target.value)}>
-            <option>Select Location</option>
-          {city.map(doc=>(
-            <option class="dropdown-content">{doc}</option>
-            ))}
-          </select>
-        </div>
-      </Filter>
-      {/* ==================End Location===================== */}
+              {/* ==================Start Location===================== */}
+              <Filter>
+                <br></br>
+                <strong>Filter By Categories</strong>
+                <div class="dropdown">
+                  <select
+                    class="dropbtn"
+                    name="location"
+                    onChange={(e) => setLocation(e.target.value)}
+                  >
+                    <option>Select Location</option>
+                    {city.map((doc) => (
+                      <option class="dropdown-content">{doc}</option>
+                    ))}
+                  </select>
+                </div>
+              </Filter>
+              {/* ==================End Location===================== */}
 
-      {/* ==================Start Age===================== */}
-      <Filter>
-      <div class="dropdown">
-          <select class="dropbtn"  onChange={(e)=>setSelectAge(e.target.value)}>
-            <option>Select Age</option>
-          {age.map(doc=>(
-            <option class="dropdown-content">{doc}</option>
-            ))}
-          </select>
-        </div>
-      </Filter>
+              {/* ==================Start Age===================== */}
+              <Filter>
+                <div class="dropdown">
+                  <select
+                    class="dropbtn"
+                    onChange={(e) => setSelectAge(e.target.value)}
+                  >
+                    <option>Select Age</option>
+                    {age.map((doc) => (
+                      <option class="dropdown-content">{doc}</option>
+                    ))}
+                  </select>
+                </div>
+              </Filter>
 
-      {/* ==================End Age===================== */}
+              {/* ==================End Age===================== */}
 
-      {/* ==================Start Height===================== */}
-      <Filter>
-      <div class="dropdown">
-          <select class="dropbtn" onChange={(e)=>setSelectReligion(e.target.value)}>
-            <option>Select Religion</option>
-          {religion.map(doc=>(
-            <option class="dropdown-content">{doc}</option>
-            ))}
-          </select>
-        </div>
-      </Filter>
+              {/* ==================Start Height===================== */}
+              <Filter>
+                <div class="dropdown">
+                  <select
+                    class="dropbtn"
+                    onChange={(e) => setSelectReligion(e.target.value)}
+                  >
+                    <option>Select Religion</option>
+                    {religion.map((doc) => (
+                      <option class="dropdown-content">{doc}</option>
+                    ))}
+                  </select>
+                </div>
+              </Filter>
 
-      {/* ==================End Height===================== */}
+              {/* ==================End Height===================== */}
 
-      {/* ==================Start Religion===================== */}
-      <Filter>
-      <div class="dropdown">
-          <select class="dropbtn" onChange={(e)=>setSelectTounge(e.target.value)} >
-            <option>Select MotherTounge</option>
-          {motherTounge.map(doc=>(
-            <option class="dropdown-content">{doc}</option>
-            ))}
-          </select>
-        </div>
-      </Filter>
+              {/* ==================Start Religion===================== */}
+              <Filter>
+                <div class="dropdown">
+                  <select
+                    class="dropbtn"
+                    onChange={(e) => setSelectTounge(e.target.value)}
+                  >
+                    <option>Select MotherTounge</option>
+                    {motherTounge.map((doc) => (
+                      <option class="dropdown-content">{doc}</option>
+                    ))}
+                  </select>
+                </div>
+              </Filter>
 
-      {/* ==================end Religion===================== */}
+              {/* ==================end Religion===================== */}
 
-      {/* ==================End mothertounge===================== */}
-      <Filter>
-      <div class="dropdown">
-          <select class="dropbtn" onChange={(e)=>setSelectHeight(e.target.value)}>
-            <option>Select Height</option>
-          {height.map(doc=>(
-            <option class="dropdown-content">{doc}</option>
-            ))}
-          </select>
-        </div>
-      </Filter>
+              {/* ==================End mothertounge===================== */}
+              <Filter>
+                <div class="dropdown">
+                  <select
+                    class="dropbtn"
+                    onChange={(e) => setSelectHeight(e.target.value)}
+                  >
+                    <option>Select Height</option>
+                    {height.map((doc) => (
+                      <option class="dropdown-content">{doc}</option>
+                    ))}
+                  </select>
+                </div>
+              </Filter>
 
-      {/* ==================End mothertounge===================== */}
+              {/* ==================End mothertounge===================== */}
             </Fil>
           </Filtter>
         </SectionFiltter>
         <SectionCard>
           <Card>
             {data
-            .filter((doc)=>doc.height?.toLowerCase().indexOf(selectHeight.toLowerCase()) !== -1)
-            .filter((doc)=>doc.tounge?.toLowerCase().indexOf(selectTounge.toLowerCase()) !== -1)
-            .filter((doc)=>doc.religion?.toLowerCase().indexOf(selectReligion.toLowerCase()) !== -1)
-            .filter((doc)=>doc.city?.toLowerCase().indexOf(location.toLowerCase()) !== -1)
-            .filter((doc)=>doc.displayName.toLowerCase().indexOf(search.toLowerCase()) !== -1)
-            .map
-            ((doc) => (
-              <>
-                {userData?.gender !== doc.gender ?
+              .filter(
+                (doc) =>
+                  doc.height
+                    ?.toLowerCase()
+                    .indexOf(selectHeight.toLowerCase()) !== -1
+              )
+              .filter(
+                (doc) =>
+                  doc.tounge
+                    ?.toLowerCase()
+                    .indexOf(selectTounge.toLowerCase()) !== -1
+              )
+              .filter(
+                (doc) =>
+                  doc.religion
+                    ?.toLowerCase()
+                    .indexOf(selectReligion.toLowerCase()) !== -1
+              )
+              .filter(
+                (doc) =>
+                  doc.city?.toLowerCase().indexOf(location.toLowerCase()) !== -1
+              )
+              .filter(
+                (doc) =>
+                  doc.displayName
+                    .toLowerCase()
+                    .indexOf(search.toLowerCase()) !== -1
+              )
+              .map((doc) => (
                 <>
-                {doc.displayName === user.displayName ? null : (
-                  <SingleCard>
-                    <Avatar
-                      src={doc.image}
-                      sx={{ width: "100%", height: 250 }}
-                      variant="square"
-                    />
-                    <span
-                      style={{ textTransform: "capitalize", fontWeight: 600 }}
-                    >
-                      {doc.displayName}
-                    </span>
-                    <span
-                      style={{
-                        textTransform: "capitalize",
-                        fontFamily: "emoji",
-                      }}
-                    >
-                      {doc?.gender}
-                    </span>
-                    <span style={{ fontFamily: "cursive" }}>
-                      {calculate_age(new Date(doc.birth))}
-                    </span>
-                    <Button >
-                      <Link to={`/view/${doc.uid}`}>Send Message</Link>
-                    </Button>
-                  </SingleCard>
-                )}
-                </> : null
-                }
-              </>
-            ))}
+                  {userData?.gender !== doc.gender ? (
+                    <>
+                      {doc.displayName === user.displayName ? null : (
+                        <SingleCard>
+                          <Avatar
+                            src={doc.image}
+                            sx={{ width: "100%", height: 250 }}
+                            variant="square"
+                          />
+                          <span
+                            style={{
+                              textTransform: "capitalize",
+                              fontWeight: 600,
+                            }}
+                          >
+                            {doc.displayName}
+                          </span>
+                          <span
+                            style={{
+                              textTransform: "capitalize",
+                              fontFamily: "emoji",
+                            }}
+                          >
+                            {doc?.gender}
+                          </span>
+                          <span style={{ fontFamily: "cursive" }}>
+                            {calculate_age(new Date(doc.birth))}
+                          </span>
+                          <Button>
+                            <Link to={`/view/${doc.uid}`}>Send Message</Link>
+                          </Button>
+                        </SingleCard>
+                      )}
+                    </>
+                  ) : null}
+                </>
+              ))}
           </Card>
         </SectionCard>
       </Section>
@@ -603,13 +735,13 @@ const SingleCard = styled.div`
   > span {
     margin-left: 4px;
   }
-  
-> button {
-  padding: 4px;
-  background-color:#FFA500;
-  color: white;
-  border: 1px solid #FFA500;
-  margin: 4px;
+
+  > button {
+    padding: 4px;
+    background-color: #ffa500;
+    color: white;
+    border: 1px solid #ffa500;
+    margin: 4px;
   }
   > button :hover {
     color: red;
@@ -646,28 +778,6 @@ const SearchBar = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  > input {
-    font-size: 15px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    height: 45px;
-    width: 300px;
-    outline: none;
-  }
-  > button {
-    background: #ffa500;
-    color: #fff;
-    height: 45px;
-    width: 80px;
-    font-size: 15px;
-    border-radius: 4px;
-    font-weight: 700;
-    border: 0;
-  }
-  @media (max-width: 768px) {
-    
-  }
 `;
 const Filter = styled.div`
   .dropbtn {
@@ -725,5 +835,69 @@ const Filter = styled.div`
 
   .dropdown:hover .dropbtn {
     background-color: #ff8507;
+  }
+`;
+
+const Speed = styled.div`
+  margin-right: 10px;
+  margin-top: 12px;
+  display: none;
+  a {
+    background-color: #ffa500;
+    border-radius: 50%;
+    padding: 15px;
+  }
+  a :hover {
+    cursor: pointer;
+  }
+
+  a > .MuiSvgIcon-root {
+    color: white;
+  }
+
+  ul {
+    position: absolute;
+    z-index:1;
+  }
+
+  ul li {
+    list-style: none;
+    margin: 6px;
+  }
+
+  ul li select {
+    width: 190px;
+    padding: 4px;
+    background-color: #ffa500;
+    color: white;
+    border-radius: 24px;
+    border: 1px solid #ffa500;
+    outline: none;
+  }
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+const Input = styled.div`
+  display: flex;
+  > input {
+    font-size: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 45px;
+    width: 100%;
+    outline: none;
+  }
+  > button {
+    background: #ffa500;
+    color: #fff;
+    height: 45px;
+    width: 80px;
+    font-size: 15px;
+    border-radius: 4px;
+    font-weight: 700;
+    border: 0;
   }
 `;

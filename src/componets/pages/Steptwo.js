@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import Footer from '../Footer';
 import { auth, db } from '../firebase';
 import {Helmet} from "react-helmet";
+import subCommi from './religion.json'
 
 const Steptwo = () => {
     const history = useHistory()
@@ -12,12 +13,13 @@ const Steptwo = () => {
        collage :"",
        work:"",
        tounge:"",
-       religion:""
+       religion:"",
+       subcommi:""
     })
 
     const submitForm = (e)=>{
         e.preventDefault() 
-        const {qaulification,collage,work,tounge,religion} = data
+        const {qaulification,collage,work,tounge,religion,subcommi} = data
         auth.onAuthStateChanged(user=>{
             if(user){
                 db.collection("users").doc(user.uid).update({
@@ -25,7 +27,8 @@ const Steptwo = () => {
                     collage:collage,
                     work:work,
                     tounge:tounge,
-                    religion:religion
+                    religion:religion,
+                    subcommi:subcommi
                 })
             }
         })
@@ -38,7 +41,7 @@ const Steptwo = () => {
         setData({...data,[name]:value})
 
     }
-    let religion = ["Hindu","Muslim","Christian","Sikh","Parsi","Jain","Buddhist","Jewish","No_Religion","Spiritual","Other"]
+    let religion = ["Hindu","Muslim","Christian","Sikh","Parsi","Jain","Buddhist","Jewish","No_Religion","Spiritual","Other","Sindhi"]
     let motherTounge = ["Hindi","English","Marathi","Punjabi","Bengali","Gujarati","Urdu","Telugu","Kannada","English", "Tamil","Oriya","Marwari","More","Aka",
         "Arabic","Arunachali","Assamese","Awadhi","Baluchi","Bengali","Bhojpuri","Bhutia","Brahui","Brij","Burmese","Chattis,garhi","Chinese",
         "Coorgi","Dogri","English,","French","Garhwali,","Garo","Gujarati","Haryana","Himachal","Pahari","Hindi","Hindko","Kakbarak,","Kanauji", "Kannada","Kashmiri",
@@ -81,9 +84,9 @@ const Steptwo = () => {
                  })}
              </select>
              <label>Sub Community</label>
-             <select name='religion'  onChange={handalChange} value={data.religion}>
+             <select name='subcommi'  onChange={handalChange} value={data.subcommi}>
              <option >Select</option>
-                 {religion.map((ele)=>{
+                 {subCommi.map((ele)=>{
                      return <option >{ele}</option>
                  })}
              </select>
