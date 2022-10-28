@@ -16,8 +16,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import Setting from '../setting/Setting';
 import DeleteUser from '../setting/DeleteUser'
 import Login from '../pages/Login';
-import Gallery from '../pages/Gallery';
-import Service from '../pages/Service';
 
 const Nav = styled.div`
   list-style: none;
@@ -55,10 +53,12 @@ const Nav = styled.div`
     background-color: #0D2538;
     position: fixed;
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
-    top: 0;
+    top:0;
     right: 0;
     z-index:2;
-    height:auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height:100vh;
     width: 300px;
     transition: transform 0.3s ease-in-out;
     ul {
@@ -115,16 +115,15 @@ const Nav = styled.div`
       >span{  
         display: inline-grid;
         margin-left: 15px;
-        margin-top: -18px;
+       
       }
       >span a{
-        margin-left: -14px;
         font-size: 16px;
-        margin-top: -70px;
-        padding: 15px;
+        position: absolute
       }
       >span p{
         font-size: 13px;
+        margin-bottom: 0;
       }
     }
     .name a {
@@ -283,7 +282,6 @@ const RightNav = ({ open }) => {
        :
        <>
        <ul className=''>
-       {/* <li><Link to="/">Home</Link></li> */}
        <li><Link to="/">Matches</Link></li>
        <li><Link to="/my-profile">Account</Link></li>
        <li><Link to="/chat">Chat</Link></li>
@@ -321,7 +319,7 @@ const RightNav = ({ open }) => {
         <div className='user'>
         <Avatar  style={{textTransform: 'capitalize'}}>{user.displayName?.[0]}</Avatar>
         <span>
-        <p >Welcome</p>
+        <p >.</p>
         <a  style={{textTransform: 'capitalize'}}>{user.displayName}</a>
         </span>
         </div>
