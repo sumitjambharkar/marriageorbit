@@ -19,9 +19,11 @@ import Navbar from '../Nav/Navbar';
 import Header from '../Header';
 import images from "../image/bg-border.png";
 import Footer from "../Footer";
+import { Link } from "react-router-dom";
 
 
 const MyProfile = () => {
+
   const [img ,setImag ] = useState('')
   const [userDetails, setUserDetails] = useState([]);
   var user = useSelector(selectUser);
@@ -34,8 +36,11 @@ const MyProfile = () => {
   const [number, setNumber] = useState()
   const [error ,setError] = useState("")
   const [userN, setUserN] = useState()
-
-  
+  const [req,setReq] = useState([])
+  const [send ,setSend] = useState([])
+  const [accept,setAccept] = useState([])
+  const [received,setReceived] = useState([])
+  console.log(req.length);
  
   
   useEffect(()=>{
@@ -102,6 +107,22 @@ const MyProfile = () => {
       })
       setShow(false)
   }
+
+  useEffect(() => {
+    db.collection("users").doc(user.uid).collection("sent").onSnapshot(snapshot=>(
+      setSend(snapshot.docs.map((doc)=>(doc.data())))
+    ))
+    db.collection("users").doc(user.uid).collection("req").onSnapshot(snapshot=>(
+      setReq(snapshot.docs.map((doc)=>(doc.data())))
+    ))
+    db.collection("users").doc(user.uid).collection("accept").onSnapshot(snapshot=>(
+      setAccept(snapshot.docs.map((doc)=>(doc.data())))
+    ))
+    db.collection("users").doc(user.uid).collection("received").onSnapshot(snapshot=>(
+      setReceived(snapshot.docs.map((doc)=>(doc.data())))
+    ))
+  }, [])
+  
 
   
   function calculate_age(dob) {
@@ -203,11 +224,17 @@ const MyProfile = () => {
               </Tooltip>
             </Button></li>
             {num ? <li><input type="number" value={number} defaultValue={userDetails.number} onChange={(e)=>setNumber(e.target.value)}/><Button onClick={updateNum}>Update</Button></li> : null}
+            <div className="noti">
+            <Link to="/inbox">Send Notification  {send.length}</Link>
+            <Link to="/inbox">Request  {req.length}</Link>
+            </div>
+            <div className="noti">
+            <Link to="/inbox">Received  {received.length}</Link>
+            <Link to="/inbox">Accept..  {accept.length}</Link>
+            </div>
           </ImageDetails>
         </ImageSection>
       </ProfileSection>
-     
-      
     <Section>
       <form onSubmit={updateDataAll} >
     <div class="container" style={{justifyContent:'center'}}>
@@ -616,9 +643,25 @@ const ImageDetails = styled.div`
   padding: 12px;
   padding-right: 80px;
   color:black;
+  .noti {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .noti a {
+    color:orange;
+  }
+  .noti a span {
+    color:black;
+    font-weight: bolder;
+    font-size:18px;
+  }
   > li {
     list-style: none;
     margin: 6px;
+    color: #212126;
+    font-size: 16px;
+    font-weight: 400;
   }
   > li > .MuiSvgIcon-root {
     margin-left: 24px;

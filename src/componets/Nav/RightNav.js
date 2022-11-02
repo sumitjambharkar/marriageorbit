@@ -299,12 +299,12 @@ const RightNav = ({ open }) => {
        <ul>
        <li className='hide'>
        <Avtars>
-       <Link onClick={()=>setShow(!show)}>{user.displayName}</Link>
-            <Link style={{textTransform: 'capitalize'}} onClick={()=>setShow(!show)}>
-            <button><Avatar style={{textTransform: 'capitalize'}}>{user.displayName?.[0]}</Avatar></button>
-            <ArrowDropDownIcon/>
-            </Link>
-            {show ? <>
+        <Link onClick={()=>setShow(!show)}>{user.displayName}</Link>
+        <Link style={{textTransform: 'capitalize'}} onClick={()=>setShow(!show)}>
+        <button><Avatar style={{textTransform: 'capitalize'}}>{user.displayName?.[0]}</Avatar></button>
+        <ArrowDropDownIcon/>
+        </Link>
+        {show ? <>
       <Drop>
               <span><Link to="/my-profile"><AccountCircleIcon/> My Profile</Link></span>
               <span onClick={handalLogout}><LogoutIcon/>Logout</span>

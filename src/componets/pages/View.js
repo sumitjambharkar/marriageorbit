@@ -16,11 +16,12 @@ import { selectUser } from "../userSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CallIcon from "@mui/icons-material/Call";
+import { DoDisturb } from "@mui/icons-material";
+import { doc } from "firebase/firestore";
 
-const View = (props) => {
+const View = () => {
   const history =  useHistory()
   const user = useSelector(selectUser);
-  console.log(user);
   function calculate_age(dob) {
     var diff_ms = Date.now() - dob.getTime();
     var age_dt = new Date(diff_ms);
@@ -28,7 +29,6 @@ const View = (props) => {
     return Math.abs(age_dt.getUTCFullYear() - 1970);
   }
   const { Id } = useParams();
-  console.log(Id);
   const [getImage,setGetImage] = useState('')
   const [personData, setPersonData] = useState([]);
   
@@ -40,6 +40,8 @@ const View = (props) => {
 
   const sendNot = async (e) => {
     e.preventDefault();
+    db.collection("users").doc(user.uid).collection("sent").doc(personData.uid).set({data:personData})
+    db.collection("users").doc(personData.uid).collection("req").doc(user.uid).set({data:getImage})
     const respone = await fetch(
       "https://marriageorbit-backend-api.herokuapp.com/send-email",
       {

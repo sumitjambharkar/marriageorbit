@@ -186,7 +186,7 @@ const HomeSection = () => {
   const [data, setData] = useState([]);
   const user = useSelector(selectUser);
   const [search, setSearch] = useState("");
-  console.log(search);
+  
   const [location, setLocation] = useState("");
   const [showFiltter, setShowFiltter] = useState(false);
   const [selectAge, setSelectAge] = useState("");
@@ -784,7 +784,7 @@ const Filter = styled.div`
     background-color: #ffa500;
     color: white;
     padding: 10px;
-    width: 270px;
+    width:195px;
     font-size: 16px;
     margin-top: 40px;
     border: none;
