@@ -23,6 +23,7 @@ import Message from "./Message";
 import {Helmet} from "react-helmet";
 import Navbar from "../Nav/Navbar";
 import Footer from "../Footer";
+import SearchIcon from "@mui/icons-material/Search";
 
 
 const Home = () => {
@@ -131,7 +132,12 @@ const Home = () => {
             </Helmet>
            <Header>
             <h3>Marroageorbit.com</h3>
-            <input placeholder="search Name" value={search} onChange={(e)=>setSearch(e.target.value)}/>
+            <Input>
+            <input
+              placeholder="search Name" value={search} onChange={(e)=>setSearch(e.target.value)}
+            />
+            <SearchIcon />
+          </Input>
            </Header>
             <Navbar/>
     <HomeContainer>
@@ -219,13 +225,8 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 height: 80px;
-> input {
-  padding: 4px;
-  border-color: darkgoldenrod;
-  border-radius: 12px;
-}
-> input:focus {
-  outline: none;
+> h3 {
+  color:orange;
 }
 @media (max-width:500px) {
   >h3 {
@@ -234,3 +235,30 @@ height: 80px;
 }
 
 `
+
+const Input = styled.div`
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 25px;
+  border-radius: 24px;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  > input {
+    font-size: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 45px;
+    width: 100%;
+    border: none;
+    outline: none;
+  }
+  .MuiSvgIcon-root {
+    color: orange;
+  }
+`;

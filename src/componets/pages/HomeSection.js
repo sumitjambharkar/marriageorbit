@@ -16,9 +16,10 @@ import Navbar from "../Nav/Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
-import city from './city.json';
-import girl from '../image/girl.jpeg';
-import man from '../image/man.jpg'
+import city from "./city.json";
+import girl from "../image/girl.jpeg";
+import man from "../image/man.jpg";
+import SearchIcon from "@mui/icons-material/Search";
 
 const age = [
   "18",
@@ -188,7 +189,7 @@ const HomeSection = () => {
   const [data, setData] = useState([]);
   const user = useSelector(selectUser);
   const [search, setSearch] = useState("");
-  
+
   const [location, setLocation] = useState("");
   const [showFiltter, setShowFiltter] = useState(false);
   const [selectAge, setSelectAge] = useState("");
@@ -197,14 +198,6 @@ const HomeSection = () => {
   const [selectHeight, setSelectHeight] = useState("");
   const [userData, setUserData] = useState("");
   
-  // const handleSearch =()=> {
-
-  //   var newData = location.filter((item)=>{
-  //     return item.data.city === search
-  //   })
-  //   setLocation(newData)
-  // }
-
   useEffect(() => {
     if (user.uid) {
       db.collection("users")
@@ -368,14 +361,13 @@ const HomeSection = () => {
               onChange={(e) => setSearch(e.target.value)}
               placeholder="search"
             />
-            <button type="submit">Search</button>
+            <SearchIcon />
           </Input>
         </SearchBar>
       </Container>
       <Section className="container">
         <SectionFiltter>
           <Filtter>
-            <Fil>
               {/* ==================Start Location===================== */}
               <Filter>
                 <br></br>
@@ -400,9 +392,10 @@ const HomeSection = () => {
                 <div class="dropdown">
                   <select
                     class="dropbtn"
+                    name="age"
                     onChange={(e) => setSelectAge(e.target.value)}
                   >
-                    <option>Select Age</option>
+                    <option>Select Age        </option>
                     {age.map((doc) => (
                       <option class="dropdown-content">{doc}</option>
                     ))}
@@ -417,6 +410,7 @@ const HomeSection = () => {
                 <div class="dropdown">
                   <select
                     class="dropbtn"
+                    name="rel"
                     onChange={(e) => setSelectReligion(e.target.value)}
                   >
                     <option>Select Religion</option>
@@ -462,7 +456,6 @@ const HomeSection = () => {
               </Filter>
 
               {/* ==================End mothertounge===================== */}
-            </Fil>
           </Filtter>
         </SectionFiltter>
         <SectionCard>
@@ -502,13 +495,35 @@ const HomeSection = () => {
                     <>
                       {doc.displayName === user.displayName ? null : (
                         <SingleCard>
-                          {doc.gender==="Male" ? 
-                          <>
-                          {doc.image? <img style={{height:250,width:"100%"}} src={doc.image}/> : <img style={{height:250,width:"100%"}} src={man}/>}
-                          </> :
-                          <>
-                          {doc.image? <img style={{height:250,width:"100%"}} src={doc.image}/> : <img style={{height:250,width:"100%"}} src={girl}/>}
-                          </> }
+                          {doc.gender === "Male" ? (
+                            <>
+                              {doc.image ? (
+                                <img
+                                  style={{ height: 250, width: "100%" }}
+                                  src={doc.image}
+                                />
+                              ) : (
+                                <img
+                                  style={{ height: 250, width: "100%" }}
+                                  src={man}
+                                />
+                              )}
+                            </>
+                          ) : (
+                            <>
+                              {doc.image ? (
+                                <img
+                                  style={{ height: 250, width: "100%" }}
+                                  src={doc.image}
+                                />
+                              ) : (
+                                <img
+                                  style={{ height: 250, width: "100%" }}
+                                  src={girl}
+                                />
+                              )}
+                            </>
+                          )}
                           <span
                             style={{
                               textTransform: "capitalize",
@@ -700,7 +715,6 @@ const Section = styled.div`
 `;
 
 const SectionFiltter = styled.div`
-  width: 25%;
   padding: 1%;
 
   @media (max-width: 768px) {
@@ -709,7 +723,7 @@ const SectionFiltter = styled.div`
 `;
 
 const SectionCard = styled.div`
-  width: 75%;
+  width:100%;
   padding: 1%;
 
   @media (max-width: 768px) {
@@ -720,7 +734,7 @@ const SectionCard = styled.div`
 const Filtter = styled.div`
   background-color: #eee;
   min-height: 100vh;
-  padding: 0;
+  padding:10px;
 `;
 const Card = styled.div`
   display: flax;
@@ -729,13 +743,19 @@ const Card = styled.div`
 `;
 
 const SingleCard = styled.div`
-  width: 198px;
+  width:220px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   background-color: #eee;
   margin: 1%;
-  border: 1px solid #ffa500;
+  border: 2px solid #9994;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
   > span {
     margin-left: 4px;
   }
@@ -755,29 +775,6 @@ const SingleCard = styled.div`
     text-decoration: none;
   }
 `;
-const Fil = styled.div`
-  width: 90%;
-  background-color: #eee;
-  margin: 5%;
-
-  > p {
-    font-weight: bold;
-    padding-top: 10px;
-  }
-  > select {
-    width: 100%;
-    height: 30px;
-  }
-  > ul {
-    padding-left: 0;
-  }
-  > ul li {
-    list-style-type: none;
-  }
-  label {
-    padding-left: 5px;
-  }
-`;
 const SearchBar = styled.div`
   width: 100%;
   display: flex;
@@ -788,7 +785,7 @@ const Filter = styled.div`
     background-color: #ffa500;
     color: white;
     padding: 10px;
-    width:195px;
+    width: 195px;
     font-size: 16px;
     margin-top: 40px;
     border: none;
@@ -850,6 +847,7 @@ const Speed = styled.div`
     background-color: #ffa500;
     border-radius: 50%;
     padding: 15px;
+    
   }
   a :hover {
     cursor: pointer;
@@ -861,7 +859,8 @@ const Speed = styled.div`
 
   ul {
     position: absolute;
-    z-index:1;
+    z-index: 1;
+    margin-top: 10px;
   }
 
   ul li {
@@ -884,24 +883,28 @@ const Speed = styled.div`
 `;
 
 const Input = styled.div`
+  border: 1px solid #ccc;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 25px;
+  border-radius: 24px;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
   > input {
     font-size: 15px;
-    border-radius: 4px;
     border: 1px solid #ccc;
     padding: 10px;
     height: 45px;
     width: 100%;
+    border: none;
     outline: none;
   }
-  > button {
-    background: #ffa500;
-    color: #fff;
-    height: 45px;
-    width: 80px;
-    font-size: 15px;
-    border-radius: 4px;
-    font-weight: 700;
-    border: 0;
+  .MuiSvgIcon-root {
+    color: orange;
   }
 `;

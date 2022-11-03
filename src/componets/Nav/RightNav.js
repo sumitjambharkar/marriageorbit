@@ -91,12 +91,12 @@ const Nav = styled.div`
     }
 
     .use{
-      display: inline-grid;
-      width:300px;
-      text-align: center;
-      justify-content: center;
+    display: inline-grid;
+    width:300px;
+    text-align: center;
+    justify-content: center;
     >button{
-      height: 32px;
+    height: 32px;
     margin-top: 10px;
     line-height: 32px;
     font-size: 15px;
@@ -106,6 +106,7 @@ const Nav = styled.div`
     border-radius: 15px;
     border: 1px solid #ffa500;
     }
+    
   }
 
     .user{
@@ -205,7 +206,7 @@ const Drop = styled.div`
    position:absolute;
    display:flex;
    width:300px;
-   margin-left:-134px;
+   margin-left:-50px;
    z-index:1;
    justify-content:start;
   height:100px;
@@ -300,7 +301,7 @@ const RightNav = ({ open }) => {
        <ul>
        <li className='hide'>
        <Avtars>
-        <Link onClick={()=>setShow(!show)}>{user.displayName}</Link>
+        <Link className='show' onClick={()=>setShow(!show)}>{user.displayName}</Link>
         <Link style={{textTransform: 'capitalize'}} onClick={()=>setShow(!show)}>
         <button><Avatar style={{textTransform: 'capitalize'}}>{user.displayName?.[0]}</Avatar></button>
         <ArrowDropDownIcon/>

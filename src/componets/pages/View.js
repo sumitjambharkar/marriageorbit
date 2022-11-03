@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useHistory, useParams } from "react-router-dom";
 import { db } from "../firebase";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Avatar } from "@mui/material";
 import images from "../image/bg-border.png";
 import { Helmet } from "react-helmet";
 import Header from "../Header";
 import Navbar from "../Nav/Navbar";
 import ChatIcon from "@mui/icons-material/Chat";
-import EmailIcon from '@mui/icons-material/Email';
+import EmailIcon from "@mui/icons-material/Email";
 import Footer from "../Footer";
 import { useSelector } from "react-redux";
 import { selectUser } from "../userSlice";
@@ -18,9 +18,11 @@ import "react-toastify/dist/ReactToastify.css";
 import CallIcon from "@mui/icons-material/Call";
 import { DoDisturb } from "@mui/icons-material";
 import { doc } from "firebase/firestore";
+import girl from "../image/girl.jpeg";
+import man from "../image/man.jpg";
 
 const View = () => {
-  const history =  useHistory()
+  const history = useHistory();
   const user = useSelector(selectUser);
   function calculate_age(dob) {
     var diff_ms = Date.now() - dob.getTime();
@@ -29,9 +31,9 @@ const View = () => {
     return Math.abs(age_dt.getUTCFullYear() - 1970);
   }
   const { Id } = useParams();
-  const [getImage,setGetImage] = useState('')
+  const [getImage, setGetImage] = useState("");
   const [personData, setPersonData] = useState([]);
-  
+
   let x = personData.birth;
   let date = new Date(x);
   let dateMDY = `${date.getDate()}-${
@@ -40,8 +42,16 @@ const View = () => {
 
   const sendNot = async (e) => {
     e.preventDefault();
-    db.collection("users").doc(user.uid).collection("sent").doc(personData.uid).set({data:personData})
-    db.collection("users").doc(personData.uid).collection("req").doc(user.uid).set({data:getImage})
+    db.collection("users")
+      .doc(user.uid)
+      .collection("sent")
+      .doc(personData.uid)
+      .set({ data: personData });
+    db.collection("users")
+      .doc(personData.uid)
+      .collection("req")
+      .doc(user.uid)
+      .set({ data: getImage });
     const respone = await fetch(
       "https://marriageorbit-backend-api.herokuapp.com/send-email",
       {
@@ -76,42 +86,50 @@ const View = () => {
 
   useEffect(() => {
     if (user.uid) {
-      db.collection("users").doc(user.uid).onSnapshot(snapshot => {
-        setGetImage(snapshot.data())
-      })
+      db.collection("users")
+        .doc(user.uid)
+        .onSnapshot((snapshot) => {
+          setGetImage(snapshot.data());
+        });
     }
+  }, [user.uid]);
 
-  }, [user.uid])
-  
-  const getData =async() => {
-    const uid = personData.uid
-    const displayName = personData.displayName
-    const image = personData.image
+  const getData = async () => {
+    const uid = personData.uid;
+    const displayName = personData.displayName;
+    const image = personData.image;
 
     const id = user.uid > uid ? `${user.uid + uid}` : `${uid + user.ui}`;
-    if(user.uid){
-    db.collection("users").doc(user.uid).collection("messages").doc(id).set({
-      uid:uid,
-      displayName,
-      image:image || null,
-      createdAt :new Date(),
-    })
-    if (uid) {
-      db.collection("users").doc(uid).collection("messages").doc(id).set({
-        uid : user.uid,
-        displayName:getImage.displayName,
-        image :getImage.image || null,
-        createdAt :new Date(),
-      })
+    if (user.uid) {
+      db.collection("users")
+        .doc(user.uid)
+        .collection("messages")
+        .doc(id)
+        .set({
+          uid: uid,
+          displayName,
+          image: image || null,
+          createdAt: new Date(),
+        });
+      if (uid) {
+        db.collection("users")
+          .doc(uid)
+          .collection("messages")
+          .doc(id)
+          .set({
+            uid: user.uid,
+            displayName: getImage.displayName,
+            image: getImage.image || null,
+            createdAt: new Date(),
+          });
+      }
+      history.push({
+        pathname: "/chat",
+        state: { uid: personData.uid },
+      });
     }
-    history.push({
-      pathname: '/chat',
-      state:{uid:personData.uid}
-    });
-  }
-  }
+  };
 
-  
   return (
     <>
       <Helmet>
@@ -144,11 +162,29 @@ const View = () => {
       <ProfileSection>
         <ImageSection>
           <CardImage>
-            <Avatar
-              src={personData.image}
-              sx={{ width: 224, height: 250 }}
-              variant="square"
-            />
+            {personData.gender === "Male" ? (
+              <>
+                {personData.image ? (
+                  <img
+                    style={{ height: 250, width: "100%" }}
+                    src={personData.image}
+                  />
+                ) : (
+                  <img style={{ height: 250, width: "100%" }} src={man} />
+                )}
+              </>
+            ) : (
+              <>
+                {personData.image ? (
+                  <img
+                    style={{ height: 250, width: "100%" }}
+                    src={personData.image}
+                  />
+                ) : (
+                  <img style={{ height: 250, width: "100%" }} src={girl} />
+                )}
+              </>
+            )}
           </CardImage>
           <ImageDetails>
             <h3 style={{ textTransform: "capitalize" }}>
@@ -175,18 +211,22 @@ const View = () => {
 
             <Second>
               <li>
-                <a onClick={sendNot}><EmailIcon email={personData.email} /></a>
+                <a onClick={sendNot}>
+                  <EmailIcon email={personData.email} />
+                </a>
                 <p>Connect now</p>
               </li>
               <li>
-              <a href={`tel:+91${personData.number}`}><CallIcon/></a>
-              <p>Call now</p>
+                <a href={`tel:+91${personData.number}`}>
+                  <CallIcon />
+                </a>
+                <p>Call now</p>
               </li>
               <li>
-                 <a onClick={getData}>
-                    <ChatIcon />
-                  </a>
-                  <p>Chat now</p>
+                <a onClick={getData}>
+                  <ChatIcon />
+                </a>
+                <p>Chat now</p>
               </li>
             </Second>
           </ImageDetails>
@@ -407,43 +447,43 @@ const Second = styled.div`
     align-items: center;
     margin-top: 5px;
     > a {
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ffa500;
-    font-size: 18px;
-    border: 1px solid #ffa500;
-    cursor: pointer;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffa500;
+      font-size: 18px;
+      border: 1px solid #ffa500;
+      cursor: pointer;
 
-    >.MuiSvgIcon-root {
-    font-size:35px;
-    color:#FFA500;
-    }
+      > .MuiSvgIcon-root {
+        font-size: 35px;
+        color: #ffa500;
+      }
     }
     a:hover {
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    line-height: 50px;
-    color:white;
-    font-size: 18px;
-    background-color: #ffa500;
-    border: 1px solid white;
-    >.MuiSvgIcon-root {
-    font-size:35px;
-    color:white;
-    }
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      line-height: 50px;
+      color: white;
+      font-size: 18px;
+      background-color: #ffa500;
+      border: 1px solid white;
+      > .MuiSvgIcon-root {
+        font-size: 35px;
+        color: white;
+      }
     }
     p {
-      font-size:12px;
-      margin:2px;
+      font-size: 12px;
+      margin: 2px;
     }
-    p:hover{
+    p:hover {
       cursor: pointer;
-      color: #FFA500;
+      color: #ffa500;
     }
-  }  
+  }
 `;

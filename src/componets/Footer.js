@@ -146,7 +146,6 @@ color:white;
 }
 >ul{
   display: flex;
-  margin-left: -40px;
 }
 >ul li{
   margin:5px;
