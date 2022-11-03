@@ -21,8 +21,17 @@ import { selectUser } from "../userSlice";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Button from '@mui/material/Button';
+import { Link } from "react-router-dom";
 
 const Inbox = () => {
+
+  function calculate_age(dob) {
+    var diff_ms = Date.now() - dob.getTime();
+    var age_dt = new Date(diff_ms);
+
+    return Math.abs(age_dt.getUTCFullYear() - 1970);
+  }
+
   const user = useSelector(selectUser);
   const [userData,setUserData] = useState([])
   const [sent ,setSent] = useState([])
@@ -151,15 +160,15 @@ const Inbox = () => {
                      </h2>
                      <hr></hr>
                      <small>
-                       27 yrs,5'3"
+                     {calculate_age(new Date(doc.data.birth))} yrs,{doc.data.height}
                        <br />
-                       Hindi , Rajput
+                       {doc.data.religion}, {doc.data.tounge}
                        <br />
-                       Delhi, Delhi-NCR
+                       {doc.data.city}, {doc.data.state}
                        <br />
-                       Master
+                       {doc.data.qaulification}
                        <br />
-                       Interior Designer
+                       {doc.data.des}
                      </small>
                    </div>
                    <div className="lov">
@@ -167,7 +176,7 @@ const Inbox = () => {
                        <LockOutlinedIcon />
                      </span>
                      <p>
-                       Nirjala has sent you a message. In the interest of our
+                     {doc.data.displayName} has sent you a message. In the interest of our
                        Premium Members, we allow only Premium users to read
                        messages.
                      </p>
@@ -195,10 +204,12 @@ const Inbox = () => {
                        Whatsapp
                      </p>
                      </a>
+                     <Link to="/chat">
                      <p className="pikk">
                        <MarkChatReadIcon />
                        Shaddi Chat
                      </p>
+                     </Link>
                    </div>
                  </div>
                </div>
@@ -227,35 +238,35 @@ const Inbox = () => {
                     </div>
                   </div>
                   <div className="col-6 sib">
-                    <div className="sid">
-                      <p>
-                        {doc.data.displayName} <VerifiedUserOutlinedIcon />
-                      </p>
-                      <h2>
-                        <span>
-                          <QuestionAnswerOutlinedIcon />
-                        </span>
-                        Online 1hr Ago
-                      </h2>
-                      <hr></hr>
-                      <small>
-                        27 yrs,5'3"
-                        <br />
-                        Hindi , Rajput
-                        <br />
-                        Delhi, Delhi-NCR
-                        <br />
-                        Master
-                        <br />
-                        Interior Designer
-                      </small>
-                    </div>
+                  <div className="sid">
+                     <p>
+                       {doc.data.displayName} <VerifiedUserOutlinedIcon />
+                     </p>
+                     <h2>
+                       <span>
+                         <QuestionAnswerOutlinedIcon />
+                       </span>
+                       Online 1hr Ago
+                     </h2>
+                     <hr></hr>
+                     <small>
+                     {calculate_age(new Date(doc.data.birth))} yrs,{doc.data.height}
+                       <br />
+                       {doc.data.religion}, {doc.data.tounge}
+                       <br />
+                       {doc.data.city}, {doc.data.state}
+                       <br />
+                       {doc.data.qaulification}
+                       <br />
+                       {doc.data.des}
+                     </small>
+                   </div>
                     <div className="lov">
                       <span>
                         <LockOutlinedIcon />
                       </span>
                       <p>
-                        Nirjala has sent you a message. In the interest of our
+                      {doc.data.displayName} has sent you a message. In the interest of our
                         Premium Members, we allow only Premium users to read
                         messages.
                       </p>
@@ -284,10 +295,12 @@ const Inbox = () => {
                      </p>
                      </a>
 
+                      <Link to="/chat">
                       <p className="pikk">
                         <MarkChatReadIcon />
                         Shaddi Chat
                       </p>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -316,9 +329,9 @@ const Inbox = () => {
                    </div>
                  </div>
                  <div className="col-6 sib">
-                   <div className="sid">
+                 <div className="sid">
                      <p>
-                      {doc.data.displayName}<VerifiedUserOutlinedIcon />
+                       {doc.data.displayName} <VerifiedUserOutlinedIcon />
                      </p>
                      <h2>
                        <span>
@@ -328,15 +341,15 @@ const Inbox = () => {
                      </h2>
                      <hr></hr>
                      <small>
-                       27 yrs,5'3"
+                     {calculate_age(new Date(doc.data.birth))} yrs,{doc.data.height}
                        <br />
-                       Hindi , Rajput
+                       {doc.data.religion}, {doc.data.tounge}
                        <br />
-                       Delhi, Delhi-NCR
+                       {doc.data.city}, {doc.data.state}
                        <br />
-                       Master
+                       {doc.data.qaulification}
                        <br />
-                       Interior Designer
+                       {doc.data.des}
                      </small>
                    </div>
                    <div className="lov">
@@ -344,7 +357,7 @@ const Inbox = () => {
                        <LockOutlinedIcon />
                      </span>
                      <p>
-                       Nirjala has sent you a message. In the interest of our
+                       {doc.data.displayName} has sent you a message. In the interest of our
                        Premium Members, we allow only Premium users to read
                        messages.
                      </p>
@@ -393,29 +406,29 @@ const Inbox = () => {
                     </div>
                   </div>
                   <div className="col-6 sib">
-                    <div className="sid">
-                      <p>
-                        {doc.data.displayName} <VerifiedUserOutlinedIcon />
-                      </p>
-                      <h2>
-                        <span>
-                          <QuestionAnswerOutlinedIcon />
-                        </span>
-                        Online 1hr Ago
-                      </h2>
-                      <hr></hr>
-                      <small>
-                        27 yrs,5'3"
-                        <br />
-                        Hindi , Rajput
-                        <br />
-                        Delhi, Delhi-NCR
-                        <br />
-                        Master
-                        <br />
-                        Interior Designer
-                      </small>
-                    </div>
+                  <div className="sid">
+                     <p>
+                       {doc.data.displayName} <VerifiedUserOutlinedIcon />
+                     </p>
+                     <h2>
+                       <span>
+                         <QuestionAnswerOutlinedIcon />
+                       </span>
+                       Online 1hr Ago
+                     </h2>
+                     <hr></hr>
+                     <small>
+                     {calculate_age(new Date(doc.data.birth))} yrs,{doc.data.height}
+                       <br />
+                       {doc.data.religion}, {doc.data.tounge}
+                       <br />
+                       {doc.data.city}, {doc.data.state}
+                       <br />
+                       {doc.data.qaulification}
+                       <br />
+                       {doc.data.des}
+                     </small>
+                   </div>
                     <br />
                     <div className="love">
                       <p>
@@ -426,7 +439,7 @@ const Inbox = () => {
                         my profile interests you too
                       </p>
                       <h3>
-                        He viewed your Invitation on 25 Aug 2022 and chose to
+                        He viewed your Invitation and choose to
                         respond later.
                       </h3>
                     </div>
@@ -450,10 +463,12 @@ const Inbox = () => {
                      </p>
                      </a>
 
-                      <p className="pikk">
+                     <Link to="/chat">
+                     <p className="pikk">
                         <MarkChatReadIcon />
                         Shaddi Chat
                       </p>
+                     </Link>
                     </div>
                   </div>
                 </div>

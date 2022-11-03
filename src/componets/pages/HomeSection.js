@@ -16,7 +16,9 @@ import Navbar from "../Nav/Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
-import city from './city.json'
+import city from './city.json';
+import girl from '../image/girl.jpeg';
+import man from '../image/man.jpg'
 
 const age = [
   "18",
@@ -500,11 +502,13 @@ const HomeSection = () => {
                     <>
                       {doc.displayName === user.displayName ? null : (
                         <SingleCard>
-                          <Avatar
-                            src={doc.image}
-                            sx={{ width: "100%", height: 250 }}
-                            variant="square"
-                          />
+                          {doc.gender==="Male" ? 
+                          <>
+                          {doc.image? <img style={{height:250,width:"100%"}} src={doc.image}/> : <img style={{height:250,width:"100%"}} src={man}/>}
+                          </> :
+                          <>
+                          {doc.image? <img style={{height:250,width:"100%"}} src={doc.image}/> : <img style={{height:250,width:"100%"}} src={girl}/>}
+                          </> }
                           <span
                             style={{
                               textTransform: "capitalize",

@@ -289,6 +289,7 @@ const RightNav = ({ open }) => {
        <li><Link to="/myphoto">My Photo</Link></li>
        <li><Link to="/gallery">Gallery</Link></li>
        <li><Link to="/service">Service</Link></li>
+       <li><Link to="/inbox">Inbox</Link></li>
        <li className='menu'><Setting/></li>
         <li className='menu'><DeleteUser/></li>
        
